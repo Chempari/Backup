@@ -1,0 +1,841 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: charles
+meta:
+  id: wrk_477273a048bd49e98dac63ec9e0032c1
+  created: 1781913215278
+  modified: 1783657695625
+  description: ""
+collection:
+  - url: "{{ _.BASE_PATH }}/auth/register"
+    name: Register
+    meta:
+      id: req_6790ae054d7d491e83cc01a8c9722f14
+      created: 1781766808324
+      modified: 1783657695616
+      isPrivate: false
+      description: ""
+      sortKey: -1781766808324
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nombre": "Jerica Cortez",
+          "correo": "hooola@correo.com",
+          "password": "7654321",
+          "passwordConfirm": "7654321",
+        	"rol": "instructor"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.BASE_PATH }}/auth/login"
+    name: Login
+    meta:
+      id: req_af388e44ed3d49cc91d85573e2b71a91
+      created: 1781769262722
+      modified: 1783657814596
+      isPrivate: false
+      description: ""
+      sortKey: -1781769262722
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "correo": "hooola@correo.com",
+          "password": "7654321"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - name: Cursos
+    meta:
+      id: fld_6d86ea34734d46d9b3642a62c8ba6b96
+      created: 1783665066498
+      modified: 1783665066498
+      sortKey: -1783665066498
+      description: ""
+    children:
+      - url: "{{ _.BASE_PATH }}/Cursos"
+        name: Enviar Cursos
+        meta:
+          id: req_f3f3778d223441c3b15c1458656f2270
+          created: 1783665172133
+          modified: 1783669108689
+          isPrivate: false
+          description: ""
+          sortKey: -1783665172133
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "titulo": "Desarrollo de APIs con Node.js",
+              "descripcion": "Aprende a estructurar un backend desde cero.",
+              "categoria": "Programación",
+              "nivel": "intermedio",
+              "precio": 49.99,
+              "imagen": "https://tu-dominio.com/imagenes/curso-node.jpg"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        authentication:
+          type: bearer
+          token: "{{ _.access_token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_PATH }}/Cursos"
+        name: Obtener Curso
+        meta:
+          id: req_014be072e79f49afad302892dc967939
+          created: 1783666428774
+          modified: 1783669113676
+          isPrivate: false
+          description: ""
+          sortKey: -1783666428774
+        method: GET
+        authentication:
+          type: bearer
+          token: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_PATH }}/Cursos/6a5092407163d35dc3937e00"
+        name: Actualizar Curso
+        meta:
+          id: req_3402780a6c9246a29286aff8fbe8ffb4
+          created: 1783667026752
+          modified: 1783669492691
+          isPrivate: false
+          description: ""
+          sortKey: -1783667026752
+        method: PUT
+        body:
+          mimeType: application/json
+          text: >-
+            {
+              "titulo": "Desarrollo de APIs con Node.js y MongoDB (Edición otra vez)",
+              "precio": 59.99,
+              "nivel": "avanzado"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: Bearer
+            value: Bearer {{ _.access_token }}
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.access_token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_PATH }}/Cursos/6a5092407163d35dc3937e00/publicar"
+        name: ActualizarEstado "Publicar"
+        meta:
+          id: req_ed4ab66dbe7c46eeab1411f1b2185446
+          created: 1783667091030
+          modified: 1783669513210
+          isPrivate: false
+          description: ""
+          sortKey: -1783667091030
+        method: PATCH
+        authentication:
+          type: bearer
+          token: "{{ _.access_token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_PATH }}/Cursos"
+        name: Eliminar Curso
+        meta:
+          id: req_55cbe7be81844b59b8154223c0f620bd
+          created: 1783667564222
+          modified: 1783667711358
+          isPrivate: false
+          description: ""
+          sortKey: -1783667564222
+        method: DELETE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Usuario
+    meta:
+      id: fld_258a771837724085a21608c350ac1c0a
+      created: 1783665083471
+      modified: 1783665083471
+      sortKey: -1783665083471
+      description: ""
+    children:
+      - url: "{{ _.BASE_PATH }}/Usuarios"
+        name: Obtener Usuarios
+        meta:
+          id: req_0a31f40528b54d4ebed1e29adf6cabae
+          created: 1781277100858
+          modified: 1783669552432
+          isPrivate: false
+          description: ""
+          sortKey: -1783665149717
+        method: GET
+        body:
+          mimeType: multipart/form-data
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: User-Agent
+            value: insomnia/12.6.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.access_token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_PATH }}/Usuarios"
+        name: Enviar Usuario
+        meta:
+          id: req_b985cf3d2fd442f4a21bbef52e7dafed
+          created: 1781277170372
+          modified: 1783669543317
+          isPrivate: false
+          description: ""
+          sortKey: -1783665149617
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "nombre": "Juan Christian",
+              "apellido": "Cortez",
+              "correo": "CORREO@ejemplo.com",
+              "password": "passwordSeguro123",
+              "rol": "instructor"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.6.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.access_token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_PATH }}/Usuarios/6a50986a7163d35dc3937e1f"
+        name: Eliminar
+        meta:
+          id: req_99c939a49129441da1a2f74b1220a9f2
+          created: 1781277488053
+          modified: 1783667008379
+          isPrivate: false
+          description: ""
+          sortKey: -1783665149517
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.6.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_PATH }}/Usuarios/6a50986a7163d35dc3937e1f"
+        name: Actualizar Usuarios
+        meta:
+          id: req_f8a146be82554eba963fb650ee043c47
+          created: 1781277553463
+          modified: 1783669533975
+          isPrivate: false
+          description: ""
+          sortKey: -1783665149417
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "nombre": "Juan Iberos",
+            	"apellido": "Cortezz",
+            	"correo":"CORREO@ejemplo.com",
+            	"foto":"hadsfkdfdjgkgkgno.jpeg",
+              "rol": "estudiante"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.6.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.access_token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_PATH }}/auth/me"
+        name: Me
+        meta:
+          id: req_78db5a5b3ce146f391a461f58cf46043
+          created: 1783669755727
+          modified: 1783669804886
+          isPrivate: false
+          description: ""
+          sortKey: -1783669755727
+        method: GET
+        authentication:
+          type: bearer
+          token: "{{ _.access_token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Secciones
+    meta:
+      id: fld_1fb39d69a271429a8d9a15be1f2274c1
+      created: 1783665246056
+      modified: 1783665246056
+      sortKey: -1783665246056
+      description: ""
+    children:
+      - url: "{{ _.BASE_PATH }}/Secciones"
+        name: Enviar Seccion
+        meta:
+          id: req_e3583a446c284af6810f1864d3d46635
+          created: 1783665268118
+          modified: 1783669524327
+          isPrivate: false
+          description: ""
+          sortKey: -1783665268118
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "cursoID": "6a5092407163d35dc3937e00",
+              "titulo": "Desarrollo de APIs con Node.js",
+            	"orden": 1
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        authentication:
+          type: bearer
+          token: "{{ _.access_token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_PATH }}/Secciones"
+        name: Obtener Seccion
+        meta:
+          id: req_26eefa345c7b466b97cff4c21275481c
+          created: 1783666559944
+          modified: 1783667758535
+          isPrivate: false
+          description: ""
+          sortKey: -1783666559944
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_PATH }}/Secciones"
+        name: Actualizar Seccion
+        meta:
+          id: req_30c2be7eefd644e9a2dcc20394798362
+          created: 1783667304340
+          modified: 1783669578662
+          isPrivate: false
+          description: ""
+          sortKey: -1783667304340
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "titulo": "Módulo 1: Configuración Avanzada del Entorno",
+              "orden": 2
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        authentication:
+          type: bearer
+          token: "{{ _.access_token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_PATH }}/Secciones"
+        name: Eliminar Seccion
+        meta:
+          id: req_6b0d71c3458e4155b488efef6cf75330
+          created: 1783667604571
+          modified: 1783667805277
+          isPrivate: false
+          description: ""
+          sortKey: -1783667604571
+        method: DELETE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Lecciones
+    meta:
+      id: fld_a0fd97c5e71646bfbbb0700bed8fae27
+      created: 1783665728417
+      modified: 1783665728417
+      sortKey: -1783665728417
+      description: ""
+    children:
+      - url: "{{ _.BASE_PATH }}/Lecciones"
+        name: Enviar Leccion
+        meta:
+          id: req_e7ecd91b4b644489b83051ecef903d59
+          created: 1783665732057
+          modified: 1783669585551
+          isPrivate: false
+          description: ""
+          sortKey: -1783665732057
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+              "seccionID": "6a5095117163d35dc3937e0d",
+              "titulo": "Instalación de dependencias",
+              "descripcion": "Cómo inicializar package.json e instalar Express.",
+              "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+              "duracion": 15,
+              "orden": 1
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        authentication:
+          type: bearer
+          token: "{{ _.access_token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_PATH }}/Lecciones"
+        name: Obtener Leccion
+        meta:
+          id: req_897a0e48dad941e787b5d65e095893c6
+          created: 1783666587429
+          modified: 1783667945473
+          isPrivate: false
+          description: ""
+          sortKey: -1783666587429
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_PATH }}/Lecciones"
+        name: Actualizar Leccion
+        meta:
+          id: req_787ce0f9aecd49799c1373cde268b087
+          created: 1783667338585
+          modified: 1783669598229
+          isPrivate: false
+          description: ""
+          sortKey: -1783667338585
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "titulo": "Instalación de dependencias de producción",
+              "descripcion": "Análisis detallado de npm install --production",
+              "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+              "duracion": 25,
+              "orden": 2
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        authentication:
+          type: bearer
+          token: "{{ _.access_token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_PATH
+          }}Inscripciones/ID_DE_INSCRIPCION/lecciones/ID_DE_LA_LECCION"
+        name: Marcar Leccion "Completada"
+        meta:
+          id: req_670cdf6e7bb04cd39a69b21535132720
+          created: 1783667442144
+          modified: 1783669611487
+          isPrivate: false
+          description: ""
+          sortKey: -1783667442144
+        method: PATCH
+        authentication:
+          type: bearer
+          token: "{{ _.access_token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_PATH }}/Lecciones"
+        name: Eliminar Leccion
+        meta:
+          id: req_8501852dce7e48978782e03a1de4bce9
+          created: 1783667625580
+          modified: 1783667970121
+          isPrivate: false
+          description: ""
+          sortKey: -1783667625580
+        method: DELETE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Inscripcion
+    meta:
+      id: fld_1548724d4d6948aaa5263020eb462a72
+      created: 1783666026394
+      modified: 1783666026394
+      sortKey: -1783666026394
+      description: ""
+    children:
+      - url: "{{ _.BASE_PATH }}/Inscripciones"
+        name: Enviar Inscripcion
+        meta:
+          id: req_67a58703eb71433ebe46332e7a56e5bf
+          created: 1783666067371
+          modified: 1783669619823
+          isPrivate: false
+          description: ""
+          sortKey: -1783666067371
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "curso_id": "6a5092407163d35dc3937e00"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        authentication:
+          type: bearer
+          token: "{{ _.access_token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_PATH }}/Inscripciones/mis-cursos"
+        name: Obtener Inscripcion (ESTUDIANTE)
+        meta:
+          id: req_d7d2c0d04a0c44fbb345c9312c28166b
+          created: 1783666604420
+          modified: 1783670044983
+          isPrivate: false
+          description: ""
+          sortKey: -1783666604420
+        method: GET
+        authentication:
+          type: bearer
+          token: "{{ _.access_token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_PATH }}/Inscripciones"
+        name: Eliminar Inscriptcion
+        meta:
+          id: req_71d8d770987d44d9a9b2f61839f1a332
+          created: 1783667641599
+          modified: 1783668018281
+          isPrivate: false
+          description: ""
+          sortKey: -1783667641599
+        method: DELETE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_PATH }}/Cursos/ID_DEL_CURSO/inscritos"
+        name: Obtener Inscripcion (INSTRUCTOR)
+        meta:
+          id: req_74e2a1c0a50a493cb72b073ad471f347
+          created: 1783670051046
+          modified: 1783670127517
+          isPrivate: false
+          description: ""
+          sortKey: -1783670051046
+        method: GET
+        authentication:
+          type: bearer
+          token: "{{ _.access_token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Reseñas
+    meta:
+      id: fld_e99275effb76403f85266898b1a329f8
+      created: 1783666227041
+      modified: 1783666227041
+      sortKey: -1783666227041
+      description: ""
+    children:
+      - url: "{{ _.BASE_PATH }}/Resenas"
+        name: Enviar Reseña
+        meta:
+          id: req_423563c23d2a42f8a1a0759a6af29048
+          created: 1783666230099
+          modified: 1783669631794
+          isPrivate: false
+          description: ""
+          sortKey: -1783666230099
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "curso_id": "6a5092407163d35dc3937e00",
+              "calificacion": 5,
+              "comentario": "Excelente contenido, muy claro y directo."
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        authentication:
+          type: bearer
+          token: "{{ _.access_token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_PATH }}/Cursos/ID_DEL_CURSO/resenas"
+        name: Obtener Reseña
+        meta:
+          id: req_fb65e010ad3e4e5b9735a07aeaa22d53
+          created: 1783666632638
+          modified: 1783669924481
+          isPrivate: false
+          description: ""
+          sortKey: -1783666632638
+        method: GET
+        authentication:
+          type: bearer
+          token: "{{ _.access_token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_PATH }}/Resenas"
+        name: Actualizar Reseña
+        meta:
+          id: req_63b962582326418ebe3bb13c3f480c9a
+          created: 1783667371271
+          modified: 1783669648959
+          isPrivate: false
+          description: ""
+          sortKey: -1783667371271
+        method: PUT
+        body:
+          mimeType: application/json
+          text: >-
+            {
+              "calificacion": 4,
+              "comentario": "Actualizo mi reseña: El curso es excelente, aunque me gustaría que profundizaran más en despliegues."
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        authentication:
+          type: bearer
+          token: "{{ _.access_token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_PATH }}/Resenas"
+        name: Eliminar Reseña
+        meta:
+          id: req_fc65fcd1707b47cab2bb906e4ca32157
+          created: 1783667669128
+          modified: 1783668060947
+          isPrivate: false
+          description: ""
+          sortKey: -1783667669128
+        method: DELETE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_6675d71a550a53354d430c33e529bc57b5521227
+    created: 1783657695757
+    modified: 1783657695757
+environments:
+  name: Base Environment
+  meta:
+    id: env_37617b30cf2645fab94f9823ac29498d
+    created: 1777008959659
+    modified: 1783657695608
+    isPrivate: false
+  subEnvironments:
+    - name: BASEZZ
+      meta:
+        id: env_40331d43d7494fb4a889c333848046e3
+        created: 1781277027272
+        modified: 1783669333992
+        isPrivate: false
+        sortKey: 1781277027272
+      data:
+        BASE_PATH: http://localhost:3977/api/v1
+        access_token: "{% response 'body', 'req_af388e44ed3d49cc91d85573e2b71a91',
+          'b64::JC5kYXRhLnRva2Vu::46b', 'always', 60 %}"
+      color: "#006eff"

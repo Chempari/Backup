@@ -1,0 +1,294 @@
+/* =========================================
+   Contenedor Principal (Efecto Glassmorphism)
+   ========================================= */
+.curso-preview {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  /* Fondo oscuro sólido para buen contraste */
+  background: rgba(27, 46, 38, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.curso-preview h1, .curso-preview h2, .curso-preview h3 {
+  color: #ffffff;
+  margin-top: 0;
+  font-weight: 700;
+}
+
+/* =========================================
+   Encabezado del Curso
+   ========================================= */
+.curso-preview-header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 24px;
+}
+
+.curso-preview h1 {
+  font-size: 32px;
+  letter-spacing: -0.5px;
+}
+
+.curso-preview-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 14px;
+  align-items: center;
+}
+
+.curso-preview-meta span {
+  background: rgba(163, 190, 176, 0.15);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  color: #bbf7d0; /* Un verde menta suave */
+  border: 1px solid rgba(163, 190, 176, 0.2);
+}
+
+/* =========================================
+   Cuerpo y Layout Principal
+   ========================================= */
+.curso-preview-body {
+  display: flex;
+  gap: 32px;
+}
+
+.curso-preview-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 32px; /* Espacio entre descripción, temario y reseñas */
+}
+
+.curso-preview-desc p {
+  color: #cbd5e1;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+/* =========================================
+   Panel Lateral (Sidebar)
+   ========================================= */
+.curso-preview-sidebar {
+  width: 320px;
+  background: rgba(27, 46, 38, 0.69);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  height: fit-content;
+  position: sticky;
+  top: 24px;
+}
+
+.curso-preview-price {
+  font-size: 32px;
+  font-weight: 800;
+  color: #ffffff;
+  padding: 16px 24px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.curso-preview-instructor {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  width: 100%;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  color: #e2e8f0;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.curso-preview-instructor:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(163, 190, 176, 0.4);
+}
+
+.curso-preview-instructor img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(163, 190, 176, 0.5);
+}
+
+/* =========================================
+   Estadisticas del Curso (Sidebar)
+   ========================================= */
+.curso-preview-stats {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 4px;
+  color: #e2e8f0;
+  font-size: 15px;
+}
+
+.stat-value {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.stat-stars {
+  color: #fbbf24;
+}
+
+.stat-label {
+  color: #cbd5e1;
+  font-size: 13.5px;
+}
+
+/* =========================================
+   Boton Inscribir (Sidebar)
+   ========================================= */
+.preview-btn-inscribir {
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 12px;
+  background: #4f6b5b; /* Verde corporativo */
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(79, 107, 91, 0.3);
+}
+
+.preview-btn-inscribir:hover {
+  background: #5e7e6c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(79, 107, 91, 0.4);
+}
+
+.preview-btn-inscribir:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* =========================================
+   Temario (Acordeón)
+   ========================================= */
+.preview-temario {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.seccion-item {
+  background: rgba(27, 46, 38, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.preview-seccion-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #ffffff;
+  background: rgba(27, 46, 38, 0.6);
+  transition: background 0.2s;
+}
+
+.preview-seccion-header:hover {
+  background: rgba(27, 46, 38, 0.9);
+}
+
+.preview-leccion-item {
+  padding: 14px 20px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  color: #cbd5e1;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 15px;
+  background: rgba(27, 46, 38, 0.45);
+}
+
+.leccion-icon {
+  color: #6ee7b7; /* Ícono de play verde brillante */
+  font-size: 12px;
+}
+
+/* =========================================
+   Responsive Design
+   ========================================= */
+@media (max-width: 900px) {
+  .curso-preview-body { flex-direction: column; }
+  .curso-preview-sidebar {
+    width: 100%;
+    position: static; /* Quita el sticky en móviles */
+  }
+  .curso-preview {
+    padding: 24px;
+    margin: 20px 16px;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .curso-preview {
+    padding: 18px;
+    margin: 12px 10px;
+  }
+
+  .curso-preview h1 {
+    font-size: 24px;
+  }
+
+  .curso-preview-price {
+    font-size: 26px;
+    padding: 12px 16px;
+  }
+
+  .preview-seccion-header {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+
+  .preview-leccion-item {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+}

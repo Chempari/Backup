@@ -1,0 +1,113 @@
+.certificados-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 18px 40px;
+  color: #fff;
+}
+
+.certificados-header h1 {
+  font-size: 30px;
+  font-weight: 800;
+  margin: 0 0 6px;
+}
+
+.certificados-header p {
+  color: rgba(232, 240, 236, 0.7);
+  margin-bottom: 24px;
+}
+
+.certificados-empty {
+  background: rgba(27, 46, 38, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  padding: 60px 20px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.certificados-empty p {
+  margin-bottom: 18px;
+}
+
+.certificados-link {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 30px;
+  background: #5d55dd;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.certificados-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.certificado-card {
+  background: rgba(27, 46, 38, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #fff;
+  transition: transform 0.2s, border-color 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.certificado-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(93, 85, 221, 0.4);
+}
+
+.certificado-card-media {
+  height: 150px;
+  background: linear-gradient(135deg, #5d55dd, #1b2e26);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.certificado-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.certificado-card-placeholder {
+  font-size: 56px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.certificado-card-info {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.certificado-card-tag {
+  align-self: flex-start;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(93, 85, 221, 0.25);
+  color: #a89dff;
+}
+
+.certificado-card-info h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.certificado-card-fecha {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+}

@@ -1,0 +1,1 @@
+export { CursoAprendizaje } from './CursoAprendizaje';

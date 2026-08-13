@@ -1,0 +1,208 @@
+.perfil-publico-page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 24px 18px 40px;
+}
+
+.perfil-publico-card {
+  background: rgba(27, 46, 38, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 22px;
+  padding: 32px;
+  color: #ffffff;
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.perfil-publico-header {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+
+.perfil-publico-foto,
+.perfil-publico-placeholder {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.perfil-publico-placeholder {
+  background: linear-gradient(135deg, #5d55dd, #1b2e26);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 38px;
+  font-weight: 800;
+}
+
+.perfil-publico-nombre h1 {
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0 0 6px;
+}
+
+.perfil-publico-rol {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: rgba(163, 190, 176, 0.2);
+  color: #a3beb0;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.perfil-publico-rol--estudiante {
+  background: rgba(93, 85, 221, 0.2);
+  color: #a89dff;
+}
+
+.perfil-publico-bio {
+  margin-top: 18px;
+  color: rgba(232, 240, 236, 0.85);
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.perfil-publico-redes {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.perfil-publico-red {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.perfil-publico-red:hover {
+  background: rgba(93, 85, 221, 0.3);
+  border-color: rgba(93, 85, 221, 0.6);
+  transform: translateY(-2px);
+}
+
+.perfil-publico-red--facebook:hover { background: rgba(24, 119, 242, 0.3); border-color: #1877f2; }
+.perfil-publico-red--instagram:hover { background: rgba(225, 48, 108, 0.3); border-color: #e1306c; }
+.perfil-publico-red--linkedin:hover { background: rgba(10, 102, 194, 0.3); border-color: #0a66c2; }
+.perfil-publico-red--github:hover { background: rgba(255, 255, 255, 0.15); border-color: #ffffff; }
+.perfil-publico-red--whatsapp:hover { background: rgba(37, 211, 102, 0.3); border-color: #25d366; }
+
+.perfil-publico-red span {
+  display: none;
+}
+
+.perfil-publico-red:hover span {
+  display: inline;
+}
+
+.perfil-publico-cursos {
+  margin-top: 32px;
+  background: rgba(27, 46, 38, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  padding: 28px;
+  color: #fff;
+}
+
+.perfil-publico-cursos h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.perfil-publico-empty {
+  color: rgba(255, 255, 255, 0.65);
+  padding: 20px 0;
+}
+
+.perfil-publico-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.perfil-publico-curso {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 12px;
+  text-decoration: none;
+  color: #fff;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.perfil-publico-curso:hover {
+  transform: translateY(-2px);
+  border-color: rgba(163, 190, 176, 0.4);
+}
+
+.perfil-publico-curso img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.perfil-publico-curso-placeholder {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #5d55dd, #1b2e26);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.perfil-publico-curso-info h3 {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+
+.perfil-publico-curso-info span {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 600px) {
+  .perfil-publico-header {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .perfil-publico-foto,
+  .perfil-publico-placeholder {
+    width: 72px;
+    height: 72px;
+  }
+
+  .perfil-publico-nombre h1 {
+    font-size: 22px;
+  }
+}

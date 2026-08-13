@@ -1,0 +1,1 @@
+export { TemarioSeccion } from './TemarioSeccion';

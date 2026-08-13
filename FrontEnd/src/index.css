@@ -1,0 +1,235 @@
+/* ============================================
+   Global Styles - index.css
+   Solo estilos globales, variables y reset
+   ============================================ */
+
+:root {
+  /* Base colors */
+  --text: #1a1a2e;
+  --text-light: #6b7280;
+  --bg: #769283;
+  --white: #ffffff;
+  --accent: #5d55dd;
+  --accent-hover: #1904ff;
+  --border: #e5e7eb;
+  --error: #ef4444;
+  --error-bg: #fef2f2;
+  --success: #10b981;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --radius: 8px;
+
+  /* Dashboard palette */
+  --blanco-puro: #ffffff;
+  --verde-apagado-oscuro: #1b2e26;
+  --verde-apagado-medio: #345446;
+  --verde-apagado-suave: #507a67;
+  --verde-intermedio-luz: #a3beb0;
+  --verde-intermedio-oscuro-transparente: #7692839e;
+  --verde-casi-blanco: #e8f0ec;
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  font: 16px/1.5 var(--sans);
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* --- Keyframes globales --- */
+
+@keyframes authPageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes authPageSlideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes authPageSlideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes authCardPop {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Loading & Error States (globales) --- */
+
+.dashboard-loading,
+.app-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-size: 16px;
+  color: var(--text-light);
+}
+
+.dashboard-error {
+  color: var(--error);
+  text-align: center;
+  padding: 40px 24px;
+  font-size: 15px;
+}
+
+/* --- Navbar (público) --- */
+
+.layout-navbar-public {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 56px;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.layout-navbar-public-brand a {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.layout-navbar-public-links {
+  display: flex;
+  gap: 20px;
+}
+
+.layout-navbar-public-links a {
+  font-size: 14px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.layout-navbar-public-links a:hover {
+  color: var(--accent);
+}
+
+/* --- Empty Message --- */
+
+.empty-message {
+  color: var(--text-light);
+  text-align: center;
+  padding: 40px 0;
+  font-size: 15px;
+}
+
+/* --- Main Content (público) --- */
+
+.layout-main-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  width: 100%;
+}
+
+.layout-page-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+/* --- Media queries globales --- */
+
+@media (max-width: 1024px) {
+  body {
+    font-size: 15px;
+  }
+
+  .layout-main-content {
+    padding: 28px 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .layout-main-content {
+    padding: 22px 14px;
+  }
+
+  .layout-page-title {
+    font-size: 20px;
+    margin-bottom: 18px;
+  }
+
+  .layout-navbar-public {
+    padding: 0 14px;
+    height: 52px;
+  }
+
+  .layout-navbar-public-links {
+    gap: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .layout-navbar-public-links {
+    display: none;
+  }
+
+  .layout-main-content {
+    padding: 18px 12px;
+  }
+
+  .layout-page-title {
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+
+  .empty-message {
+    padding: 28px 0;
+  }
+}

@@ -1,0 +1,331 @@
+/* ============================================
+   Layout Styles
+   Prefijo: .layout-
+   ============================================ */
+
+/* --- Dashboard Wrapper --- */
+.layout-wrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  color: #ffffff;
+  background-color: var(--verde-intermedio-oscuro-transparente);
+}
+
+/* --- Navbar Glassmorphism --- */
+.layout-navbar {
+  background: rgba(27, 46, 38, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 16px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.layout-logo {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+}
+
+.layout-search {
+  width: 400px;
+}
+
+.layout-search-input {
+  padding: 10px 40px 10px 20px;
+}
+
+.layout-auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.layout-btn-text {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.layout-btn-text:hover {
+  color: #a3beb0;
+}
+
+.layout-btn-nav {
+  padding: 10px 24px;
+  font-size: 14px;
+  margin-top: 0;
+}
+
+/* --- Input Container (Navbar) --- */
+.layout-input-container {
+  position: relative;
+}
+
+.layout-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 30px;
+  font-size: 14px;
+  color: #ffffff;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.layout-input::placeholder {
+  color: rgba(232, 240, 236, 0.5);
+}
+
+.layout-input:focus {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: #a3beb0;
+  box-shadow: 0 0 0 4px rgba(163, 190, 176, 0.15);
+}
+
+.layout-input-icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(232, 240, 236, 0.6);
+  pointer-events: none;
+}
+
+/* --- Primary Button (Navbar) --- */
+.layout-btn-primary {
+  background-color: #ffffff;
+  color: #1b2e26;
+  border: none;
+  border-radius: 30px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.layout-btn-primary:hover {
+  background-color: #e8f0ec;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Layout Page Transition --- */
+/* --- Main Content --- */
+.layout-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px;
+  width: 100%;
+}
+
+.layout-page-transition {
+  opacity: 0;
+  transform: translateY(28px) scale(0.99);
+  filter: blur(2px);
+  transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1), transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), filter 0.45s ease;
+}
+
+.layout-page-transition.page-enter {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+/* --- Dynamic Background (LayoutBackground component) --- */
+.layout-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background-color: transparent;
+  filter: blur(20px);
+  -webkit-filter: blur(20px);
+}
+
+.layout-shape {
+  position: absolute;
+  box-shadow: 0 22px 42px rgba(9, 23, 16, 0.14);
+  will-change: transform;
+  opacity: 0.78;
+}
+
+.layout-shape:hover {
+  filter: brightness(1.06);
+}
+
+/* --- Header Section --- */
+.layout-header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+}
+
+.layout-title {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+@media (max-width: 1024px) {
+  .layout-navbar {
+    padding: 14px 24px;
+  }
+
+  .layout-search {
+    width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .layout-navbar {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+
+  .layout-search {
+    order: 3;
+    width: 100%;
+    display: none;
+  }
+
+  .layout-auth-buttons {
+    gap: 12px;
+  }
+
+  .layout-title {
+    font-size: 28px;
+  }
+
+  .layout-content {
+    padding: 24px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .layout-navbar {
+    padding: 10px 12px;
+  }
+
+  .layout-logo {
+    font-size: 18px;
+  }
+
+  .layout-auth-buttons {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .layout-btn-text,
+  .layout-btn-nav {
+    font-size: 13px;
+    padding: 8px 14px;
+  }
+}
+
+/* Search dropdown styles for authenticated navbar */
+.layout-input-container {
+  position: relative;
+}
+
+.layout-search-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: rgba(27, 46, 38, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  z-index: 200;
+  animation: dropdownIn 0.18s ease-out;
+  backdrop-filter: blur(10px);
+}
+
+.layout-search-result {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.layout-search-result:last-child {
+  border-bottom: none;
+}
+
+.layout-search-result:hover {
+  background: rgba(163, 190, 176, 0.1);
+}
+
+.layout-search-result-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.layout-search-result-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.layout-search-result-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f8fafc;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.layout-search-result-meta {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.layout-search-loading,
+.layout-search-empty {
+  padding: 16px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 13px;
+}
+
+@keyframes dropdownIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}

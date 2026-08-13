@@ -1,0 +1,191 @@
+.cert-page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 24px 18px 40px;
+  color: #1b2e26;
+}
+
+.cert-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-bottom: 18px;
+}
+
+.cert-btn-primary,
+.cert-btn-secondary {
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.cert-btn-primary {
+  background: #5d55dd;
+  color: #fff;
+  border-color: #5d55dd;
+}
+
+.cert-btn-primary:hover {
+  background: #1904ff;
+  border-color: #1904ff;
+}
+
+.cert-btn-secondary {
+  background: transparent;
+  color: #1b2e26;
+  border-color: rgba(27, 46, 38, 0.3);
+}
+
+.cert-btn-secondary:hover {
+  background: rgba(27, 46, 38, 0.06);
+}
+
+.certificado {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  padding: 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.certificado-border {
+  border: 8px double #1b2e26;
+  margin: 16px;
+  padding: 56px 40px 32px;
+  text-align: center;
+  position: relative;
+}
+
+.certificado-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 32px;
+}
+
+.certificado-brand {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #1b2e26;
+}
+
+.certificado-tipo {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #5d55dd;
+}
+
+.certificado-body {
+  margin: 24px 0 40px;
+}
+
+.certificado-otorgado,
+.certificado-por,
+.certificado-fecha {
+  color: #4b5563;
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+.certificado-nombre {
+  font-size: 38px;
+  font-weight: 800;
+  color: #1b2e26;
+  margin: 16px 0;
+  letter-spacing: -0.01em;
+}
+
+.certificado-curso {
+  font-size: 22px;
+  font-weight: 700;
+  color: #5d55dd;
+  margin: 14px 0 18px;
+  font-style: italic;
+}
+
+.certificado-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 60px;
+  padding-top: 24px;
+}
+
+.certificado-firma {
+  text-align: center;
+  width: 220px;
+}
+
+.certificado-firma-svg {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 4px;
+}
+
+.certificado-firma-linea {
+  border-top: 1px solid #1b2e26;
+  margin: 4px 0 6px;
+}
+
+.certificado-firma-nombre {
+  font-weight: 700;
+  font-size: 14px;
+  color: #1b2e26;
+}
+
+.certificado-firma-cargo {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.certificado-sello svg {
+  width: 100px;
+  height: 100px;
+}
+
+.certificado-id {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  font-size: 10px;
+  color: #9ca3af;
+  letter-spacing: 0.05em;
+}
+
+@media print {
+  .no-print,
+  .layout-navbar,
+  .layout-background,
+  .layout-page-transition {
+    display: none !important;
+  }
+
+  body, html, #root {
+    background: #fff !important;
+  }
+
+  .cert-page {
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+  }
+
+  .layout-wrapper {
+    background: #fff !important;
+  }
+
+  .layout-content {
+    padding: 0 !important;
+  }
+
+  .certificado {
+    box-shadow: none;
+  }
+}

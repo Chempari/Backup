@@ -1,0 +1,1 @@
+export { DashboardInstructor } from './DashboardInstructor';

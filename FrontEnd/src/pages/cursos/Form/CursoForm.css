@@ -1,0 +1,278 @@
+.curso-form-page {
+  width: min(100%, 1080px);
+  margin: 0 auto;
+  padding: 28px 20px 40px;
+}
+
+.curso-form-card {
+  background: rgba(27, 46, 38, 0.79);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border-radius: 28px;
+  padding: 36px;
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.26);
+  color: #fff;
+}
+
+.curso-form-card h1 {
+  font-size: clamp(1.8rem, 2vw, 2.4rem);
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+.curso-form-page .curso-form-success,
+.curso-form-page .curso-form-error {
+  border-radius: 20px;
+  padding: 14px 16px;
+  font-size: 0.95rem;
+  margin-bottom: 22px;
+}
+
+.curso-form-page .curso-form-success {
+  background: rgba(16, 185, 129, 0.14);
+  color: #d1fae5;
+  border: 1px solid rgba(16, 185, 129, 0.24);
+}
+
+.curso-form-page .curso-form-error {
+  background: rgba(248, 113, 113, 0.16);
+  color: #fecaca;
+  border: 1px solid rgba(248, 113, 113, 0.28);
+}
+
+.curso-form-page .curso-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.curso-form-page .curso-form-group label {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.curso-form-page .curso-form-group input,
+.curso-form-page .curso-form-group textarea,
+.curso-form-page .curso-form-group select {
+  width: 100%;
+  min-height: 50px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+.curso-form-page .curso-form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.curso-form-page .curso-form-group input::placeholder,
+.curso-form-page .curso-form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.curso-form-page .curso-form-group input:focus,
+.curso-form-page .curso-form-group textarea:focus,
+.curso-form-page .curso-form-group select:focus {
+  border-color: rgba(163, 190, 176, 0.9);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 0 4px rgba(163, 190, 176, 0.12);
+}
+
+.curso-form-page .btn-primary {
+  width: 100%;
+  padding: 14px 18px;
+  background: #ffffff;
+  color: #1b2e26;
+  border: none;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.curso-form-page .btn-primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.18);
+}
+
+.curso-form-page .btn-primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.curso-form-page .btn-secondary {
+  padding: 12px 18px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.curso-form-page .btn-secondary:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-1px);
+}
+
+.curso-form-page .btn-secondary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.curso-form-page .secciones-manager {
+  margin-top: 28px;
+}
+
+.curso-form-page .secciones-manager h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #fff;
+}
+
+.curso-form-page .secciones-manager > div:first-child {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.curso-form-page .secciones-manager input {
+  flex: 1;
+  min-width: 180px;
+}
+
+.curso-form-page .seccion-group {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 22px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.curso-form-page .seccion-group h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+}
+
+.curso-form-page .seccion-group .curso-form-leccion-item {
+  margin-bottom: 10px;
+  padding: 10px 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.curso-form-page .seccion-group .curso-form-leccion-item span {
+  display: inline-block;
+  max-width: 100%;
+  word-break: break-word;
+}
+
+.curso-form-page .seccion-group .curso-form-leccion-item span:last-child {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.85rem;
+}
+
+.curso-form-page .btn-sm {
+  padding: 8px 14px;
+  font-size: 0.88rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.curso-form-page .btn-sm:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-1px);
+}
+
+.curso-form-page .btn-sm.danger {
+  color: #fecaca;
+  border-color: rgba(248, 113, 113, 0.35);
+}
+
+.curso-form-page .btn-sm.danger:hover {
+  background: rgba(253, 67, 67, 0.34);
+}
+
+.curso-form-page .curso-form-btn-outline {
+  padding: 12px 18px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.curso-form-page .curso-form-btn-outline:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-1px);
+}
+
+.curso-form-page .divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin: 28px 0;
+}
+
+.curso-form-page .imagen-preview {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-top: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+@media (max-width: 820px) {
+  .curso-form-card {
+    padding: 28px 24px;
+  }
+
+  .curso-form-page .secciones-manager > div:first-child {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 560px) {
+  .curso-form-page {
+    padding: 20px 16px 28px;
+  }
+
+  .curso-form-card {
+    border-radius: 20px;
+  }
+
+  .curso-form-page .btn-primary,
+  .curso-form-page .btn-secondary,
+  .curso-form-page .curso-form-btn-outline {
+    width: 100%;
+  }
+}

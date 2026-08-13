@@ -1,0 +1,78 @@
+.instructor-comentarios {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.instructor-comentarios-vacio {
+  padding: 32px 22px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(27, 46, 38, 0.5);
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  font-size: 14px;
+}
+
+.instructor-comentario {
+  background: rgba(27, 46, 38, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 0.2s ease;
+}
+
+.instructor-comentario:hover {
+  border-color: rgba(163, 190, 176, 0.3);
+}
+
+.instructor-comentario-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.instructor-comentario-fecha {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.instructor-comentario-stars {
+  color: #fbbf24;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.instructor-comentario-texto {
+  color: rgba(232, 240, 236, 0.92);
+  font-size: 14.5px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.instructor-comentario-curso {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.instructor-comentario-curso a {
+  color: #a3beb0;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.instructor-comentario-curso a:hover {
+  color: #d1fae5;
+  text-decoration: underline;
+}
+
+.instructor-comentario-leccion {
+  color: rgba(255, 255, 255, 0.45);
+  margin-left: 4px;
+}

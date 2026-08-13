@@ -1,0 +1,337 @@
+/* =========================================
+   Estilos compartidos de Reseñas / Comentarios
+   Usados por CursoPreview y CursoAprendizaje
+   ========================================= */
+
+.resenas-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.calificacion-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 28px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.estrellas, .resena-stars {
+  color: #fbbf24; /* Amarillo para las estrellas */
+}
+
+.resena-card {
+  background: rgba(27, 46, 38, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.resena-actions {
+  display: flex;
+  gap: 6px;
+  align-self: flex-start;
+}
+
+.resena-action-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #cbd5e1;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.resena-action-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.resena-action-edit:hover {
+  border-color: rgba(163, 190, 176, 0.6);
+  color: #bbf7d0;
+}
+
+.resena-action-delete:hover {
+  border-color: rgba(248, 113, 113, 0.6);
+  color: #fca5a5;
+}
+
+.resena-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.resena-edit textarea {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 14px;
+  color: #ffffff;
+  font-size: 15px;
+  resize: vertical;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.resena-edit textarea:focus {
+  outline: none;
+  border-color: #4f6b5b;
+}
+
+.resena-edit-error {
+  color: #f87171;
+  font-size: 13px;
+  margin: 0;
+}
+
+.resena-edit-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.resena-edit-actions .preview-btn-enviar {
+  width: auto;
+  padding: 8px 18px;
+  font-size: 14px;
+}
+
+.resena-btn-cancel {
+  padding: 8px 18px;
+  border-radius: 12px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #e2e8f0;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.resena-btn-cancel:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.resena-btn-cancel:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.resena-edit-form {
+  margin-top: 12px;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+.resena-edit-textarea {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 12px;
+  color: #ffffff;
+  font-size: 14px;
+  resize: vertical;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.resena-edit-textarea:focus {
+  outline: none;
+  border-color: #4f6b5b;
+}
+
+.resena-acciones {
+  display: flex;
+  gap: 6px;
+  align-self: flex-start;
+}
+
+.resena-acciones .preview-btn-outline {
+  font-size: 12px;
+  padding: 4px 10px;
+}
+
+.resena-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.resena-header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.resena-name {
+  font-weight: 600;
+  color: #ffffff;
+  flex: 1;
+}
+
+.resena-fecha {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.resena-acciones {
+  display: flex;
+  gap: 6px;
+  align-self: flex-start;
+}
+
+.resena-comentario {
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* =========================================
+   Formulario de Reseña / Comentario
+   ========================================= */
+.resena-form {
+  margin-top: 16px;
+  background: rgba(27, 46, 38, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.comentario-form,
+.calificacion-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.calificacion-form {
+  align-items: flex-start;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  padding-left: 24px;
+}
+
+.calificacion-form-hint {
+  font-size: 13px;
+  color: rgba(203, 213, 225, 0.7);
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .resena-form {
+    grid-template-columns: 1fr;
+  }
+
+  .calificacion-form {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+  }
+}
+
+/* =========================================
+   Selector de estrellas
+   ========================================= */
+.preview-star-rating {
+  display: flex;
+  gap: 4px;
+}
+
+.preview-star-rating button {
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  transition: color 0.2s, transform 0.1s;
+}
+
+.preview-star-rating button:hover {
+  transform: scale(1.1);
+}
+
+.preview-star-rating button.filled {
+  color: #fbbf24;
+}
+
+.resena-form textarea {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 16px;
+  color: #ffffff;
+  font-size: 15px;
+  resize: vertical;
+  font-family: inherit;
+  transition: border-color 0.2s;
+  box-sizing: border-box; /* Previene desbordamientos */
+}
+
+.resena-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.resena-form textarea:focus {
+  outline: none;
+  border-color: #4f6b5b;
+}
+
+.perfil-photo-placeholder {
+  background: #4f6b5b;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+/* Botones compartidos de reseñas */
+.preview-btn-enviar {
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 12px;
+  background: #4f6b5b;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(79, 107, 91, 0.3);
+}
+
+.preview-btn-enviar:hover {
+  background: #5e7e6c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(79, 107, 91, 0.4);
+}
+
+.preview-btn-enviar:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}

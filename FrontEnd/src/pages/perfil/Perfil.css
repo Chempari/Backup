@@ -1,0 +1,249 @@
+.perfil-page {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 18px 40px;
+  position: relative;
+  z-index: 10;
+}
+
+.perfil-card {
+  background: rgba(27, 46, 38, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.22);
+  color: #fff;
+}
+
+.perfil-photo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.perfil-photo-wrapper {
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.perfil-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.perfil-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(163, 190, 176, 0.18);
+  color: #fff;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.perfil-page .perfil-btn-secondary {
+  padding: 10px 22px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.perfil-page .perfil-btn-secondary:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-1px);
+}
+
+.perfil-page .perfil-btn-secondary:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.perfil-page .perfil-success,
+.perfil-page .perfil-error {
+  border-radius: 18px;
+  padding: 14px 16px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.perfil-page .perfil-success {
+  background: rgba(16, 185, 129, 0.12);
+  color: #d1fae5;
+  border: 1px solid rgba(16, 185, 129, 0.28);
+}
+
+.perfil-page .perfil-error {
+  background: rgba(254, 202, 202, 0.16);
+  color: #fecaca;
+  border: 1px solid rgba(248, 113, 113, 0.28);
+}
+
+.perfil-page .perfil-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.perfil-page .perfil-form-group label {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.perfil-page .perfil-form-group input,
+.perfil-page .perfil-form-group textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 14px 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  outline: none;
+  transition: all 0.25s ease;
+  resize: vertical;
+}
+
+.perfil-page .perfil-form-group textarea {
+  min-height: 100px;
+}
+
+.perfil-page .perfil-form-group input::placeholder,
+.perfil-page .perfil-form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.perfil-page .perfil-form-group input:focus,
+.perfil-page .perfil-form-group textarea:focus {
+  border-color: rgba(163, 190, 176, 0.9);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 0 4px rgba(163, 190, 176, 0.12);
+}
+
+.perfil-page .btn-primary {
+  width: 100%;
+  padding: 14px 18px;
+  background: #ffffff;
+  color: #1b2e26;
+  border: none;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.perfil-page .btn-primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.14);
+}
+
+.perfil-page .btn-primary:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .perfil-page {
+    padding: 18px 14px 32px;
+  }
+
+  .perfil-card {
+    padding: 24px;
+  }
+
+  .perfil-photo-wrapper {
+    width: 88px;
+    height: 88px;
+  }
+}
+
+@media (max-width: 480px) {
+  .perfil-card {
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .perfil-page .perfil-form-group input,
+  .perfil-page .perfil-form-group textarea {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .perfil-photo-wrapper {
+    width: 76px;
+    height: 76px;
+  }
+}
+
+.perfil-page .perfil-form-hint {
+  font-size: 13px;
+  color: rgba(232, 240, 236, 0.6);
+  margin-bottom: 8px;
+}
+
+.perfil-page .perfil-red-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 14px;
+}
+
+.perfil-page .perfil-red-field label {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.perfil-page .perfil-red-domain {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.perfil-page .perfil-red-field input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  outline: none;
+  transition: all 0.25s ease;
+  font-size: 14px;
+}
+
+.perfil-page .perfil-red-field input:focus {
+  border-color: rgba(163, 190, 176, 0.9);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 0 4px rgba(163, 190, 176, 0.12);
+}
+
+.perfil-page .perfil-red-field input.input-error {
+  border-color: rgba(248, 113, 113, 0.7);
+  background: rgba(248, 113, 113, 0.08);
+}
+
+.perfil-page .perfil-red-error {
+  font-size: 12px;
+  color: #fca5a5;
+}

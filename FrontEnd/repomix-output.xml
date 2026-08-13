@@ -1,0 +1,5397 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+public/
+  favicon.svg
+  icons.svg
+src/
+  Api/
+    axios.js
+  assets/
+    hero.png
+    react.svg
+    vite.svg
+  components/
+    AuthBackground.jsx
+    layout.css
+    Layout.jsx
+    LayoutBackground.jsx
+  context/
+    AuthContext.jsx
+    useAuth.js
+  pages/
+    auth/
+      Login/
+        components/
+          LoginForm.jsx
+        index.js
+        Login.jsx
+      Register/
+        components/
+          RegisterForm.jsx
+        index.js
+        Register.jsx
+      shared/
+        auth-shared.css
+        AuthBackground.jsx
+        FormInput.jsx
+        index.js
+        SignupRedirect.jsx
+        SocialButtons.jsx
+    dashboard/
+      Estudiante/
+        components/
+          CursosLista.jsx
+          EstudianteHeader.jsx
+          ResumenCards.jsx
+        DashboardEstudiante.css
+        DashboardEstudiante.jsx
+        index.js
+      Instructor/
+        components/
+          CursoCard.jsx
+          InstructorCourses.jsx
+          InstructorHeader.jsx
+        DashboardInstructor.css
+        DashboardInstructor.jsx
+        index.js
+      shared/
+        dashboard-shared.css
+        index.js
+        ProgressBar.jsx
+        SummaryCard.jsx
+        Switch.jsx
+    CursoAprendizaje.css
+    CursoAprendizaje.jsx
+    CursoForm.css
+    CursoForm.jsx
+    CursoPreview.css
+    CursoPreview.jsx
+    CursosLista.css
+    CursosLista.jsx
+    MisCursos.css
+    MisCursos.jsx
+    Perfil.css
+    Perfil.jsx
+  App.jsx
+  index.css
+  main.jsx
+  utils.js
+.gitignore
+eslint.config.js
+index.html
+package.json
+README.md
+vite.config.js
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="public/favicon.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="46" fill="none" viewBox="0 0 48 46"><path fill="#863bff" d="M25.946 44.938c-.664.845-2.021.375-2.021-.698V33.937a2.26 2.26 0 0 0-2.262-2.262H10.287c-.92 0-1.456-1.04-.92-1.788l7.48-10.471c1.07-1.497 0-3.578-1.842-3.578H1.237c-.92 0-1.456-1.04-.92-1.788L10.013.474c.214-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.471c-1.07 1.498 0 3.579 1.842 3.579h11.377c.943 0 1.473 1.088.89 1.83L25.947 44.94z" style="fill:#863bff;fill:color(display-p3 .5252 .23 1);fill-opacity:1"/><mask id="a" width="48" height="46" x="0" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path fill="#000" d="M25.842 44.938c-.664.844-2.021.375-2.021-.698V33.937a2.26 2.26 0 0 0-2.262-2.262H10.183c-.92 0-1.456-1.04-.92-1.788l7.48-10.471c1.07-1.498 0-3.579-1.842-3.579H1.133c-.92 0-1.456-1.04-.92-1.787L9.91.473c.214-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.471c-1.07 1.498 0 3.578 1.842 3.578h11.377c.943 0 1.473 1.088.89 1.832L25.843 44.94z" style="fill:#000;fill-opacity:1"/></mask><g mask="url(#a)"><g filter="url(#b)"><ellipse cx="5.508" cy="14.704" fill="#ede6ff" rx="5.508" ry="14.704" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -4.47 31.516)"/></g><g filter="url(#c)"><ellipse cx="10.399" cy="29.851" fill="#ede6ff" rx="10.399" ry="29.851" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -39.328 7.883)"/></g><g filter="url(#d)"><ellipse cx="5.508" cy="30.487" fill="#7e14ff" rx="5.508" ry="30.487" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.814 -25.913 -14.639)scale(1 -1)"/></g><g filter="url(#e)"><ellipse cx="5.508" cy="30.599" fill="#7e14ff" rx="5.508" ry="30.599" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.814 -32.644 -3.334)scale(1 -1)"/></g><g filter="url(#f)"><ellipse cx="5.508" cy="30.599" fill="#7e14ff" rx="5.508" ry="30.599" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -34.34 30.47)"/></g><g filter="url(#g)"><ellipse cx="14.072" cy="22.078" fill="#ede6ff" rx="14.072" ry="22.078" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="rotate(93.35 24.506 48.493)scale(-1 1)"/></g><g filter="url(#h)"><ellipse cx="3.47" cy="21.501" fill="#7e14ff" rx="3.47" ry="21.501" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.009 28.708 47.59)scale(-1 1)"/></g><g filter="url(#i)"><ellipse cx="3.47" cy="21.501" fill="#7e14ff" rx="3.47" ry="21.501" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.009 28.708 47.59)scale(-1 1)"/></g><g filter="url(#j)"><ellipse cx=".387" cy="8.972" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(39.51 .387 8.972)"/></g><g filter="url(#k)"><ellipse cx="47.523" cy="-6.092" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 47.523 -6.092)"/></g><g filter="url(#l)"><ellipse cx="41.412" cy="6.333" fill="#47bfff" rx="5.971" ry="9.665" style="fill:#47bfff;fill:color(display-p3 .2799 .748 1);fill-opacity:1" transform="rotate(37.892 41.412 6.333)"/></g><g filter="url(#m)"><ellipse cx="-1.879" cy="38.332" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 -1.88 38.332)"/></g><g filter="url(#n)"><ellipse cx="-1.879" cy="38.332" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 -1.88 38.332)"/></g><g filter="url(#o)"><ellipse cx="35.651" cy="29.907" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 35.651 29.907)"/></g><g filter="url(#p)"><ellipse cx="38.418" cy="32.4" fill="#47bfff" rx="5.971" ry="15.297" style="fill:#47bfff;fill:color(display-p3 .2799 .748 1);fill-opacity:1" transform="rotate(37.892 38.418 32.4)"/></g></g><defs><filter id="b" width="60.045" height="41.654" x="-19.77" y="16.149" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="c" width="90.34" height="51.437" x="-54.613" y="-7.533" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="d" width="79.355" height="29.4" x="-49.64" y="2.03" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="e" width="79.579" height="29.4" x="-45.045" y="20.029" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="f" width="79.579" height="29.4" x="-43.513" y="21.178" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="g" width="74.749" height="58.852" x="15.756" y="-17.901" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="h" width="61.377" height="25.362" x="23.548" y="2.284" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="i" width="61.377" height="25.362" x="23.548" y="2.284" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="j" width="56.045" height="63.649" x="-27.636" y="-22.853" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="k" width="54.814" height="64.646" x="20.116" y="-38.415" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="l" width="33.541" height="35.313" x="24.641" y="-11.323" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="m" width="54.814" height="64.646" x="-29.286" y="6.009" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="n" width="54.814" height="64.646" x="-29.286" y="6.009" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="o" width="54.814" height="64.646" x="8.244" y="-2.416" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="p" width="39.409" height="43.623" x="18.713" y="10.588" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter></defs></svg>
+</file>
+
+<file path="public/icons.svg">
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="bluesky-icon" viewBox="0 0 16 17">
+    <g clip-path="url(#bluesky-clip)"><path fill="#08060d" d="M7.75 7.735c-.693-1.348-2.58-3.86-4.334-5.097-1.68-1.187-2.32-.981-2.74-.79C.188 2.065.1 2.812.1 3.251s.241 3.602.398 4.13c.52 1.744 2.367 2.333 4.07 2.145-2.495.37-4.71 1.278-1.805 4.512 3.196 3.309 4.38-.71 4.987-2.746.608 2.036 1.307 5.91 4.93 2.746 2.72-2.746.747-4.143-1.747-4.512 1.702.189 3.55-.4 4.07-2.145.156-.528.397-3.691.397-4.13s-.088-1.186-.575-1.406c-.42-.19-1.06-.395-2.741.79-1.755 1.24-3.64 3.752-4.334 5.099"/></g>
+    <defs><clipPath id="bluesky-clip"><path fill="#fff" d="M.1.85h15.3v15.3H.1z"/></clipPath></defs>
+  </symbol>
+  <symbol id="discord-icon" viewBox="0 0 20 19">
+    <path fill="#08060d" d="M16.224 3.768a14.5 14.5 0 0 0-3.67-1.153c-.158.286-.343.67-.47.976a13.5 13.5 0 0 0-4.067 0c-.128-.306-.317-.69-.476-.976A14.4 14.4 0 0 0 3.868 3.77C1.546 7.28.916 10.703 1.231 14.077a14.7 14.7 0 0 0 4.5 2.306q.545-.748.965-1.587a9.5 9.5 0 0 1-1.518-.74q.191-.14.372-.293c2.927 1.369 6.107 1.369 8.999 0q.183.152.372.294-.723.437-1.52.74.418.838.963 1.588a14.6 14.6 0 0 0 4.504-2.308c.37-3.911-.63-7.302-2.644-10.309m-9.13 8.234c-.878 0-1.599-.82-1.599-1.82 0-.998.705-1.82 1.6-1.82.894 0 1.614.82 1.599 1.82.001 1-.705 1.82-1.6 1.82m5.91 0c-.878 0-1.599-.82-1.599-1.82 0-.998.705-1.82 1.6-1.82.893 0 1.614.82 1.599 1.82 0 1-.706 1.82-1.6 1.82"/>
+  </symbol>
+  <symbol id="documentation-icon" viewBox="0 0 21 20">
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="m15.5 13.333 1.533 1.322c.645.555.967.833.967 1.178s-.322.623-.967 1.179L15.5 18.333m-3.333-5-1.534 1.322c-.644.555-.966.833-.966 1.178s.322.623.966 1.179l1.534 1.321"/>
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M17.167 10.836v-4.32c0-1.41 0-2.117-.224-2.68-.359-.906-1.118-1.621-2.08-1.96-.599-.21-1.349-.21-2.848-.21-2.623 0-3.935 0-4.983.369-1.684.591-3.013 1.842-3.641 3.428C3 6.449 3 7.684 3 10.154v2.122c0 2.558 0 3.838.706 4.726q.306.383.713.671c.76.536 1.79.64 3.581.66"/>
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M3 10a2.78 2.78 0 0 1 2.778-2.778c.555 0 1.209.097 1.748-.047.48-.129.854-.503.982-.982.145-.54.048-1.194.048-1.749a2.78 2.78 0 0 1 2.777-2.777"/>
+  </symbol>
+  <symbol id="github-icon" viewBox="0 0 19 19">
+    <path fill="#08060d" fill-rule="evenodd" d="M9.356 1.85C5.05 1.85 1.57 5.356 1.57 9.694a7.84 7.84 0 0 0 5.324 7.44c.387.079.528-.168.528-.376 0-.182-.013-.805-.013-1.454-2.165.467-2.616-.935-2.616-.935-.349-.91-.864-1.143-.864-1.143-.71-.48.051-.48.051-.48.787.051 1.2.805 1.2.805.695 1.194 1.817.857 2.268.649.064-.507.27-.857.49-1.052-1.728-.182-3.545-.857-3.545-3.87 0-.857.31-1.558.8-2.104-.078-.195-.349-1 .077-2.078 0 0 .657-.208 2.14.805a7.5 7.5 0 0 1 1.946-.26c.657 0 1.328.092 1.946.26 1.483-1.013 2.14-.805 2.14-.805.426 1.078.155 1.883.078 2.078.502.546.799 1.247.799 2.104 0 3.013-1.818 3.675-3.558 3.87.284.247.528.714.528 1.454 0 1.052-.012 1.896-.012 2.156 0 .208.142.455.528.377a7.84 7.84 0 0 0 5.324-7.441c.013-4.338-3.48-7.844-7.773-7.844" clip-rule="evenodd"/>
+  </symbol>
+  <symbol id="social-icon" viewBox="0 0 20 20">
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M12.5 6.667a4.167 4.167 0 1 0-8.334 0 4.167 4.167 0 0 0 8.334 0"/>
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M2.5 16.667a5.833 5.833 0 0 1 8.75-5.053m3.837.474.513 1.035c.07.144.257.282.414.309l.93.155c.596.1.736.536.307.965l-.723.73a.64.64 0 0 0-.152.531l.207.903c.164.715-.213.991-.84.618l-.872-.52a.63.63 0 0 0-.577 0l-.872.52c-.624.373-1.003.094-.84-.618l.207-.903a.64.64 0 0 0-.152-.532l-.723-.729c-.426-.43-.289-.864.306-.964l.93-.156a.64.64 0 0 0 .412-.31l.513-1.034c.28-.562.735-.562 1.012 0"/>
+  </symbol>
+  <symbol id="x-icon" viewBox="0 0 19 19">
+    <path fill="#08060d" fill-rule="evenodd" d="M1.893 1.98c.052.072 1.245 1.769 2.653 3.77l2.892 4.114c.183.261.333.48.333.486s-.068.089-.152.183l-.522.593-.765.867-3.597 4.087c-.375.426-.734.834-.798.905a1 1 0 0 0-.118.148c0 .01.236.017.664.017h.663l.729-.83c.4-.457.796-.906.879-.999a692 692 0 0 0 1.794-2.038c.034-.037.301-.34.594-.675l.551-.624.345-.392a7 7 0 0 1 .34-.374c.006 0 .93 1.306 2.052 2.903l2.084 2.965.045.063h2.275c1.87 0 2.273-.003 2.266-.021-.008-.02-1.098-1.572-3.894-5.547-2.013-2.862-2.28-3.246-2.273-3.266.008-.019.282-.332 2.085-2.38l2-2.274 1.567-1.782c.022-.028-.016-.03-.65-.03h-.674l-.3.342a871 871 0 0 1-1.782 2.025c-.067.075-.405.458-.75.852a100 100 0 0 1-.803.91c-.148.172-.299.344-.99 1.127-.304.343-.32.358-.345.327-.015-.019-.904-1.282-1.976-2.808L6.365 1.85H1.8zm1.782.91 8.078 11.294c.772 1.08 1.413 1.973 1.425 1.984.016.017.241.02 1.05.017l1.03-.004-2.694-3.766L7.796 5.75 5.722 2.852l-1.039-.004-1.039-.004z" clip-rule="evenodd"/>
+  </symbol>
+</svg>
+</file>
+
+<file path="src/Api/axios.js">
+import axios from 'axios';
+
+const api = axios.create({
+  baseURL: 'http://localhost:3977/api/v1',
+  timeout: 10000,
+  headers: {
+    'Content-Type': 'application/json'
+  }
+});
+
+api.interceptors.request.use((config) => {
+  const token = localStorage.getItem('token');
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+
+  if (config.data instanceof FormData) {
+    delete config.headers['Content-Type'];
+    config.timeout = 30000;
+  }
+
+  return config;
+});
+
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response && error.response.status === 401) {
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      window.location.href = '/login';
+    }
+    return Promise.reject(error);
+  }
+);
+
+export default api;
+</file>
+
+<file path="src/assets/react.svg">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--logos" width="35.93" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 228"><path fill="#00D8FF" d="M210.483 73.824a171.49 171.49 0 0 0-8.24-2.597c.465-1.9.893-3.777 1.273-5.621c6.238-30.281 2.16-54.676-11.769-62.708c-13.355-7.7-35.196.329-57.254 19.526a171.23 171.23 0 0 0-6.375 5.848a155.866 155.866 0 0 0-4.241-3.917C100.759 3.829 77.587-4.822 63.673 3.233C50.33 10.957 46.379 33.89 51.995 62.588a170.974 170.974 0 0 0 1.892 8.48c-3.28.932-6.445 1.924-9.474 2.98C17.309 83.498 0 98.307 0 113.668c0 15.865 18.582 31.778 46.812 41.427a145.52 145.52 0 0 0 6.921 2.165a167.467 167.467 0 0 0-2.01 9.138c-5.354 28.2-1.173 50.591 12.134 58.266c13.744 7.926 36.812-.22 59.273-19.855a145.567 145.567 0 0 0 5.342-4.923a168.064 168.064 0 0 0 6.92 6.314c21.758 18.722 43.246 26.282 56.54 18.586c13.731-7.949 18.194-32.003 12.4-61.268a145.016 145.016 0 0 0-1.535-6.842c1.62-.48 3.21-.974 4.76-1.488c29.348-9.723 48.443-25.443 48.443-41.52c0-15.417-17.868-30.326-45.517-39.844Zm-6.365 70.984c-1.4.463-2.836.91-4.3 1.345c-3.24-10.257-7.612-21.163-12.963-32.432c5.106-11 9.31-21.767 12.459-31.957c2.619.758 5.16 1.557 7.61 2.4c23.69 8.156 38.14 20.213 38.14 29.504c0 9.896-15.606 22.743-40.946 31.14Zm-10.514 20.834c2.562 12.94 2.927 24.64 1.23 33.787c-1.524 8.219-4.59 13.698-8.382 15.893c-8.067 4.67-25.32-1.4-43.927-17.412a156.726 156.726 0 0 1-6.437-5.87c7.214-7.889 14.423-17.06 21.459-27.246c12.376-1.098 24.068-2.894 34.671-5.345a134.17 134.17 0 0 1 1.386 6.193ZM87.276 214.515c-7.882 2.783-14.16 2.863-17.955.675c-8.075-4.657-11.432-22.636-6.853-46.752a156.923 156.923 0 0 1 1.869-8.499c10.486 2.32 22.093 3.988 34.498 4.994c7.084 9.967 14.501 19.128 21.976 27.15a134.668 134.668 0 0 1-4.877 4.492c-9.933 8.682-19.886 14.842-28.658 17.94ZM50.35 144.747c-12.483-4.267-22.792-9.812-29.858-15.863c-6.35-5.437-9.555-10.836-9.555-15.216c0-9.322 13.897-21.212 37.076-29.293c2.813-.98 5.757-1.905 8.812-2.773c3.204 10.42 7.406 21.315 12.477 32.332c-5.137 11.18-9.399 22.249-12.634 32.792a134.718 134.718 0 0 1-6.318-1.979Zm12.378-84.26c-4.811-24.587-1.616-43.134 6.425-47.789c8.564-4.958 27.502 2.111 47.463 19.835a144.318 144.318 0 0 1 3.841 3.545c-7.438 7.987-14.787 17.08-21.808 26.988c-12.04 1.116-23.565 2.908-34.161 5.309a160.342 160.342 0 0 1-1.76-7.887Zm110.427 27.268a347.8 347.8 0 0 0-7.785-12.803c8.168 1.033 15.994 2.404 23.343 4.08c-2.206 7.072-4.956 14.465-8.193 22.045a381.151 381.151 0 0 0-7.365-13.322Zm-45.032-43.861c5.044 5.465 10.096 11.566 15.065 18.186a322.04 322.04 0 0 0-30.257-.006c4.974-6.559 10.069-12.652 15.192-18.18ZM82.802 87.83a323.167 323.167 0 0 0-7.227 13.238c-3.184-7.553-5.909-14.98-8.134-22.152c7.304-1.634 15.093-2.97 23.209-3.984a321.524 321.524 0 0 0-7.848 12.897Zm8.081 65.352c-8.385-.936-16.291-2.203-23.593-3.793c2.26-7.3 5.045-14.885 8.298-22.6a321.187 321.187 0 0 0 7.257 13.246c2.594 4.48 5.28 8.868 8.038 13.147Zm37.542 31.03c-5.184-5.592-10.354-11.779-15.403-18.433c4.902.192 9.899.29 14.978.29c5.218 0 10.376-.117 15.453-.343c-4.985 6.774-10.018 12.97-15.028 18.486Zm52.198-57.817c3.422 7.8 6.306 15.345 8.596 22.52c-7.422 1.694-15.436 3.058-23.88 4.071a382.417 382.417 0 0 0 7.859-13.026a347.403 347.403 0 0 0 7.425-13.565Zm-16.898 8.101a358.557 358.557 0 0 1-12.281 19.815a329.4 329.4 0 0 1-23.444.823c-7.967 0-15.716-.248-23.178-.732a310.202 310.202 0 0 1-12.513-19.846h.001a307.41 307.41 0 0 1-10.923-20.627a310.278 310.278 0 0 1 10.89-20.637l-.001.001a307.318 307.318 0 0 1 12.413-19.761c7.613-.576 15.42-.876 23.31-.876H128c7.926 0 15.743.303 23.354.883a329.357 329.357 0 0 1 12.335 19.695a358.489 358.489 0 0 1 11.036 20.54a329.472 329.472 0 0 1-11 20.722Zm22.56-122.124c8.572 4.944 11.906 24.881 6.52 51.026c-.344 1.668-.73 3.367-1.15 5.09c-10.622-2.452-22.155-4.275-34.23-5.408c-7.034-10.017-14.323-19.124-21.64-27.008a160.789 160.789 0 0 1 5.888-5.4c18.9-16.447 36.564-22.941 44.612-18.3ZM128 90.808c12.625 0 22.86 10.235 22.86 22.86s-10.235 22.86-22.86 22.86s-22.86-10.235-22.86-22.86s10.235-22.86 22.86-22.86Z"></path></svg>
+</file>
+
+<file path="src/assets/vite.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="77" height="47" fill="none" aria-labelledby="vite-logo-title" viewBox="0 0 77 47"><title id="vite-logo-title">Vite</title><style>.parenthesis{fill:#000}@media (prefers-color-scheme:dark){.parenthesis{fill:#fff}}</style><path fill="#9135ff" d="M40.151 45.71c-.663.844-2.02.374-2.02-.699V34.708a2.26 2.26 0 0 0-2.262-2.262H24.493c-.92 0-1.457-1.04-.92-1.788l7.479-10.471c1.07-1.498 0-3.578-1.842-3.578H15.443c-.92 0-1.456-1.04-.92-1.788l9.696-13.576c.213-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.472c-1.07 1.497 0 3.578 1.842 3.578h11.376c.944 0 1.474 1.087.89 1.83L40.153 45.712z"/><mask id="a" width="48" height="47" x="14" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path fill="#000" d="M40.047 45.71c-.663.843-2.02.374-2.02-.699V34.708a2.26 2.26 0 0 0-2.262-2.262H24.389c-.92 0-1.457-1.04-.92-1.788l7.479-10.472c1.07-1.497 0-3.578-1.842-3.578H15.34c-.92 0-1.456-1.04-.92-1.788l9.696-13.575c.213-.297.556-.474.92-.474H53.93c.92 0 1.456 1.04.92 1.788L47.37 13.03c-1.07 1.498 0 3.578 1.842 3.578h11.376c.944 0 1.474 1.088.89 1.831L40.049 45.712z"/></mask><g mask="url(#a)"><g filter="url(#b)"><ellipse cx="5.508" cy="14.704" fill="#eee6ff" rx="5.508" ry="14.704" transform="rotate(269.814 20.96 11.29)scale(-1 1)"/></g><g filter="url(#c)"><ellipse cx="10.399" cy="29.851" fill="#eee6ff" rx="10.399" ry="29.851" transform="rotate(89.814 -16.902 -8.275)scale(1 -1)"/></g><g filter="url(#d)"><ellipse cx="5.508" cy="30.487" fill="#8900ff" rx="5.508" ry="30.487" transform="rotate(89.814 -19.197 -7.127)scale(1 -1)"/></g><g filter="url(#e)"><ellipse cx="5.508" cy="30.599" fill="#8900ff" rx="5.508" ry="30.599" transform="rotate(89.814 -25.928 4.177)scale(1 -1)"/></g><g filter="url(#f)"><ellipse cx="5.508" cy="30.599" fill="#8900ff" rx="5.508" ry="30.599" transform="rotate(89.814 -25.738 5.52)scale(1 -1)"/></g><g filter="url(#g)"><ellipse cx="14.072" cy="22.078" fill="#eee6ff" rx="14.072" ry="22.078" transform="rotate(93.35 31.245 55.578)scale(-1 1)"/></g><g filter="url(#h)"><ellipse cx="3.47" cy="21.501" fill="#8900ff" rx="3.47" ry="21.501" transform="rotate(89.009 35.419 55.202)scale(-1 1)"/></g><g filter="url(#i)"><ellipse cx="3.47" cy="21.501" fill="#8900ff" rx="3.47" ry="21.501" transform="rotate(89.009 35.419 55.202)scale(-1 1)"/></g><g filter="url(#j)"><ellipse cx="14.592" cy="9.743" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(39.51 14.592 9.743)"/></g><g filter="url(#k)"><ellipse cx="61.728" cy="-5.321" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 61.728 -5.32)"/></g><g filter="url(#l)"><ellipse cx="55.618" cy="7.104" fill="#00c2ff" rx="5.971" ry="9.665" transform="rotate(37.892 55.618 7.104)"/></g><g filter="url(#m)"><ellipse cx="12.326" cy="39.103" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 12.326 39.103)"/></g><g filter="url(#n)"><ellipse cx="12.326" cy="39.103" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 12.326 39.103)"/></g><g filter="url(#o)"><ellipse cx="49.857" cy="30.678" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 49.857 30.678)"/></g><g filter="url(#p)"><ellipse cx="52.623" cy="33.171" fill="#00c2ff" rx="5.971" ry="15.297" transform="rotate(37.892 52.623 33.17)"/></g></g><path d="M6.919 0c-9.198 13.166-9.252 33.575 0 46.789h6.215c-9.25-13.214-9.196-33.623 0-46.789zm62.424 0h-6.215c9.198 13.166 9.252 33.575 0 46.789h6.215c9.25-13.214 9.196-33.623 0-46.789" class="parenthesis"/><defs><filter id="b" width="60.045" height="41.654" x="-5.564" y="16.92" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="c" width="90.34" height="51.437" x="-40.407" y="-6.762" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="d" width="79.355" height="29.4" x="-35.435" y="2.801" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="e" width="79.579" height="29.4" x="-30.84" y="20.8" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="f" width="79.579" height="29.4" x="-29.307" y="21.949" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="g" width="74.749" height="58.852" x="29.961" y="-17.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="h" width="61.377" height="25.362" x="37.754" y="3.055" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="i" width="61.377" height="25.362" x="37.754" y="3.055" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="j" width="56.045" height="63.649" x="-13.43" y="-22.082" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="k" width="54.814" height="64.646" x="34.321" y="-37.644" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="l" width="33.541" height="35.313" x="38.847" y="-10.552" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="m" width="54.814" height="64.646" x="-15.081" y="6.78" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="n" width="54.814" height="64.646" x="-15.081" y="6.78" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="o" width="54.814" height="64.646" x="22.45" y="-1.645" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="p" width="39.409" height="43.623" x="32.919" y="11.36" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter></defs></svg>
+</file>
+
+<file path="src/components/AuthBackground.jsx">
+import { useEffect, useRef, useState } from 'react';
+
+const randomBetween = (min, max) => Math.random() * (max - min) + min;
+
+const triangleShapes = [
+  'polygon(50% 0%, 98% 16%, 82% 100%, 18% 88%, 0% 24%)',
+  'polygon(50% 0%, 98% 16%, 82% 100%, 18% 88%, 0% 24%)',
+  'polygon(50% 0%, 98% 16%, 82% 100%, 18% 88%, 0% 24%)',
+  'polygon(50% 0%, 98% 16%, 82% 100%, 18% 88%, 0% 24%)',
+];
+
+const createTriangles = (count, containerWidth, containerHeight) => {
+  const sizeFactors = [0.38, 0.34, 0.42, 0.3];
+
+  return Array.from({ length: count }, (_, index) => {
+    const width = Math.round(containerWidth * sizeFactors[index % sizeFactors.length]);
+    const height = width;
+
+    return {
+      id: index,
+      width,
+      height,
+      x: randomBetween(0, Math.max(1, containerWidth - width)),
+      y: randomBetween(0, Math.max(1, containerHeight - height)),
+      vx: randomBetween(-18, 18),
+      vy: randomBetween(-14, 14),
+      rotation: randomBetween(0, 360),
+      angularVelocity: randomBetween(-16, 16),
+      color: ['rgba(163, 190, 176, 0.96)', 'rgba(80, 122, 103, 0.92)', 'rgba(27, 46, 38, 0.88)', 'rgba(52, 84, 70, 0.74)'][index % 4],
+      shape: triangleShapes[index % triangleShapes.length],
+    };
+  });
+};
+
+export function AuthBackground({ active, shakePulse }) {
+  const containerRef = useRef(null);
+  const triangleRefs = useRef([]);
+  const trianglesRef = useRef([]);
+  const frameRef = useRef(null);
+  const motionSpeedRef = useRef(1);
+  const shakeTimeoutRef = useRef(null);
+  const sizeRef = useRef({ width: 0, height: 0 });
+  const previousShakePulse = useRef(0);
+  const [triangles, setTriangles] = useState(() => createTriangles(4, 1200, 900));
+
+  useEffect(() => {
+    trianglesRef.current = triangles;
+  }, [triangles]);
+
+  useEffect(() => {
+    if (shakePulse > previousShakePulse.current) {
+      previousShakePulse.current = shakePulse;
+
+      trianglesRef.current.forEach((triangle) => {
+        triangle.vx = Math.max(-40, Math.min(40, triangle.vx + randomBetween(-12, 12)));
+        triangle.vy = Math.max(-40, Math.min(40, triangle.vy + randomBetween(-12, 12)));
+        triangle.angularVelocity = Math.max(-36, Math.min(36, triangle.angularVelocity + randomBetween(-12, 12)));
+      });
+
+      motionSpeedRef.current = 2.2;
+      clearTimeout(shakeTimeoutRef.current);
+      shakeTimeoutRef.current = setTimeout(() => {
+        motionSpeedRef.current = active ? 1.8 : 1;
+      }, 1600);
+    }
+  }, [shakePulse, active]);
+
+  useEffect(() => {
+    motionSpeedRef.current = active ? 1.8 : 1;
+  }, [active]);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const updateSize = () => {
+      const rect = container.getBoundingClientRect();
+      sizeRef.current = { width: rect.width, height: rect.height };
+
+      if (!trianglesRef.current.length) {
+        const initialTriangles = createTriangles(4, rect.width, rect.height);
+        trianglesRef.current = initialTriangles;
+        setTriangles(initialTriangles);
+      }
+    };
+
+    updateSize();
+    window.addEventListener('resize', updateSize);
+
+    const step = () => {
+      const { width, height } = sizeRef.current;
+      if (!width || !height) {
+        frameRef.current = requestAnimationFrame(step);
+        return;
+      }
+
+      const speedFactor = motionSpeedRef.current;
+
+      trianglesRef.current.forEach((triangle) => {
+        triangle.x += triangle.vx * 0.06 * speedFactor;
+        triangle.y += triangle.vy * 0.06 * speedFactor;
+        triangle.rotation += triangle.angularVelocity * 0.04 * speedFactor;
+
+        if (triangle.x < -triangle.width * 0.08) {
+          triangle.x = -triangle.width * 0.08;
+          triangle.vx = Math.abs(triangle.vx) * 0.5;
+        } else if (triangle.x + triangle.width > width + triangle.width * 0.08) {
+          triangle.x = width - triangle.width + triangle.width * 0.08;
+          triangle.vx = -Math.abs(triangle.vx) * 0.5;
+        }
+
+        if (triangle.y < -triangle.height * 0.08) {
+          triangle.y = -triangle.height * 0.08;
+          triangle.vy = Math.abs(triangle.vy) * 0.55;
+        } else if (triangle.y + triangle.height > height + triangle.height * 0.08) {
+          triangle.y = height - triangle.height + triangle.height * 0.08;
+          triangle.vy = -Math.abs(triangle.vy) * 0.55;
+        }
+
+        triangle.vx *= active ? 0.992 : 0.988;
+        triangle.vy *= active ? 0.992 : 0.988;
+        triangle.angularVelocity *= active ? 0.996 : 0.994;
+
+        const triangleEl = triangleRefs.current[triangle.id];
+        if (triangleEl) {
+          triangleEl.style.transform = `translate(${Math.round(triangle.x)}px, ${Math.round(triangle.y)}px) rotate(${triangle.rotation.toFixed(2)}deg)`;
+        }
+      });
+
+      frameRef.current = requestAnimationFrame(step);
+    };
+
+    frameRef.current = requestAnimationFrame(step);
+
+    return () => {
+      window.removeEventListener('resize', updateSize);
+      cancelAnimationFrame(frameRef.current);
+    };
+  }, [active]);
+
+  return (
+    <div className="auth-background" ref={containerRef}>
+      {triangles.map((triangle) => (
+        <div
+          key={triangle.id}
+          ref={(el) => { triangleRefs.current[triangle.id] = el; }}
+          className="auth-triangle"
+          style={{
+            width: `${triangle.width}px`,
+            height: `${triangle.height}px`,
+            backgroundColor: triangle.color,
+            clipPath: triangle.shape,
+            transform: `translate(${triangle.x}px, ${triangle.y}px) rotate(${triangle.rotation}deg)`,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/layout.css">
+/* ============================================
+   Layout Styles
+   Prefijo: .layout-
+   ============================================ */
+
+/* --- Dashboard Wrapper --- */
+.layout-wrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  color: #ffffff;
+  background-color: var(--verde-intermedio-oscuro-transparente);
+}
+
+/* --- Navbar Glassmorphism --- */
+.layout-navbar {
+  background: rgba(27, 46, 38, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 16px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.layout-logo {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+}
+
+.layout-search {
+  width: 400px;
+}
+
+.layout-search-input {
+  padding: 10px 40px 10px 20px;
+}
+
+.layout-auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.layout-btn-text {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.layout-btn-text:hover {
+  color: #a3beb0;
+}
+
+.layout-btn-nav {
+  padding: 10px 24px;
+  font-size: 14px;
+  margin-top: 0;
+}
+
+/* --- Input Container (Navbar) --- */
+.layout-input-container {
+  position: relative;
+}
+
+.layout-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 30px;
+  font-size: 14px;
+  color: #ffffff;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.layout-input::placeholder {
+  color: rgba(232, 240, 236, 0.5);
+}
+
+.layout-input:focus {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: #a3beb0;
+  box-shadow: 0 0 0 4px rgba(163, 190, 176, 0.15);
+}
+
+.layout-input-icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(232, 240, 236, 0.6);
+  pointer-events: none;
+}
+
+/* --- Primary Button (Navbar) --- */
+.layout-btn-primary {
+  background-color: #ffffff;
+  color: #1b2e26;
+  border: none;
+  border-radius: 30px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.layout-btn-primary:hover {
+  background-color: #e8f0ec;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Layout Page Transition --- */
+/* --- Main Content --- */
+.layout-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px;
+  width: 100%;
+}
+
+.layout-page-transition {
+  opacity: 0;
+  transform: translateY(28px) scale(0.99);
+  filter: blur(2px);
+  transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1), transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), filter 0.45s ease;
+}
+
+.layout-page-transition.page-enter {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+/* --- Dynamic Background (LayoutBackground component) --- */
+.layout-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background-color: transparent;
+  filter: blur(20px);
+  -webkit-filter: blur(20px);
+}
+
+.layout-shape {
+  position: absolute;
+  box-shadow: 0 22px 42px rgba(9, 23, 16, 0.14);
+  will-change: transform;
+  opacity: 0.78;
+}
+
+.layout-shape:hover {
+  filter: brightness(1.06);
+}
+
+/* --- Header Section --- */
+.layout-header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+}
+
+.layout-title {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+</file>
+
+<file path="src/components/Layout.jsx">
+import { useEffect } from 'react';
+import { useNavigate, Link, useLocation } from 'react-router-dom';
+import { useAuth } from '../context/useAuth';
+import { LayoutBackground } from './LayoutBackground';
+import './layout.css';
+
+export function Layout({ children, title }) {
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    const content = document.querySelector('.layout-page-transition');
+    if (!content) return;
+
+    content.classList.remove('page-enter');
+    void content.offsetWidth;
+    content.classList.add('page-enter');
+  }, [location.pathname]);
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login');
+  };
+
+  return (
+    <div className="layout-wrapper">
+      {/* Fondo Geométrico Global para toda la app */}
+      <LayoutBackground />
+
+      {/* NAVBAR GLASSMORPHISM GLOBAL */}
+      <nav className="layout-navbar" style={{ zIndex: 100 }}>
+        <Link to="/dashboard" className="layout-logo" style={{ textDecoration: 'none' }}>
+          MENTORA
+        </Link>
+
+        {/* Buscador visual (opcional a nivel global) */}
+        <div className="layout-search layout-input-container">
+          <input
+            type="text"
+            placeholder="Buscar cursos..."
+            className="layout-input layout-search-input"
+          />
+          <span className="layout-input-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </span>
+        </div>
+
+        <div className="layout-auth-buttons">
+          <Link to="/explorar" className="layout-btn-text" style={{ textDecoration: 'none' }}>Explorar</Link>
+          <Link to="/dashboard" className="layout-btn-text" style={{ textDecoration: 'none' }}>Dashboard</Link>
+
+          {/* Opciones exclusivas para instructor */}
+          {user?.rol === 'instructor' && (
+            <>
+              <Link to="/cursos/nuevo" className="layout-btn-text" style={{ textDecoration: 'none' }}>Crear curso</Link>
+              <Link to="/mis-cursos" className="layout-btn-text" style={{ textDecoration: 'none' }}>Mis cursos</Link>
+            </>
+          )}
+
+          <Link to="/perfil" className="layout-btn-text" style={{ textDecoration: 'none' }}>Perfil</Link>
+
+          {/* Nombre del usuario dinámico */}
+          <span style={{ fontSize: '14px', color: 'rgb(255, 255, 255)', marginLeft: '8px', fontWeight: 500 }}>
+            {user?.nombre || 'Usuario'}
+          </span>
+
+          {/* Botón de cerrar sesión unificado */}
+          <button className="layout-btn-primary layout-btn-nav" onClick={handleLogout}>
+            Cerrar sesión
+          </button>
+        </div>
+      </nav>
+
+      {/* CONTENIDO PRINCIPAL DINÁMICO */}
+      <main key={location.pathname} className="layout-content layout-page-transition" style={{ position: 'relative', zIndex: 10 }}>
+        {/* Renderizado de título dinámico si se pasa la prop 'title' */}
+        {title && (
+          <div className="layout-header-section" style={{ marginBottom: '24px' }}>
+            <h1 className="layout-title" style={{ textAlign: 'left' }}>{title}</h1>
+          </div>
+        )}
+
+        {children}
+      </main>
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/LayoutBackground.jsx">
+import { useEffect, useRef, useState } from 'react';
+
+const randomBetween = (min, max) => Math.random() * (max - min) + min;
+const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+const shapePath = 'polygon(50% 0%, 98% 16%, 82% 100%, 18% 88%, 0% 24%)';
+
+const createShapes = (count, containerWidth, containerHeight) => {
+  const sizeFactors = [0.38, 0.3, 0.28, 0.22, 0.34, 0.18, 0.25, 0.2];
+  const colors = [
+    'var(--verde-intermedio-luz)',
+    'var(--verde-apagado-suave)',
+    'var(--verde-apagado-oscuro)',
+    'var(--verde-apagado-medio)',
+  ];
+
+  return Array.from({ length: count }, (_, index) => {
+    const width = Math.round(containerWidth * sizeFactors[index % sizeFactors.length]);
+    const height = width;
+    const color = colors[index % colors.length];
+
+    return {
+      id: index,
+      width,
+      height,
+      x: randomBetween(-width * 0.25, Math.max(0, containerWidth - width + width * 0.25)),
+      y: randomBetween(-height * 0.22, Math.max(0, containerHeight - height + height * 0.22)),
+      vx: randomBetween(-18, 18),
+      vy: randomBetween(-14, 14),
+      rotation: randomBetween(0, 360),
+      angularVelocity: randomBetween(-6, 6),
+      color,
+      shape: shapePath,
+      opacity: index % 3 === 0 ? 0.78 : index % 2 === 0 ? 0.82 : 0.7,
+    };
+  });
+};
+
+export function LayoutBackground() {
+  const containerRef = useRef(null);
+  const shapeRefs = useRef([]);
+  const shapesRef = useRef([]);
+  const frameRef = useRef(null);
+  const sizeRef = useRef({ width: 0, height: 0 });
+  const [shapes, setShapes] = useState(() => createShapes(8, 1200, 900));
+
+  useEffect(() => {
+    shapesRef.current = shapes;
+  }, [shapes]);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const updateSize = () => {
+      const rect = container.getBoundingClientRect();
+      sizeRef.current = { width: rect.width, height: rect.height };
+
+      if (!shapesRef.current.length) {
+        const initialShapes = createShapes(8, rect.width, rect.height);
+        shapesRef.current = initialShapes;
+        setShapes(initialShapes);
+      }
+    };
+
+    updateSize();
+    window.addEventListener('resize', updateSize);
+
+    const step = () => {
+      const { width, height } = sizeRef.current;
+      if (!width || !height) {
+        frameRef.current = requestAnimationFrame(step);
+        return;
+      }
+
+      shapesRef.current.forEach((shape) => {
+        shape.x += shape.vx * 0.03;
+        shape.y += shape.vy * 0.03;
+        shape.rotation += shape.angularVelocity * 0.03;
+
+        const horizontalLimit = shape.width * 0.08;
+        const verticalLimit = shape.height * 0.08;
+
+        if (shape.x < -horizontalLimit) {
+          shape.x = -horizontalLimit;
+          shape.vx = Math.abs(shape.vx) * randomBetween(0.76, 0.96);
+        } else if (shape.x + shape.width > width + horizontalLimit) {
+          shape.x = width - shape.width + horizontalLimit;
+          shape.vx = -Math.abs(shape.vx) * randomBetween(0.76, 0.96);
+        }
+
+        if (shape.y < -verticalLimit) {
+          shape.y = -verticalLimit;
+          shape.vy = Math.abs(shape.vy) * randomBetween(0.78, 0.94);
+        } else if (shape.y + shape.height > height + verticalLimit) {
+          shape.y = height - shape.height + verticalLimit;
+          shape.vy = -Math.abs(shape.vy) * randomBetween(0.78, 0.94);
+        }
+
+        if (Math.abs(shape.vx) < 1.6) {
+          shape.vx = shape.vx < 0 ? -1.8 : 1.8;
+        }
+        if (Math.abs(shape.vy) < 1.6) {
+          shape.vy = shape.vy < 0 ? -1.8 : 1.8;
+        }
+
+        shape.vx = clamp(shape.vx, -24, 24);
+        shape.vy = clamp(shape.vy, -20, 20);
+        shape.angularVelocity = clamp(shape.angularVelocity, -6, 6);
+
+        const shapeEl = shapeRefs.current[shape.id];
+        if (shapeEl) {
+          shapeEl.style.transform = `translate(${Math.round(shape.x)}px, ${Math.round(shape.y)}px) rotate(${shape.rotation.toFixed(2)}deg)`;
+        }
+      });
+
+      frameRef.current = requestAnimationFrame(step);
+    };
+
+    frameRef.current = requestAnimationFrame(step);
+
+    return () => {
+      window.removeEventListener('resize', updateSize);
+      cancelAnimationFrame(frameRef.current);
+    };
+  }, []);
+
+  return (
+    <div className="layout-background" ref={containerRef}>
+      {shapes.map((shape) => (
+        <div
+          key={shape.id}
+          ref={(el) => { shapeRefs.current[shape.id] = el; }}
+          className="layout-shape"
+          style={{
+            width: `${shape.width}px`,
+            height: `${shape.height}px`,
+            backgroundColor: shape.color,
+            clipPath: shape.shape,
+            transform: `translate(${shape.x}px, ${shape.y}px) rotate(${shape.rotation}deg)`,
+            opacity: shape.opacity,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+</file>
+
+<file path="src/context/AuthContext.jsx">
+import { createContext, useState, useEffect, useRef } from 'react';
+import api from '../Api/axios';
+
+const AuthContext = createContext(null);
+export { AuthContext };
+
+export function AuthProvider({ children }) {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(!!localStorage.getItem('token'));
+  const checked = useRef(false);
+
+  useEffect(() => {
+    if (checked.current) return;
+    checked.current = true;
+
+    const token = localStorage.getItem('token');
+    if (token) {
+      api.get('/auth/me')
+        .then((res) => setUser(res.data.data))
+        .catch(() => {
+          localStorage.removeItem('token');
+          localStorage.removeItem('user');
+        })
+        .finally(() => setLoading(false));
+    }
+  }, []);
+
+  const login = async (correo, password) => {
+    const res = await api.post('/auth/login', { correo, password });
+    const { token, usuario } = res.data.data;
+    localStorage.setItem('token', token);
+    localStorage.setItem('user', JSON.stringify(usuario));
+    setUser(usuario);
+    return usuario;
+  };
+
+  const register = async ({ nombre, apellido, correo, password, rol }) => {
+    const res = await api.post('/auth/register', { nombre, apellido, correo, password, rol });
+    const { token, usuario } = res.data.data;
+    localStorage.setItem('token', token);
+    localStorage.setItem('user', JSON.stringify(usuario));
+    setUser(usuario);
+    return usuario;
+  };
+
+  const logout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    setUser(null);
+  };
+
+  return (
+    <AuthContext.Provider value={{ user, loading, login, register, logout }}>
+      {children}
+    </AuthContext.Provider>
+  );
+}
+</file>
+
+<file path="src/context/useAuth.js">
+import { useContext } from 'react';
+import { AuthContext } from './AuthContext';
+
+export function useAuth() {
+  const ctx = useContext(AuthContext);
+  if (!ctx) throw new Error('useAuth must be used within AuthProvider');
+  return ctx;
+}
+</file>
+
+<file path="src/pages/auth/Login/components/LoginForm.jsx">
+import { FormInput } from '../../shared';
+
+const emailIcon = (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+    <circle cx="12" cy="7" r="4" />
+  </svg>
+);
+
+const passwordIcon = (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+  </svg>
+);
+
+export function LoginForm({ onSubmit, loading, correo, setCorreo, password, setPassword }) {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit();
+  };
+
+  return (
+    <form className="auth-form" onSubmit={handleSubmit}>
+      <FormInput
+        id="email"
+        type="email"
+        placeholder="Correo"
+        required
+        value={correo}
+        onChange={(e) => setCorreo(e.target.value)}
+        icon={emailIcon}
+        autoComplete="email"
+      />
+
+      <FormInput
+        id="password"
+        type="password"
+        placeholder="Contraseña"
+        required
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        icon={passwordIcon}
+        autoComplete="current-password"
+      />
+
+      <div className="auth-options">
+        <label className="auth-remember">
+          <input type="checkbox" />
+          <span>Recordarme</span>
+        </label>
+        <a href="#" className="auth-forgot">¿Olvidaste tu contraseña?</a>
+      </div>
+
+      <button type="submit" className="auth-btn-primary" disabled={loading}>
+        {loading ? 'Ingresando...' : 'Login'}
+      </button>
+    </form>
+  );
+}
+</file>
+
+<file path="src/pages/auth/Login/index.js">
+export { Login } from './Login';
+</file>
+
+<file path="src/pages/auth/Login/Login.jsx">
+import { useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../../context/useAuth';
+import { AuthBackground, SocialButtons, SignupRedirect } from '../shared';
+import { LoginForm } from './components/LoginForm';
+import '../shared/auth-shared.css';
+
+export function Login() {
+  const [correo, setCorreo] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [fastMotion, setFastMotion] = useState(false);
+  const [shakePulse, setShakePulse] = useState(0);
+  const interactionTimer = useRef(null);
+  const { login } = useAuth();
+  const navigate = useNavigate();
+
+  const handleUserActivity = () => {
+    setFastMotion(true);
+    clearTimeout(interactionTimer.current);
+    interactionTimer.current = setTimeout(() => setFastMotion(false), 900);
+  };
+
+  const handleFieldInteraction = (event) => {
+    if (!event.target.closest('input, select')) return;
+    setShakePulse((prev) => prev + 1);
+  };
+
+  const handleFormBlur = () => {
+    clearTimeout(interactionTimer.current);
+    interactionTimer.current = setTimeout(() => setFastMotion(false), 400);
+  };
+
+  const handleSubmit = async () => {
+    setError('');
+    setLoading(true);
+    try {
+      await login(correo, password);
+      navigate('/dashboard');
+    } catch (err) {
+      const msg = err.response?.data?.message
+        || (err.request ? 'No se pudo conectar con el servidor. Verifica que el backend este corriendo.' : 'Error al iniciar sesion');
+      setError(msg);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const pageClass = `auth-page auth-page--slide-in-left${fastMotion ? ' auth-page--fast-motion' : ''}`;
+
+  return (
+    <div className={pageClass}>
+      <AuthBackground active={fastMotion} shakePulse={shakePulse} />
+
+      <main className="auth-wrapper">
+        <div className="auth-card">
+          <h1 className="auth-title">Iniciar sesión</h1>
+
+          {error && <div className="auth-error-msg">{error}</div>}
+
+          <LoginForm
+            onSubmit={handleSubmit}
+            loading={loading}
+            correo={correo}
+            setCorreo={setCorreo}
+            password={password}
+            setPassword={setPassword}
+          />
+
+          <SocialButtons title="Iniciar sesión con" />
+
+          <SignupRedirect
+            text="¿No tienes cuenta?"
+            linkText="Regístrate aquí"
+            to="/register"
+          />
+        </div>
+      </main>
+    </div>
+  );
+}
+</file>
+
+<file path="src/pages/auth/Register/components/RegisterForm.jsx">
+import { FormInput } from '../../shared';
+
+const userIcon = (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+    <circle cx="12" cy="7" r="4" />
+  </svg>
+);
+
+const emailIcon = (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+    <polyline points="22,6 12,13 2,6" />
+  </svg>
+);
+
+const passwordIcon = (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+  </svg>
+);
+
+const rolIcon = (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M6 9l6 6 6-6" />
+  </svg>
+);
+
+export function RegisterForm({
+  onSubmit,
+  loading,
+  nombre,
+  setNombre,
+  apellido,
+  setApellido,
+  correo,
+  setCorreo,
+  password,
+  setPassword,
+  confirmPassword,
+  setConfirmPassword,
+  rol,
+  setRol,
+}) {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit();
+  };
+
+  return (
+    <form className="auth-form" onSubmit={handleSubmit}>
+      <FormInput
+        id="nombre"
+        type="text"
+        placeholder="Nombre"
+        required
+        value={nombre}
+        onChange={(e) => setNombre(e.target.value)}
+        icon={userIcon}
+        autoComplete="given-name"
+      />
+
+      <FormInput
+        id="apellido"
+        type="text"
+        placeholder="Apellido"
+        required
+        value={apellido}
+        onChange={(e) => setApellido(e.target.value)}
+        icon={userIcon}
+        autoComplete="family-name"
+      />
+
+      <FormInput
+        id="email"
+        type="email"
+        placeholder="Correo"
+        required
+        value={correo}
+        onChange={(e) => setCorreo(e.target.value)}
+        icon={emailIcon}
+        autoComplete="email"
+      />
+
+      <FormInput
+        id="password"
+        type="password"
+        placeholder="Contraseña"
+        required
+        minLength={6}
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        icon={passwordIcon}
+        autoComplete="new-password"
+      />
+
+      <FormInput
+        id="confirm-password"
+        type="password"
+        placeholder="Confirmar contraseña"
+        required
+        minLength={6}
+        value={confirmPassword}
+        onChange={(e) => setConfirmPassword(e.target.value)}
+        icon={passwordIcon}
+        autoComplete="new-password"
+      />
+
+      <div className="auth-input-container">
+        <select
+          id="rol"
+          value={rol}
+          onChange={(e) => setRol(e.target.value)}
+          className="auth-input"
+        >
+          <option value="estudiante">Estudiante</option>
+          <option value="instructor">Instructor</option>
+        </select>
+        <span className="auth-input-icon">{rolIcon}</span>
+      </div>
+
+      <button type="submit" className="auth-btn-primary" disabled={loading}>
+        {loading ? 'Registrando...' : 'Registrarse'}
+      </button>
+    </form>
+  );
+}
+</file>
+
+<file path="src/pages/auth/Register/index.js">
+export { Register } from './Register';
+</file>
+
+<file path="src/pages/auth/Register/Register.jsx">
+import { useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../../context/useAuth';
+import { AuthBackground, SocialButtons, SignupRedirect } from '../shared';
+import { RegisterForm } from './components/RegisterForm';
+import '../shared/auth-shared.css';
+
+export function Register() {
+  const [nombre, setNombre] = useState('');
+  const [apellido, setApellido] = useState('');
+  const [correo, setCorreo] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [rol, setRol] = useState('estudiante');
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [fastMotion, setFastMotion] = useState(false);
+  const [shakePulse, setShakePulse] = useState(0);
+  const interactionTimer = useRef(null);
+  const { register } = useAuth();
+  const navigate = useNavigate();
+
+  const handleUserActivity = () => {
+    setFastMotion(true);
+    clearTimeout(interactionTimer.current);
+    interactionTimer.current = setTimeout(() => setFastMotion(false), 800);
+  };
+
+  const handleFieldInteraction = (event) => {
+    if (!event.target.closest('input, select')) return;
+    setShakePulse((prev) => prev + 1);
+  };
+
+  const handleFormBlur = () => {
+    clearTimeout(interactionTimer.current);
+    interactionTimer.current = setTimeout(() => setFastMotion(false), 350);
+  };
+
+  const handleSubmit = async () => {
+    if (password !== confirmPassword) {
+      setError('Las contrasenas no coinciden');
+      return;
+    }
+
+    setError('');
+    setLoading(true);
+    try {
+      await register({ nombre, apellido, correo, password, rol });
+      navigate('/dashboard');
+    } catch (err) {
+      const msg = err.response?.data?.message || 'Error al registrarse';
+      setError(msg);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const pageClass = `auth-page auth-page--slide-in-right${fastMotion ? ' auth-page--fast-motion' : ''}`;
+
+  return (
+    <div className={pageClass}>
+      <AuthBackground active={fastMotion} shakePulse={shakePulse} />
+
+      <main className="auth-wrapper">
+        <div className="auth-card">
+          <h1 className="auth-title">Registrarse</h1>
+
+          {error && <div className="auth-error-msg">{error}</div>}
+
+          <RegisterForm
+            onSubmit={handleSubmit}
+            loading={loading}
+            nombre={nombre}
+            setNombre={setNombre}
+            apellido={apellido}
+            setApellido={setApellido}
+            correo={correo}
+            setCorreo={setCorreo}
+            password={password}
+            setPassword={setPassword}
+            confirmPassword={confirmPassword}
+            setConfirmPassword={setConfirmPassword}
+            rol={rol}
+            setRol={setRol}
+          />
+
+          <SocialButtons title="Registrarse con" />
+
+          <SignupRedirect
+            text="¿Ya tienes cuenta?"
+            linkText="Inicia sesión"
+            to="/login"
+          />
+        </div>
+      </main>
+    </div>
+  );
+}
+</file>
+
+<file path="src/pages/auth/shared/auth-shared.css">
+/* ============================================
+   Auth Shared Styles
+   Prefijo: .auth-
+   Keyframes definidos en index.css global
+   ============================================ */
+
+/* --- Auth Page Layout --- */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  position: relative;
+  background: linear-gradient(135deg, #f0f4ff 0%, #e8ecf8 100%);
+  overflow: hidden;
+}
+
+.auth-page--slide-in-left {
+  animation: authPageSlideInLeft 0.45s ease-out both, authPageFadeIn 0.45s ease-out both;
+}
+
+.auth-page--slide-in-right {
+  animation: authPageSlideInRight 0.45s ease-out both, authPageFadeIn 0.45s ease-out both;
+}
+
+/* --- Auth Background & Triangles --- */
+.auth-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+  filter: blur(22px) saturate(1.05);
+}
+
+.auth-triangle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  clip-path: polygon(50% 0%, 98% 16%, 82% 100%, 18% 88%, 0% 24%);
+  box-shadow: 0 18px 48px rgba(6, 20, 12, 0.14);
+  mix-blend-mode: screen;
+  will-change: transform;
+  opacity: 0.75;
+  z-index: 1;
+}
+
+.auth-page--fast-motion .auth-triangle {
+  filter: brightness(1.16);
+}
+
+/* --- Glass Card Container --- */
+.auth-wrapper {
+  width: 100%;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.auth-card {
+  background: rgba(27, 46, 38, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  width: 100%;
+  max-width: 440px;
+  padding: 48px 40px;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.35);
+  text-align: center;
+  color: #ffffff;
+  animation: authCardPop 0.45s ease-out both;
+}
+
+/* --- Title --- */
+.auth-title {
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 36px;
+}
+
+/* --- Form Layout --- */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* --- Input Container & Inputs --- */
+.auth-input-container {
+  position: relative;
+  width: 100%;
+}
+
+.auth-input,
+.auth-input:focus,
+.auth-input:active,
+.auth-input:disabled {
+  transition: background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease, color 0.25s ease;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 14px 48px 14px 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 30px;
+  font-size: 14.5px;
+  color: #ffffff;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.auth-input::placeholder {
+  color: rgba(232, 240, 236, 0.5);
+}
+
+.auth-input:focus {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(163, 190, 176, 0.9);
+  box-shadow: 0 0 0 4px rgba(163, 190, 176, 0.15);
+}
+
+.auth-input:hover {
+  box-shadow: 0 0 0 4px rgba(163, 190, 176, 0.22);
+  border-color: rgba(163, 190, 176, 0.95);
+  background: rgba(255, 255, 255, 0.22);
+  transform: translateY(-1px);
+  color: #ffffff;
+}
+
+.auth-input-icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(232, 240, 236, 0.6);
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+/* --- Form Options --- */
+.auth-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.auth-remember {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: rgba(232, 240, 236, 0.8);
+}
+
+.auth-remember input {
+  accent-color: rgba(163, 190, 176, 0.9);
+  cursor: pointer;
+}
+
+.auth-forgot {
+  color: rgba(232, 240, 236, 0.8);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.auth-forgot:hover {
+  color: rgba(163, 190, 176, 1);
+}
+
+/* --- Primary Button --- */
+.auth-btn-primary {
+  background-color: #ffffff;
+  color: #1b2e26;
+  border: none;
+  padding: 14px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.auth-btn-primary:hover {
+  background-color: #e8f0ec;
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+.auth-btn-primary:active {
+  transform: translateY(0) scale(0.99);
+}
+
+.auth-btn-primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* --- Social Buttons --- */
+.auth-social-section {
+  margin-top: 32px;
+}
+
+.auth-social-title {
+  font-size: 13px;
+  color: rgba(232, 240, 236, 0.6);
+  margin-bottom: 16px;
+}
+
+.auth-social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.auth-social-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.auth-social-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: scale(1.08);
+}
+
+.auth-social-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* --- Signup Redirect --- */
+.auth-redirect {
+  margin-top: 36px;
+  font-size: 13.5px;
+  color: rgba(232, 240, 236, 0.7);
+}
+
+.auth-redirect a {
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.auth-redirect a:hover {
+  color: rgba(163, 190, 176, 1);
+}
+
+/* --- Error Message --- */
+.auth-error-msg {
+  background: rgba(254, 202, 202, 0.18);
+  color: #b91c1c;
+  padding: 12px 16px;
+  border-radius: 16px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(254, 202, 202, 0.4);
+}
+</file>
+
+<file path="src/pages/auth/shared/AuthBackground.jsx">
+import { useState, useEffect, useRef } from 'react';
+
+const randomBetween = (min, max) => Math.random() * (max - min) + min;
+
+const triangleShapes = [
+  'polygon(50% 0%, 98% 16%, 82% 100%, 18% 88%, 0% 24%)',
+  'polygon(50% 0%, 98% 16%, 82% 100%, 18% 88%, 0% 24%)',
+  'polygon(50% 0%, 98% 16%, 82% 100%, 18% 88%, 0% 24%)',
+  'polygon(50% 0%, 98% 16%, 82% 100%, 18% 88%, 0% 24%)',
+];
+
+const createTriangles = (count, containerWidth, containerHeight) => {
+  const sizeFactors = [0.38, 0.34, 0.42, 0.3];
+
+  return Array.from({ length: count }, (_, index) => {
+    const width = Math.round(containerWidth * sizeFactors[index % sizeFactors.length]);
+    const height = width;
+
+    return {
+      id: index,
+      width,
+      height,
+      x: randomBetween(0, Math.max(1, containerWidth - width)),
+      y: randomBetween(0, Math.max(1, containerHeight - height)),
+      vx: randomBetween(-18, 18),
+      vy: randomBetween(-14, 14),
+      rotation: randomBetween(0, 360),
+      angularVelocity: randomBetween(-16, 16),
+      color: ['rgba(163, 190, 176, 0.96)', 'rgba(80, 122, 103, 0.92)', 'rgba(27, 46, 38, 0.88)', 'rgba(52, 84, 70, 0.74)'][index % 4],
+      shape: triangleShapes[index % triangleShapes.length],
+    };
+  });
+};
+
+export function AuthBackground({ active, shakePulse }) {
+  const containerRef = useRef(null);
+  const triangleRefs = useRef([]);
+  const trianglesRef = useRef([]);
+  const frameRef = useRef(null);
+  const motionSpeedRef = useRef(1);
+  const shakeTimeoutRef = useRef(null);
+  const sizeRef = useRef({ width: 0, height: 0 });
+  const previousShakePulse = useRef(0);
+  const [triangles, setTriangles] = useState(() => createTriangles(4, 1200, 900));
+
+  useEffect(() => {
+    trianglesRef.current = triangles;
+  }, [triangles]);
+
+  useEffect(() => {
+    if (shakePulse > previousShakePulse.current) {
+      previousShakePulse.current = shakePulse;
+
+      trianglesRef.current.forEach((triangle) => {
+        triangle.vx = Math.max(-40, Math.min(40, triangle.vx + randomBetween(-12, 12)));
+        triangle.vy = Math.max(-40, Math.min(40, triangle.vy + randomBetween(-12, 12)));
+        triangle.angularVelocity = Math.max(-36, Math.min(36, triangle.angularVelocity + randomBetween(-12, 12)));
+      });
+
+      motionSpeedRef.current = 2.2;
+      clearTimeout(shakeTimeoutRef.current);
+      shakeTimeoutRef.current = setTimeout(() => {
+        motionSpeedRef.current = active ? 1.8 : 1;
+      }, 1600);
+    }
+  }, [shakePulse, active]);
+
+  useEffect(() => {
+    motionSpeedRef.current = active ? 1.8 : 1;
+  }, [active]);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const updateSize = () => {
+      const rect = container.getBoundingClientRect();
+      sizeRef.current = { width: rect.width, height: rect.height };
+
+      if (!trianglesRef.current.length) {
+        const initialTriangles = createTriangles(4, rect.width, rect.height);
+        trianglesRef.current = initialTriangles;
+        setTriangles(initialTriangles);
+      }
+    };
+
+    updateSize();
+    window.addEventListener('resize', updateSize);
+
+    const step = () => {
+      const { width, height } = sizeRef.current;
+      if (!width || !height) {
+        frameRef.current = requestAnimationFrame(step);
+        return;
+      }
+
+      const speedFactor = motionSpeedRef.current;
+
+      trianglesRef.current.forEach((triangle) => {
+        triangle.x += triangle.vx * 0.06 * speedFactor;
+        triangle.y += triangle.vy * 0.06 * speedFactor;
+        triangle.rotation += triangle.angularVelocity * 0.04 * speedFactor;
+
+        if (triangle.x < -triangle.width * 0.08) {
+          triangle.x = -triangle.width * 0.08;
+          triangle.vx = Math.abs(triangle.vx) * 0.5;
+        } else if (triangle.x + triangle.width > width + triangle.width * 0.08) {
+          triangle.x = width - triangle.width + triangle.width * 0.08;
+          triangle.vx = -Math.abs(triangle.vx) * 0.5;
+        }
+
+        if (triangle.y < -triangle.height * 0.08) {
+          triangle.y = -triangle.height * 0.08;
+          triangle.vy = Math.abs(triangle.vy) * 0.55;
+        } else if (triangle.y + triangle.height > height + triangle.height * 0.08) {
+          triangle.y = height - triangle.height + triangle.height * 0.08;
+          triangle.vy = -Math.abs(triangle.vy) * 0.55;
+        }
+
+        triangle.vx *= active ? 0.992 : 0.988;
+        triangle.vy *= active ? 0.992 : 0.988;
+        triangle.angularVelocity *= active ? 0.996 : 0.994;
+
+        const triangleEl = triangleRefs.current[triangle.id];
+        if (triangleEl) {
+          triangleEl.style.transform = `translate(${Math.round(triangle.x)}px, ${Math.round(triangle.y)}px) rotate(${triangle.rotation.toFixed(2)}deg)`;
+        }
+      });
+
+      frameRef.current = requestAnimationFrame(step);
+    };
+
+    frameRef.current = requestAnimationFrame(step);
+
+    return () => {
+      window.removeEventListener('resize', updateSize);
+      cancelAnimationFrame(frameRef.current);
+    };
+  }, [active]);
+
+  return (
+    <div className="auth-background" ref={containerRef}>
+      {triangles.map((triangle) => (
+        <div
+          key={triangle.id}
+          ref={(el) => { triangleRefs.current[triangle.id] = el; }}
+          className="auth-triangle"
+          style={{
+            width: `${triangle.width}px`,
+            height: `${triangle.height}px`,
+            backgroundColor: triangle.color,
+            clipPath: triangle.shape,
+            transform: `translate(${triangle.x}px, ${triangle.y}px) rotate(${triangle.rotation}deg)`,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+</file>
+
+<file path="src/pages/auth/shared/FormInput.jsx">
+export function FormInput({
+  id,
+  type = 'text',
+  placeholder,
+  value,
+  onChange,
+  required = false,
+  minLength,
+  icon,
+  autoComplete,
+}) {
+  return (
+    <div className="auth-input-container">
+      <input
+        id={id}
+        type={type}
+        placeholder={placeholder}
+        required={required}
+        minLength={minLength}
+        className="auth-input"
+        value={value}
+        onChange={onChange}
+        autoComplete={autoComplete}
+      />
+      <span className="auth-input-icon">{icon}</span>
+    </div>
+  );
+}
+</file>
+
+<file path="src/pages/auth/shared/index.js">
+export { AuthBackground } from './AuthBackground';
+export { FormInput } from './FormInput';
+export { SocialButtons } from './SocialButtons';
+export { SignupRedirect } from './SignupRedirect';
+</file>
+
+<file path="src/pages/auth/shared/SignupRedirect.jsx">
+import { Link } from 'react-router-dom';
+
+export function SignupRedirect({ text, linkText, to }) {
+  return (
+    <div className="auth-redirect">
+      {text} <Link to={to}>{linkText}</Link>
+    </div>
+  );
+}
+</file>
+
+<file path="src/pages/auth/shared/SocialButtons.jsx">
+export function SocialButtons({ title = 'Iniciar sesión con' }) {
+  return (
+    <div className="auth-social-section">
+      <p className="auth-social-title">{title}</p>
+      <div className="auth-social-icons">
+        <button type="button" className="auth-social-btn" aria-label="Google">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M21.35 11.1H12.13v2.92h5.26c-.23 1.47-1.33 3.08-3.26 3.08-1.96 0-3.56-1.61-3.56-3.6s1.6-3.6 3.56-3.6c1.12 0 1.87.48 2.3.9l1.99-1.92C16.9 5.4 15.25 4.7 13 4.7c-4.24 0-7.7 3.47-7.7 7.7s3.46 7.7 7.7 7.7c4.43 0 7.37-3.11 7.37-7.5 0-.5-.05-.92-.12-1.25z" />
+          </svg>
+        </button>
+        <button type="button" className="auth-social-btn" aria-label="Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.8z" />
+          </svg>
+        </button>
+        <button type="button" className="auth-social-btn" aria-label="GitHub">
+          <svg width="18" height="18" viewBox="0 0 19 19" fill="currentColor">
+            <path fillRule="evenodd" clipRule="evenodd" d="M9.356 1.85C5.05 1.85 1.57 5.356 1.57 9.694a7.84 7.84 0 0 0 5.324 7.44c.387.079.528-.168.528-.376 0-.182-.013-.805-.013-1.454-2.165.467-2.616-.935-2.616-.935-.349-.91-.864-1.143-.864-1.143-.71-.48.051-.48.051-.48.787.051 1.2.805 1.2.805.695 1.194 1.817.857 2.268.649.064-.507.27-.857.49-1.052-1.728-.182-3.545-.857-3.545-3.87 0-.857.31-1.558.8-2.104-.078-.195-.349-1 .077-2.078 0 0 .657-.208 2.14.805a7.5 7.5 0 0 1 1.946-.26c.657 0 1.328.092 1.946.26 1.483-1.013 2.14-.805 2.14-.805.426 1.078.155 1.883.078 2.078.502.546.799 1.247.799 2.104 0 3.013-1.818 3.675-3.558 3.87.284.247.528.714.528 1.454 0 1.052-.012 1.896-.012 2.156 0 .208.142.455.528.377a7.84 7.84 0 0 0 5.324-7.441c.013-4.338-3.48-7.844-7.773-7.844" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/pages/dashboard/Estudiante/components/CursosLista.jsx">
+import { Link } from 'react-router-dom';
+import { ProgressBar } from '../../shared/ProgressBar';
+
+export function CursosLista({ inscripciones }) {
+  if (inscripciones.length === 0) {
+    return (
+      <p style={{ color: 'rgba(232, 240, 236, 0.7)', fontSize: '16px' }}>
+        No estás inscrito en ningún curso. <Link to="/explorar" style={{ color: 'var(--verde-intermedio-luz)', textDecoration: 'none', fontWeight: 600 }}>Explora cursos aquí</Link>
+      </p>
+    );
+  }
+
+  return (
+    <div className="estudiante-grid">
+      {inscripciones.map((insc) => (
+        <Link
+          to={`/cursos/${insc.curso_id?._id}/aprender`}
+          key={insc._id}
+          className="estudiante-card"
+          style={{ textDecoration: 'none' }}
+        >
+          <div className="estudiante-card-img">IMAGEN CURSO</div>
+          <div className="estudiante-card-info">
+            <h3 className="estudiante-card-title">{insc.curso_id?.titulo || 'Curso sin título'}</h3>
+            <p className="estudiante-card-desc">{insc.curso_id?.descripcion || ''}</p>
+            <div className="estudiante-card-footer" style={{ borderTop: 'none', paddingTop: 0 }}>
+              <span className="estudiante-tag">{insc.curso_id?.nivel || 'Sin nivel'}</span>
+              <span className="estudiante-price">{insc.curso_id?.precio ? insc.curso_id.precio : 'Gratis'}</span>
+            </div>
+            <ProgressBar percentage={insc.porcentaje} label="Progreso" />
+          </div>
+        </Link>
+      ))}
+    </div>
+  );
+}
+</file>
+
+<file path="src/pages/dashboard/Estudiante/components/EstudianteHeader.jsx">
+const FilterDropdown = ({ label, value }) => (
+  <div className="estudiante-dropdown">
+    <span>{label}: <strong>{value}</strong></span>
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <polyline points="6 9 12 15 18 9"></polyline>
+    </svg>
+  </div>
+);
+
+export function EstudianteHeader() {
+  return (
+    <div className="estudiante-header">
+      <div className="estudiante-title-block">
+        <h1 className="estudiante-title" style={{ marginBottom: '8px', textAlign: 'left' }}>Panel Estudiante</h1>
+        <p className="estudiante-subtitle">Resumen de tu progreso y cursos inscritos.</p>
+      </div>
+      <div className="estudiante-filters">
+        <FilterDropdown label="Categorías" value="Todas" />
+        <FilterDropdown label="Nivel" value="Todos" />
+        <FilterDropdown label="Precio" value="Todos" />
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/pages/dashboard/Estudiante/components/ResumenCards.jsx">
+const ResumenCard = ({ value, label }) => (
+  <div className="glass-dropdown" style={{ flex: 1, padding: '20px', flexDirection: 'column', alignItems: 'flex-start', cursor: 'default' }}>
+    <span style={{ fontSize: '28px', fontWeight: 700, color: 'var(--blanco-puro)' }}>
+      {value}
+    </span>
+    <span style={{ fontSize: '14px', color: 'rgba(232, 240, 236, 0.7)' }}>{label}</span>
+  </div>
+);
+
+export function ResumenCards({ resumen, loading }) {
+  return (
+    <div style={{ marginBottom: '40px', display: 'flex', gap: '24px' }}>
+      <ResumenCard
+        value={loading ? '...' : resumen.total_cursos ?? 0}
+        label="Cursos inscritos"
+      />
+      <ResumenCard
+        value={loading ? '...' : resumen.cursos_completados ?? 0}
+        label="Completados"
+      />
+      <ResumenCard
+        value={loading ? '...' : `${resumen.progreso_promedio ?? 0}%`}
+        label="Progreso promedio"
+      />
+    </div>
+  );
+}
+</file>
+
+<file path="src/pages/dashboard/Estudiante/DashboardEstudiante.css">
+/* ============================================
+   DashboardEstudiante Specific Styles
+   Extraídos de temp/dashboard.css
+   ============================================ */
+
+/* --- Main Content --- */
+.estudiante-main-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px;
+  width: 100%;
+}
+
+/* --- Header Section --- */
+.estudiante-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+}
+
+.estudiante-title {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+.estudiante-subtitle {
+  color: rgba(232, 240, 236, 0.8);
+  font-size: 15px;
+}
+
+.estudiante-filters {
+  display: flex;
+  gap: 16px;
+}
+
+/* --- Glass Dropdown Filters --- */
+.estudiante-dropdown {
+  background: rgba(27, 46, 38, 0.5);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 30px;
+  padding: 10px 20px;
+  color: var(--blanco-puro);
+  font-size: 13.5px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.glass-dropdown{
+  background: rgba(27, 46, 38, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 22px 20px;
+  text-align: center;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.2);
+}
+
+.estudiante-dropdown:hover {
+  background: rgba(27, 46, 38, 0.8);
+  border-color: var(--verde-intermedio-luz);
+}
+
+.estudiante-dropdown strong {
+  color: var(--verde-intermedio-luz);
+  font-weight: 600;
+}
+
+/* --- Courses Grid --- */
+.estudiante-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* --- Glass Card (Course Card) --- */
+.estudiante-card {
+  background: rgba(27, 46, 38, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  color: var(--blanco-puro);
+}
+
+.estudiante-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.estudiante-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* --- Card Image Placeholder --- */
+.estudiante-card-img {
+  height: 160px;
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* --- Card Info --- */
+.estudiante-card-info {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-grow: 1;
+}
+
+.estudiante-card-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.estudiante-card-desc {
+  font-size: 13px;
+  color: rgba(232, 240, 236, 0.7);
+  line-height: 1.5;
+}
+
+/* --- Card Footer --- */
+.estudiante-card-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.estudiante-tag {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--verde-intermedio-luz);
+}
+
+.estudiante-price {
+  font-size: 15px;
+  font-weight: 700;
+}
+</file>
+
+<file path="src/pages/dashboard/Estudiante/DashboardEstudiante.jsx">
+import { useState, useEffect } from 'react';
+import api from '../../../Api/axios';
+import { EstudianteHeader } from './components/EstudianteHeader';
+import { ResumenCards } from './components/ResumenCards';
+import { CursosLista } from './components/CursosLista';
+import './DashboardEstudiante.css';
+
+export function DashboardEstudiante() {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    api.get('/Dashboard/estudiante')
+      .then((res) => setData(res.data))
+      .catch((err) => setError(err.response?.data?.message || 'Error al cargar dashboard'))
+      .finally(() => setLoading(false));
+  }, []);
+
+  const resumen = data?.resumen || {};
+  const inscripciones = data?.inscripciones || [];
+
+  return (
+    <>
+      <div className="dashboard-wrapper">
+        <main className="main-content">
+          <EstudianteHeader />
+          <ResumenCards resumen={resumen} loading={loading} />
+
+          {loading ? (
+            <div style={{ color: 'var(--blanco-puro)', textAlign: 'center', padding: '40px', fontSize: '18px' }}>
+              Cargando tus cursos...
+            </div>
+          ) : error ? (
+            <div style={{ color: '#ff6b6b', textAlign: 'center', padding: '20px', background: 'rgba(255,0,0,0.1)', borderRadius: '12px', border: '1px solid rgba(255,0,0,0.2)' }}>
+              {error}
+            </div>
+          ) : (
+            <>
+              <h2 style={{ fontSize: '24px', fontWeight: 700, color: 'var(--blanco-puro)', marginBottom: '24px' }}>
+                Mis cursos
+              </h2>
+              <CursosLista inscripciones={inscripciones} />
+            </>
+          )}
+        </main>
+      </div>
+    </>
+  );
+}
+</file>
+
+<file path="src/pages/dashboard/Estudiante/index.js">
+export { DashboardEstudiante } from './DashboardEstudiante';
+</file>
+
+<file path="src/pages/dashboard/Instructor/components/CursoCard.jsx">
+import { Link } from 'react-router-dom';
+import { Switch } from '../../shared/Switch';
+
+export function CursoCard({ curso, onTogglePublicado }) {
+  return (
+    <div className="course-card">
+      <div className="course-info">
+        <h3>{curso.titulo}</h3>
+        <div className="dash-switch-wrapper">
+          <Switch
+            isOn={curso.publicado}
+            onToggle={() => onTogglePublicado(curso)}
+            title={curso.publicado ? 'Despublicar' : 'Publicar'}
+          />
+          <span className={`dash-stat ${curso.publicado ? 'published' : 'draft'}`}>
+            {curso.publicado ? 'Publicado' : 'Borrador'}
+          </span>
+        </div>
+      </div>
+      <span className="course-category">{curso.categoria} - {curso.nivel}</span>
+      <div className="course-stats">
+        <span className="dash-stat">{curso.total_inscritos ?? 0} inscritos</span>
+        <span className="dash-stat">{curso.calificacion_promedio ?? 0} / 5</span>
+        <span className="dash-stat">${curso.precio ?? 0}</span>
+      </div>
+      <Link to={`/cursos/${curso._id}/editar`} className="dash-btn-outline">
+        Editar
+      </Link>
+    </div>
+  );
+}
+</file>
+
+<file path="src/pages/dashboard/Instructor/components/InstructorCourses.jsx">
+import { Link } from 'react-router-dom';
+import { CursoCard } from './CursoCard';
+
+export function InstructorCourses({ cursos, onTogglePublicado }) {
+  if (cursos.length === 0) {
+    return (
+      <p className="dashboard-instructor__no-courses">
+        No has creado ningun curso. <Link to="/cursos/nuevo">Crea uno aqui</Link>
+      </p>
+    );
+  }
+
+  return (
+    <div className="course-list">
+      {cursos.map((curso) => (
+        <CursoCard
+          key={curso._id}
+          curso={curso}
+          onTogglePublicado={onTogglePublicado}
+        />
+      ))}
+    </div>
+  );
+}
+</file>
+
+<file path="src/pages/dashboard/Instructor/components/InstructorHeader.jsx">
+import { Link } from 'react-router-dom';
+
+export function InstructorHeader() {
+  return (
+    <div className="dashboard-instructor__topbar">
+      <p className="dashboard-instructor__role">Instructor</p>
+      <Link to="/cursos/nuevo" className="dashboard-instructor__create-action">Crear curso</Link>
+    </div>
+  );
+}
+</file>
+
+<file path="src/pages/dashboard/Instructor/DashboardInstructor.css">
+.dashboard-instructor {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 24px 18px 40px;
+  color: rgba(255, 255, 261, 0.92);
+}
+
+.dashboard-instructor__topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.dashboard-instructor__role {
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.dashboard-instructor__create-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: #4f6b5b;
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-instructor__create-action:hover {
+  background: #5e7e6c;
+  transform: translateY(-1px);
+}
+
+.dashboard-instructor__section-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 32px 0 16px;
+  color: #f8fafc;
+}
+
+.dashboard-instructor .summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.dashboard-instructor .summary-card {
+  background: rgba(27, 46, 38, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 22px 20px;
+  text-align: center;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-instructor .summary-value {
+  display: block;
+  font-size: 32px;
+  font-weight: 700;
+  color: #e8f0ec;
+  margin-bottom: 4px;
+}
+
+.dashboard-instructor .summary-label {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.dashboard-instructor__no-courses {
+  color: rgba(255, 255, 255, 0.7);
+  padding: 26px 0;
+  font-size: 15px;
+}
+
+.dashboard-instructor__no-courses a {
+  color: #a3beb0;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.dashboard-instructor__no-courses a:hover {
+  color: #d1fae5;
+}
+
+.dashboard-instructor .course-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dashboard-instructor .course-card {
+  background: rgba(27, 46, 38, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 20px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.dashboard-instructor .course-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(163, 190, 176, 0.25);
+}
+
+.dashboard-instructor .course-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.dashboard-instructor .course-info h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 0;
+  color: #f8fafc;
+}
+
+.dashboard-instructor .course-category {
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 14px;
+}
+
+.dashboard-instructor .course-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 13px;
+}
+
+.dashboard-instructor .course-stats .dash-stat {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.dashboard-instructor .dash-switch-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dashboard-instructor .dash-switch {
+  width: 44px;
+  height: 24px;
+}
+
+.dashboard-instructor .dash-stat {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.78);
+  white-space: nowrap;
+}
+
+.dashboard-instructor .dash-stat.published {
+  color: #a3beb0;
+  font-weight: 600;
+}
+
+.dashboard-instructor .dash-stat.draft {
+  color: rgba(255, 255, 255, 0.66);
+}
+
+.dashboard-instructor .dash-btn-outline {
+  padding: 10px 16px;
+  font-size: 13px;
+}
+
+@media (max-width: 720px) {
+  .dashboard-instructor__topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dashboard-instructor .course-info {
+    justify-content: space-between;
+  }
+}
+</file>
+
+<file path="src/pages/dashboard/Instructor/DashboardInstructor.jsx">
+import { useState, useEffect } from 'react';
+import api from '../../../Api/axios';
+import { InstructorHeader } from './components/InstructorHeader';
+import { InstructorCourses } from './components/InstructorCourses';
+import { SummaryCard } from '../shared';
+import './DashboardInstructor.css';
+import '../shared/dashboard-shared.css';
+
+export function DashboardInstructor() {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    api.get('/Dashboard/instructor')
+      .then((res) => setData(res.data))
+      .catch((err) => {
+        const msg = err.response?.data?.message || err.message || 'Error al cargar dashboard';
+        setError(msg);
+      })
+      .finally(() => setLoading(false));
+  }, []);
+
+  const togglePublicado = async (curso) => {
+    try {
+      const res = await api.patch(`/Cursos/${curso?._id}/publicar`);
+      setData((prev) => prev ? {
+        ...prev,
+        cursos: prev.cursos.map((c) => c._id === curso?._id ? res.data?.curso || c : c)
+      } : prev);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  if (loading) return <div className="dash-loading">Cargando...</div>;
+  if (error) return <div className="dash-error">{error}</div>;
+
+  const resumen = data?.resumen || {};
+  const cursos = data?.cursos || [];
+
+  return (
+    <div className="dashboard-instructor">
+      <InstructorHeader />
+
+      <div className="summary-cards">
+        <SummaryCard value={resumen.total_cursos ?? 0} label="Cursos totales" />
+        <SummaryCard value={resumen.cursos_publicados ?? 0} label="Publicados" />
+        <SummaryCard value={resumen.total_estudiantes ?? 0} label="Estudiantes" />
+        <SummaryCard value={resumen.calificacion_promedio_global ?? 0} label="Calif. promedio" />
+      </div>
+
+      <h2 className="dashboard-instructor__section-title">Mis cursos</h2>
+      <InstructorCourses cursos={cursos} onTogglePublicado={togglePublicado} />
+    </div>
+  );
+}
+</file>
+
+<file path="src/pages/dashboard/Instructor/index.js">
+export { DashboardInstructor } from './DashboardInstructor';
+</file>
+
+<file path="src/pages/dashboard/shared/dashboard-shared.css">
+/* ============================================
+   Dashboard Shared Styles
+   Prefijo: .dash-
+   ============================================ */
+
+/* --- Loading & Error States --- */
+.dash-loading,
+.dash-app-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-size: 16px;
+  color: var(--text-light);
+}
+
+.dash-error {
+  color: var(--error);
+  text-align: center;
+  padding: 40px 24px;
+  font-size: 15px;
+}
+
+/* --- Stat Labels --- */
+.dash-stat {
+  color: var(--text-light);
+  white-space: nowrap;
+}
+
+.dash-stat.published {
+  color: var(--success);
+  font-weight: 600;
+}
+
+.dash-stat.draft {
+  color: var(--text-light);
+}
+
+/* --- Outline Button --- */
+.dash-btn-outline {
+
+  padding: 10px 20px;
+  background: var(--accent);
+  color: var(--white);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.dash-btn-outline:hover {
+  background: rgba(255, 255, 255, 0.61);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+}
+
+.delete-btn-outline {
+  padding: 10px 20px;
+  background: var(--error);
+  color: var(--white);
+  border: 1px solid var(--error);
+  border-radius: var(--radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+.delete-btn-outline:hover {
+  background: rgba(255, 255, 255, 0.61);
+  color: var(--error);
+  border: 1px solid var(--error);
+  border-radius: var(--radius);
+}
+
+/* --- Switch Toggle --- */
+.dash-switch-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dash-switch {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  background: var(--border);
+  border-radius: 12px;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s;
+}
+
+.dash-switch.on {
+  background: var(--success);
+}
+
+.dash-switch::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: var(--white);
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+
+.dash-switch.on::after {
+  transform: translateX(20px);
+}
+</file>
+
+<file path="src/pages/dashboard/shared/index.js">
+export { SummaryCard } from './SummaryCard';
+export { Switch } from './Switch';
+export { ProgressBar } from './ProgressBar';
+</file>
+
+<file path="src/pages/dashboard/shared/ProgressBar.jsx">
+export function ProgressBar({ percentage, label }) {
+  return (
+    <div style={{ marginTop: 'auto', paddingTop: '16px', borderTop: '1px solid rgba(255, 255, 255, 0.08)' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px', fontSize: '12px', color: 'rgba(232, 240, 236, 0.8)', fontWeight: 600 }}>
+        <span>{label || 'Progreso'}</span>
+        <span>{percentage ?? 0}%</span>
+      </div>
+      <div style={{ background: 'rgba(255, 255, 255, 0.1)', height: '6px', borderRadius: '10px', overflow: 'hidden' }}>
+        <div style={{
+          width: `${percentage ?? 0}%`,
+          height: '100%',
+          background: 'var(--verde-intermedio-luz)',
+          borderRadius: '10px',
+          transition: 'width 0.5s ease-in-out'
+        }} />
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/pages/dashboard/shared/SummaryCard.jsx">
+export function SummaryCard({ value, label }) {
+  return (
+    <div className="summary-card">
+      <span className="summary-value">{value}</span>
+      <span className="summary-label">{label}</span>
+    </div>
+  );
+}
+</file>
+
+<file path="src/pages/dashboard/shared/Switch.jsx">
+export function Switch({ isOn, onToggle, title }) {
+  return (
+    <button
+      className={`dash-switch ${isOn ? 'on' : ''}`}
+      onClick={onToggle}
+      title={title}
+    />
+  );
+}
+</file>
+
+<file path="src/pages/CursoAprendizaje.css">
+.curso-aprendizaje-page {
+  width: min(100%, 1080px);
+  margin: 0 auto;
+  padding: 28px 20px 40px;
+}
+
+.curso-aprendizaje-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.curso-aprendizaje-title {
+  font-size: clamp(2rem, 2.2vw, 2.6rem);
+  font-weight: 800;
+  color: #f8fafc;
+}
+
+.curso-aprendizaje-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+.curso-aprendizaje-progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+  padding: 16px 20px;
+  background: rgba(27, 46, 38, 0.85);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.curso-aprendizaje-progress .progress-bar,
+.progress-bar {
+  flex: 1;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.curso-aprendizaje-progress .progress-fill,
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #a3beb0, #e8f0ec);
+  border-radius: 999px;
+  transition: width 0.35s ease;
+  box-shadow: 0 0 10px rgba(163, 190, 176, 0.5);
+}
+
+.curso-aprendizaje-progress span {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #dbeafe;
+  white-space: nowrap;
+}
+
+.aprendizaje-temario {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.aprendizaje-seccion {
+  background: rgba(27, 46, 38, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.aprendizaje-seccion:hover {
+  transform: translateY(-1px);
+  border-color: rgba(163, 190, 176, 0.4);
+}
+
+.aprendizaje-seccion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 22px;
+  cursor: pointer;
+  font-weight: 700;
+  color: #f8fafc;
+  background: rgba(27, 46, 38, 0.6);
+  transition: background 0.2s ease;
+}
+
+.aprendizaje-seccion-header:hover {
+  background: rgba(27, 46, 38, 0.9);
+}
+
+.aprendizaje-leccion {
+  padding: 16px 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: rgba(241, 245, 249, 0.92);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(27, 46, 38, 0.5);
+  font-size: 0.97rem;
+}
+
+.aprendizaje-leccion.completada {
+  opacity: 0.82;
+  color: rgba(203, 213, 225, 0.92);
+}
+
+.aprendizaje-leccion.completada span {
+  text-decoration: line-through;
+}
+
+.aprendizaje-leccion label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.aprendizaje-leccion input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #a3beb0;
+  cursor: pointer;
+}
+
+.aprendizaje-leccion span {
+  flex: 1;
+  min-width: 0;
+  color: inherit;
+}
+
+.aprendizaje-leccion a {
+  color: #a3beb0;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.aprendizaje-leccion a:hover {
+  text-decoration: underline;
+}
+
+.aprendizaje-empty-message {
+  color: #cbd5e1;
+  text-align: center;
+  padding: 42px 0;
+  font-size: 1rem;
+}
+
+@media (max-width: 800px) {
+  .curso-aprendizaje-header,
+  .curso-aprendizaje-meta {
+    gap: 12px;
+  }
+
+  .curso-aprendizaje-progress {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .aprendizaje-seccion-header,
+  .aprendizaje-leccion {
+    padding: 14px 18px;
+  }
+}
+
+@media (max-width: 580px) {
+  .curso-aprendizaje-page {
+    padding: 20px 14px 30px;
+  }
+
+  .curso-aprendizaje-title {
+    font-size: 1.9rem;
+  }
+
+  .aprendizaje-leccion {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .aprendizaje-leccion a {
+    margin-top: 10px;
+  }
+}
+</file>
+
+<file path="src/pages/CursoAprendizaje.jsx">
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import api from '../Api/axios';
+import './CursoAprendizaje.css';
+
+export function CursoAprendizaje() {
+  const { id } = useParams();
+  const [curso, setCurso] = useState(null);
+  const [inscripcion, setInscripcion] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+  const [seccionAbierta, setSeccionAbierta] = useState(0);
+
+  useEffect(() => {
+    Promise.all([
+      api.get(`/Cursos/${id}`),
+      api.get('/Inscripciones/mis-cursos')
+    ])
+      .then(([cRes, iRes]) => {
+        setCurso(cRes.data.curso || cRes.data.data?.curso);
+        const inscs = iRes.data.inscripciones || [];
+        const miInsc = inscs.find((i) => i.curso_id?._id === id || i.curso_id === id);
+        if (miInsc) setInscripcion(miInsc);
+        else setError('No estas inscrito en este curso.');
+      })
+      .catch((err) => setError(err.response?.data?.message || 'Error al cargar'))
+      .finally(() => setLoading(false));
+  }, [id]);
+
+  const marcarLeccion = async (inscripcionId, leccionId) => {
+    try {
+      const res = await api.patch(`/Inscripciones/${inscripcionId}/lecciones/${leccionId}`);
+      const updated = res.data.inscripcion;
+      setInscripcion((prev) => ({
+        ...prev,
+        progreso: updated.progreso,
+        porcentaje: updated.porcentaje
+      }));
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  if (loading) return <div className="dash-loading">Cargando curso...</div>;
+  if (error) return <div className="dash-error">{error}</div>;
+  if (!curso) return <div className="dash-error">Curso no encontrado</div>;
+
+  const progresoMap = {};
+  if (inscripcion?.progreso) {
+    inscripcion.progreso.forEach((p) => {
+      progresoMap[p.leccion_id?._id || p.leccion_id] = p.completada;
+    });
+  }
+
+  const totalLecciones = curso.secciones?.reduce((sum, s) => sum + (s.lecciones?.length || 0), 0) || 0;
+  const completadas = Object.values(progresoMap).filter(Boolean).length;
+
+  return (
+    <div>
+      <div style={{ marginBottom: 24 }}>
+        <h1 style={{ fontSize: 24, fontWeight: 700 }}>{curso.titulo}</h1>
+        <div style={{ marginTop: 8, display: 'flex', alignItems: 'center', gap: 12 }}>
+          <div className="progress-bar" style={{ flex: 1, height: 10 }}>
+            <div className="progress-fill" style={{ width: `${inscripcion?.porcentaje || 0}%` }} />
+          </div>
+          <span style={{ fontSize: 14, fontWeight: 600 }}>{inscripcion?.porcentaje || 0}%</span>
+          <span style={{ fontSize: 13, color: 'var(--text-light)' }}>{completadas}/{totalLecciones} lecciones</span>
+        </div>
+      </div>
+
+      {curso.secciones && curso.secciones.length > 0 ? (
+        <div className="aprendizaje-temario" style={{ marginTop: 0 }}>
+          {curso.secciones.map((seccion, i) => (
+            <div key={seccion._id} className="aprendizaje-seccion">
+              <div className="aprendizaje-seccion-header" onClick={() => setSeccionAbierta(seccionAbierta === i ? -1 : i)}>
+                <span>{seccion.titulo}</span>
+                <span>{seccionAbierta === i ? '▲' : '▼'}</span>
+              </div>
+              {seccionAbierta === i && seccion.lecciones && seccion.lecciones.map((leccion) => {
+                const estaCompletada = progresoMap[leccion._id];
+                return (
+                  <div key={leccion._id} className={`aprendizaje-leccion ${estaCompletada ? 'completada' : ''}`}>
+                    <label>
+                      <input
+                        type="checkbox"
+                        checked={!!estaCompletada}
+                        onChange={() => marcarLeccion(inscripcion._id, leccion._id)}
+                      />
+                      <span>{leccion.titulo}</span>
+                    </label>
+                    {leccion.url && (
+                      <a href={leccion.url} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 'auto', fontSize: 13, color: 'var(--accent)' }}>
+                        Ver video
+                      </a>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p className="aprendizaje-empty-message">Este curso no tiene contenido aun.</p>
+      )}
+    </div>
+  );
+}
+</file>
+
+<file path="src/pages/CursoForm.css">
+.curso-form-page {
+  width: min(100%, 1080px);
+  margin: 0 auto;
+  padding: 28px 20px 40px;
+}
+
+.curso-form-card {
+  background: rgba(27, 46, 38, 0.79);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border-radius: 28px;
+  padding: 36px;
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.26);
+  color: #fff;
+}
+
+.curso-form-card h1 {
+  font-size: clamp(1.8rem, 2vw, 2.4rem);
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+.curso-form-page .curso-form-success,
+.curso-form-page .curso-form-error {
+  border-radius: 20px;
+  padding: 14px 16px;
+  font-size: 0.95rem;
+  margin-bottom: 22px;
+}
+
+.curso-form-page .curso-form-success {
+  background: rgba(16, 185, 129, 0.14);
+  color: #d1fae5;
+  border: 1px solid rgba(16, 185, 129, 0.24);
+}
+
+.curso-form-page .curso-form-error {
+  background: rgba(248, 113, 113, 0.16);
+  color: #fecaca;
+  border: 1px solid rgba(248, 113, 113, 0.28);
+}
+
+.curso-form-page .curso-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.curso-form-page .curso-form-group label {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.curso-form-page .curso-form-group input,
+.curso-form-page .curso-form-group textarea,
+.curso-form-page .curso-form-group select {
+  width: 100%;
+  min-height: 50px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+.curso-form-page .curso-form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.curso-form-page .curso-form-group input::placeholder,
+.curso-form-page .curso-form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.curso-form-page .curso-form-group input:focus,
+.curso-form-page .curso-form-group textarea:focus,
+.curso-form-page .curso-form-group select:focus {
+  border-color: rgba(163, 190, 176, 0.9);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 0 4px rgba(163, 190, 176, 0.12);
+}
+
+.curso-form-page .btn-primary {
+  width: 100%;
+  padding: 14px 18px;
+  background: #ffffff;
+  color: #1b2e26;
+  border: none;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.curso-form-page .btn-primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.18);
+}
+
+.curso-form-page .btn-primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.curso-form-page .btn-secondary {
+  padding: 12px 18px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.curso-form-page .btn-secondary:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-1px);
+}
+
+.curso-form-page .btn-secondary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.curso-form-page .secciones-manager {
+  margin-top: 28px;
+}
+
+.curso-form-page .secciones-manager h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #fff;
+}
+
+.curso-form-page .secciones-manager > div:first-child {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.curso-form-page .secciones-manager input {
+  flex: 1;
+  min-width: 180px;
+}
+
+.curso-form-page .seccion-group {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 22px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.curso-form-page .seccion-group h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+}
+
+.curso-form-page .seccion-group .curso-form-leccion-item {
+  margin-bottom: 10px;
+  padding: 10px 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.curso-form-page .seccion-group .curso-form-leccion-item span {
+  display: inline-block;
+  max-width: 100%;
+  word-break: break-word;
+}
+
+.curso-form-page .seccion-group .curso-form-leccion-item span:last-child {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.85rem;
+}
+
+.curso-form-page .btn-sm {
+  padding: 8px 14px;
+  font-size: 0.88rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.curso-form-page .btn-sm:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-1px);
+}
+
+.curso-form-page .btn-sm.danger {
+  color: #fecaca;
+  border-color: rgba(248, 113, 113, 0.35);
+}
+
+.curso-form-page .btn-sm.danger:hover {
+  background: rgba(253, 67, 67, 0.34);
+}
+
+.curso-form-page .curso-form-btn-outline {
+  padding: 12px 18px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.curso-form-page .curso-form-btn-outline:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-1px);
+}
+
+.curso-form-page .divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin: 28px 0;
+}
+
+.curso-form-page .imagen-preview {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-top: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+@media (max-width: 820px) {
+  .curso-form-card {
+    padding: 28px 24px;
+  }
+
+  .curso-form-page .secciones-manager > div:first-child {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 560px) {
+  .curso-form-page {
+    padding: 20px 16px 28px;
+  }
+
+  .curso-form-card {
+    border-radius: 20px;
+  }
+
+  .curso-form-page .btn-primary,
+  .curso-form-page .btn-secondary,
+  .curso-form-page .curso-form-btn-outline {
+    width: 100%;
+  }
+}
+</file>
+
+<file path="src/pages/CursoForm.jsx">
+import { useState, useEffect, useRef } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import api from '../Api/axios';
+import { imageUrl } from '../utils';
+import './CursoForm.css';
+
+const CATEGORIAS = ['programacion', 'diseno', 'negocios', 'musica', 'fotografia', 'marketing', 'desarrollo'];
+const NIVELES = ['principiante', 'intermedio', 'avanzado'];
+
+function SeccionBlock({ seccion, lecciones, onDelete, onAddLeccion, onDeleteLeccion }) {
+  const [titulo, setTitulo] = useState('');
+  const [url, setUrl] = useState('');
+  const [desc, setDesc] = useState('');
+  const [showForm, setShowForm] = useState(false);
+
+  const handleAddLeccion = () => {
+    onAddLeccion(titulo, url, desc);
+    setTitulo('');
+    setUrl('');
+    setDesc('');
+    setShowForm(false);
+  };
+
+  return (
+    <div className="seccion-group">
+      <h3>
+        {seccion.titulo}
+        <button className="btn-sm danger" type="button" onClick={onDelete}>X</button>
+      </h3>
+      {(lecciones || []).map((lec) => (
+        <div key={lec._id} className="curso-form-leccion-item" style={{ padding: '6px 0', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between' }}>
+          <span>{lec.titulo}</span>
+          <span style={{ fontSize: 12, color: 'var(--text-light)' }}>{lec.url}</span>
+          <button className="btn-sm danger" type="button" onClick={() => onDeleteLeccion(lec._id)}>X</button>
+        </div>
+      ))}
+      {showForm ? (
+        <div style={{ marginTop: 8 }}>
+          <input value={titulo} onChange={(e) => setTitulo(e.target.value)} placeholder="Titulo leccion" style={{ width: '100%', marginBottom: 4, padding: '8px 12px', border: '1px solid var(--border)', borderRadius: 'var(--radius)', fontSize: 14 }} />
+          <input value={url} onChange={(e) => setUrl(e.target.value)} placeholder="URL YouTube/Vimeo" style={{ width: '100%', marginBottom: 4, padding: '8px 12px', border: '1px solid var(--border)', borderRadius: 'var(--radius)', fontSize: 14 }} />
+          <input value={desc} onChange={(e) => setDesc(e.target.value)} placeholder="Descripcion (opcional)" style={{ width: '100%', marginBottom: 8, padding: '8px 12px', border: '1px solid var(--border)', borderRadius: 'var(--radius)', fontSize: 14 }} />
+          <button className="btn-sm" type="button" onClick={handleAddLeccion}>Guardar</button>
+          <button className="btn-sm" type="button" onClick={() => setShowForm(false)} style={{ marginLeft: 4 }}>Cancelar</button>
+        </div>
+      ) : (
+        <button className="dash-btn-outline" type="button" onClick={() => setShowForm(true)} style={{ marginTop: 8 }}>+ Agregar leccion</button>
+      )}
+    </div>
+  );
+}
+
+export function CursoForm() {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const fileRef = useRef(null);
+  const isEditing = Boolean(id);
+
+  const [curso, setCurso] = useState({
+    titulo: '', descripcion: '', categoria: '', nivel: 'principiante', precio: 0, imagen: ''
+  });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [message, setMessage] = useState('');
+  const [subiendoImagen, setSubiendoImagen] = useState(false);
+  const [cursoId, setCursoId] = useState(id || null);
+  const [secciones, setSecciones] = useState([]);
+  const [nuevoSeccion, setNuevoSeccion] = useState('');
+
+  useEffect(() => {
+    if (id) {
+      api.get(`/Cursos/${id}`)
+        .then((res) => {
+          const c = res.data.curso || res.data.data?.curso;
+          if (c) {
+            setCurso({
+              titulo: c.titulo || '',
+              descripcion: c.descripcion || '',
+              categoria: c.categoria || '',
+              nivel: c.nivel || 'principiante',
+              precio: c.precio || 0,
+              imagen: c.imagen || ''
+            });
+            setCursoId(c._id);
+          }
+        })
+        .catch(() => setError('No se pudo cargar el curso'));
+    }
+  }, [id]);
+
+  const loadSecciones = () => {
+    if (!cursoId) return;
+    api.get(`/Secciones?cursoID=${cursoId}`)
+      .then((res) => {
+        const s = res.data.secciones || [];
+        Promise.all(s.map((sec) =>
+          api.get(`/Lecciones?seccionID=${sec._id}`).then((r) => ({
+            ...sec,
+            lecciones: r.data.lecciones || []
+          }))
+        )).then(setSecciones);
+      })
+      .catch(console.error);
+  };
+
+  /* eslint-disable react-hooks/exhaustive-deps */
+  useEffect(() => {
+    if (cursoId) loadSecciones();
+  }, [cursoId]);
+  /* eslint-enable react-hooks/exhaustive-deps */
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setCurso((prev) => ({ ...prev, [name]: name === 'precio' ? Number(value) : value }));
+  };
+
+  const handleImageUpload = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    
+    // Validar tipo de archivo - aceptar solo mime types correctos (image/jpg no existe, es image/jpeg)
+    const allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/gif'];
+    if (!allowedTypes.includes(file.type)) { 
+      setError('Formato no permitido. Usa JPG, PNG, WEBP o GIF.'); 
+      return; 
+    }
+    
+    if (file.size > 2 * 1024 * 1024) { 
+      setError('Imagen excede 2MB.'); 
+      return; 
+    }
+    
+    setSubiendoImagen(true);
+    setError('');
+    setMessage('');
+    const fd = new FormData();
+    fd.append('imagen', file);
+    try {
+      const res = await api.post('/uploads/course-cover', fd);
+      setCurso((prev) => ({ ...prev, imagen: res.data.url }));
+      setMessage('Imagen subida correctamente.');
+    } catch (err) {
+      console.error('Error al subir imagen:', err);
+      setError(err.response?.data?.message || 'Error al subir imagen. Verifica el formato y tamaño.');
+    } finally {
+      setSubiendoImagen(false);
+    }
+  };
+
+  const handleSaveCurso = async (e) => {
+    e.preventDefault();
+    if (!curso.titulo.trim()) { setError('El titulo es obligatorio.'); return; }
+    if (!curso.categoria) { setError('Selecciona una categoria.'); return; }
+    setLoading(true);
+    setError('');
+    setMessage('');
+    try {
+      let res;
+      if (id) {
+        res = await api.put(`/Cursos/${id}`, curso);
+      } else {
+        res = await api.post('/Cursos', curso);
+      }
+      const saved = res.data?.curso;
+      if (!saved) { setError('Error: no se recibio el curso del servidor.'); return; }
+      const newId = id || saved._id;
+      setCursoId(newId);
+      setMessage('Curso guardado correctamente.');
+      if (!id) navigate(`/cursos/${newId}/editar`, { replace: true });
+    } catch (err) {
+      const msg = err.response?.data?.message || err.message || 'Error al guardar';
+      setError(msg);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const addSeccion = async () => {
+    if (!nuevoSeccion.trim() || !cursoId) return;
+    try {
+      await api.post('/Secciones', { cursoID: cursoId, titulo: nuevoSeccion.trim() });
+      setNuevoSeccion('');
+      loadSecciones();
+    } catch (err) {
+      setError(err.response?.data?.message || 'Error al crear seccion');
+    }
+  };
+
+  const deleteSeccion = async (seId) => {
+    if (!confirm('Eliminar esta seccion y sus lecciones?')) return;
+    try {
+      await api.delete(`/Secciones/${seId}`);
+      loadSecciones();
+    } catch (err) {
+      setError(err.response?.data?.message || 'Error');
+    }
+  };
+
+  const addLeccion = async (seId, titulo, url, desc) => {
+    if (!titulo.trim() || !url.trim()) return;
+    try {
+      await api.post('/Lecciones', {
+        seccionID: seId,
+        titulo: titulo.trim(),
+        url: url.trim(),
+        descripcion: desc.trim()
+      });
+      loadSecciones();
+    } catch (err) {
+      setError(err.response?.data?.message || 'Error al crear leccion');
+    }
+  };
+
+  const deleteLeccion = async (lecId) => {
+    if (!confirm('Eliminar esta leccion?')) return;
+    try {
+      await api.delete(`/Lecciones/${lecId}`);
+      loadSecciones();
+    } catch (err) {
+      setError(err.response?.data?.message || 'Error');
+    }
+  };
+
+  return (
+    <div className="curso-form-page">
+      <div className="curso-form-card">
+        <h1>{isEditing ? 'Editar curso' : 'Crear curso'}</h1>
+
+        {message && <div className="curso-form-success">{message}</div>}
+        {error && <div className="curso-form-error">{error}</div>}
+
+        <form onSubmit={handleSaveCurso}>
+          <div className="curso-form-group">
+            <label>Imagen de portada</label>
+            <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+              <input type="text" name="imagen" value={curso.imagen} onChange={handleChange} placeholder="URL o sube una" />
+              <input ref={fileRef} type="file" accept="image/*" style={{ display: 'none' }} onChange={handleImageUpload} />
+              <button type="button" className="btn-secondary" onClick={() => fileRef.current?.click()} disabled={subiendoImagen}>
+                {subiendoImagen ? '...' : 'Subir'}
+              </button>
+            </div>
+            {curso.imagen && (
+              <img src={imageUrl(curso.imagen)} alt="" className="imagen-preview" />
+            )}
+          </div>
+
+          <div className="curso-form-group">
+            <label>Titulo</label>
+            <input name="titulo" value={curso.titulo} onChange={handleChange} required />
+          </div>
+
+          <div className="curso-form-group">
+            <label>Descripcion</label>
+            <textarea name="descripcion" rows={4} value={curso.descripcion} onChange={handleChange} />
+          </div>
+
+          <div className="curso-form-group" style={{ display: 'flex', gap: 12 }}>
+            <div style={{ flex: 1 }}>
+              <label>Categoria</label>
+              <select name="categoria" value={curso.categoria} onChange={handleChange} required>
+                <option value="">Selecciona...</option>
+                {CATEGORIAS.map((c) => <option key={c} value={c}>{c.charAt(0).toUpperCase() + c.slice(1)}</option>)}
+              </select>
+            </div>
+            <div style={{ flex: 1 }}>
+              <label>Nivel</label>
+              <select name="nivel" value={curso.nivel} onChange={handleChange}>
+                {NIVELES.map((n) => <option key={n} value={n}>{n.charAt(0).toUpperCase() + n.slice(1)}</option>)}
+              </select>
+            </div>
+          </div>
+
+          <div className="curso-form-group">
+            <label>Precio ($) - 0 = gratis</label>
+            <input name="precio" type="number" min={0} value={curso.precio} onChange={handleChange} />
+          </div>
+
+          <button type="submit" className="btn-primary" disabled={loading}>
+            {loading ? 'Guardando...' : (isEditing ? 'Guardar cambios' : 'Crear curso')}
+          </button>
+        </form>
+
+        {cursoId && (
+          <>
+            <hr className="divider" />
+
+            <div className="secciones-manager">
+              <h2>Secciones</h2>
+              <div style={{ display: 'flex', gap: 8, marginBottom: 16 }}>
+                <input
+                  value={nuevoSeccion}
+                  onChange={(e) => setNuevoSeccion(e.target.value)}
+                  placeholder="Nombre de la seccion"
+                  style={{ flex: 1 }}
+                />
+                <button className="btn-sm" type="button" onClick={addSeccion}>Agregar</button>
+              </div>
+
+              {secciones.map((sec) => (
+                <SeccionBlock
+                  key={sec._id}
+                  seccion={sec}
+                  lecciones={sec.lecciones}
+                  onDelete={() => deleteSeccion(sec._id)}
+                  onAddLeccion={(t, u, d) => addLeccion(sec._id, t, u, d)}
+                  onDeleteLeccion={deleteLeccion}
+                />
+              ))}
+            </div>
+
+            <div style={{ marginTop: 24 }}>
+              <button className="btn-primary" type="button" onClick={() => navigate('/mis-cursos')}>
+                Ir a mis cursos
+              </button>
+            </div>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/pages/CursoPreview.css">
+/* =========================================
+   Contenedor Principal (Efecto Glassmorphism)
+   ========================================= */
+.curso-preview {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  /* Fondo oscuro sólido para buen contraste */
+  background: rgba(27, 46, 38, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.curso-preview h1, .curso-preview h2, .curso-preview h3 {
+  color: #ffffff;
+  margin-top: 0;
+  font-weight: 700;
+}
+
+/* =========================================
+   Encabezado del Curso
+   ========================================= */
+.curso-preview-header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 24px;
+}
+
+.curso-preview h1 {
+  font-size: 32px;
+  letter-spacing: -0.5px;
+}
+
+.curso-preview-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 14px;
+  align-items: center;
+}
+
+.curso-preview-meta span {
+  background: rgba(163, 190, 176, 0.15);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  color: #bbf7d0; /* Un verde menta suave */
+  border: 1px solid rgba(163, 190, 176, 0.2);
+}
+
+/* =========================================
+   Cuerpo y Layout Principal
+   ========================================= */
+.curso-preview-body {
+  display: flex;
+  gap: 32px;
+}
+
+.curso-preview-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 32px; /* Espacio entre descripción, temario y reseñas */
+}
+
+.curso-preview-desc p {
+  color: #cbd5e1;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+/* =========================================
+   Panel Lateral (Sidebar)
+   ========================================= */
+.curso-preview-sidebar {
+  width: 320px;
+  background: rgba(27, 46, 38, 0.69);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  height: fit-content;
+  position: sticky;
+  top: 24px;
+}
+
+.curso-preview-price {
+  font-size: 32px;
+  font-weight: 800;
+  color: #ffffff;
+  padding: 16px 24px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.curso-preview-instructor {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  width: 100%;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  color: #e2e8f0;
+  font-weight: 500;
+}
+
+.curso-preview-instructor img {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(163, 190, 176, 0.5);
+}
+
+.perfil-photo-placeholder {
+  background: #4f6b5b;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+/* =========================================
+   Botones Globales (Inscribir y Enviar)
+   ========================================= */
+.preview-btn-inscribir, .preview-btn-enviar {
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 12px;
+  background: #4f6b5b; /* Verde corporativo */
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(79, 107, 91, 0.3);
+}
+
+.preview-btn-inscribir:hover, .preview-btn-enviar:hover {
+  background: #5e7e6c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(79, 107, 91, 0.4);
+}
+
+.preview-btn-inscribir:disabled, .preview-btn-enviar:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* =========================================
+   Temario (Acordeón)
+   ========================================= */
+.preview-temario {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.seccion-item {
+  background: rgba(27, 46, 38, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.preview-seccion-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #ffffff;
+  background: rgba(27, 46, 38, 0.6);
+  transition: background 0.2s;
+}
+
+.preview-seccion-header:hover {
+  background: rgba(27, 46, 38, 0.9);
+}
+
+.preview-leccion-item {
+  padding: 14px 20px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  color: #cbd5e1;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 15px;
+  background: rgba(27, 46, 38, 0.45);
+}
+
+.leccion-icon {
+  color: #6ee7b7; /* Ícono de play verde brillante */
+  font-size: 12px;
+}
+
+/* =========================================
+   Sección de Reseñas
+   ========================================= */
+.resenas-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.calificacion-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 28px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.estrellas, .resena-stars {
+  color: #fbbf24; /* Amarillo para las estrellas */
+}
+
+.resena-card {
+  background: rgba(27, 46, 38, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.resena-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.resena-header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.resena-name {
+  font-weight: 600;
+  color: #ffffff;
+  flex: 1;
+}
+
+.resena-comentario {
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* =========================================
+   Formulario de Reseña
+   ========================================= */
+.resena-form {
+  margin-top: 16px;
+  background: rgba(27, 46, 38, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.preview-star-rating {
+  display: flex;
+  gap: 4px;
+}
+
+.preview-star-rating button {
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  transition: color 0.2s, transform 0.1s;
+}
+
+.preview-star-rating button:hover {
+  transform: scale(1.1);
+}
+
+.preview-star-rating button.filled {
+  color: #fbbf24;
+}
+
+.resena-form textarea {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 16px;
+  color: #ffffff;
+  font-size: 15px;
+  resize: vertical;
+  font-family: inherit;
+  transition: border-color 0.2s;
+  box-sizing: border-box; /* Previene desbordamientos */
+}
+
+.resena-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.resena-form textarea:focus {
+  outline: none;
+  border-color: #4f6b5b;
+}
+
+/* =========================================
+   Responsive Design
+   ========================================= */
+@media (max-width: 900px) {
+  .curso-preview-body { flex-direction: column; }
+  .curso-preview-sidebar { 
+    width: 100%; 
+    position: static; /* Quita el sticky en móviles */
+  }
+  .curso-preview { 
+    padding: 24px; 
+    margin: 20px 16px; 
+    border-radius: 16px;
+  }
+}
+</file>
+
+<file path="src/pages/CursoPreview.jsx">
+import { useState, useEffect } from 'react';
+import './CursoPreview.css';
+import { useParams, Link } from 'react-router-dom';
+import { useAuth } from '../context/useAuth';
+import api from '../Api/axios';
+import { imageUrl } from '../utils';
+
+const StarPicker = ({ value, onChange }) => (
+  <div className="preview-star-rating">
+    {[1, 2, 3, 4, 5].map((s) => (
+      <button
+        key={s}
+        type="button"
+        className={s <= value ? 'filled' : ''}
+        onClick={() => onChange(s)}
+      >
+        {'\u2605'}
+      </button>
+    ))}
+  </div>
+);
+
+export function CursoPreview() {
+  const { id } = useParams();
+  const { user } = useAuth();
+  const [curso, setCurso] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+  const [enrolling, setEnrolling] = useState(false);
+  const [enrolled, setEnrolled] = useState(false);
+  const [checkingEnrollment, setCheckingEnrollment] = useState(true);
+  const [message, setMessage] = useState('');
+  const [seccionAbierta, setSeccionAbierta] = useState(0);
+
+  const [resenas, setResenas] = useState([]);
+  const [resenasLoading, setResenasLoading] = useState(true);
+  const [nuevaCalif, setNuevaCalif] = useState(0);
+  const [nuevoComentario, setNuevoComentario] = useState('');
+  const [enviandoResena, setEnviandoResena] = useState(false);
+  const [resenaMsg, setResenaMsg] = useState('');
+
+  // Cargar datos del curso
+  useEffect(() => {
+    api.get(`/Cursos/${id}`)
+      .then((res) => {
+        // Manejar diferentes estructuras de respuesta
+        const cursoData = res.data?.curso || res.data?.data?.curso || null;
+        setCurso(cursoData);
+      })
+      .catch((err) => setError(err.response?.data?.message || 'Error al cargar curso'))
+      .finally(() => setLoading(false));
+  }, [id]);
+
+  // Verificar si el usuario ya está inscrito
+  useEffect(() => {
+    if (!user || !curso || user.rol !== 'estudiante') {
+      setCheckingEnrollment(false);
+      return;
+    }
+
+    const checkEnrollment = async () => {
+      try {
+        const res = await api.get('/Inscripciones/mis-cursos');
+        const inscripciones = res.data?.inscripciones || [];
+        const estaInscrito = inscripciones.some(insc => insc.curso_id?._id === id);
+        setEnrolled(estaInscrito);
+      } catch (err) {
+        console.error('Error al verificar inscripción:', err);
+      } finally {
+        setCheckingEnrollment(false);
+      }
+    };
+
+    checkEnrollment();
+  }, [id, user, curso]);
+
+  useEffect(() => {
+    api.get(`/Cursos/${id}/resenas`)
+      .then((res) => setResenas(res.data.resenas || []))
+      .catch(() => {})
+      .finally(() => setResenasLoading(false));
+  }, [id]);
+
+  const handleEnviarResena = async () => {
+    if (nuevaCalif < 1) return;
+    setEnviandoResena(true);
+    setResenaMsg('');
+    try {
+      await api.post('/Resenas', {
+        curso_id: id,
+        calificacion: nuevaCalif,
+        comentario: nuevoComentario
+      });
+      setResenaMsg('Resena enviada.');
+      setNuevaCalif(0);
+      setNuevoComentario('');
+      const res = await api.get(`/Cursos/${id}/resenas`);
+      setResenas(res.data.resenas || []);
+      const cRes = await api.get(`/Cursos/${id}`);
+      setCurso(cRes.data.curso || cRes.data.data?.curso);
+    } catch (err) {
+      setResenaMsg(err.response?.data?.message || 'Error al enviar resena');
+    } finally {
+      setEnviandoResena(false);
+    }
+  };
+
+  const handleInscribir = async () => {
+    setEnrolling(true);
+    setMessage('');
+    setError('');
+    try {
+      const res = await api.post('/Inscripciones', { curso_id: id });
+      if (res.data.requiere_pago) {
+        setMessage('Este curso requiere pago. Redirigiendo al pago simulado...');
+        try {
+          await api.post('/Inscripciones/pagar', { curso_id: id });
+          setEnrolled(true);
+          setMessage('Inscripcion exitosa!');
+        } catch (payErr) {
+          setError(payErr.response?.data?.message || 'Error en el pago');
+        }
+      } else {
+        setEnrolled(true);
+        setMessage('Inscripcion exitosa!');
+      }
+    } catch (err) {
+      if (err.response?.data?.message?.includes('Ya estas inscrito')) {
+        setEnrolled(true);
+        setMessage('Ya estas inscrito en este curso.');
+      } else {
+        setError(err.response?.data?.message || 'Error al inscribirse');
+      }
+    } finally {
+      setEnrolling(false);
+    }
+  };
+
+  if (loading) return <div className="dash-loading">Cargando curso...</div>;
+  if (error) return <div className="dash-error">{error}</div>;
+  if (!curso) return <div className="dash-error">Curso no encontrado</div>;
+
+  return (
+    <div>
+      <div className="curso-preview">
+        <div className="curso-preview-header">
+          <h1>{curso.titulo}</h1>
+          <div className="curso-preview-meta">
+            <span>{curso.categoria}</span>
+            <span>{curso.nivel}</span>
+            {curso.calificacion_promedio > 0 && (
+              <span style={{ color: '#f59e0b' }}>{'★'} {curso.calificacion_promedio}</span>
+            )}
+          </div>
+        </div>
+
+        <div className="curso-preview-body">
+          <div className="curso-preview-info">
+            <div className="curso-preview-desc">
+              <h2>Descripcion</h2>
+              <p>{curso.descripcion || 'Sin descripcion.'}</p>
+            </div>
+            <div className="curso-preview-sidebar">
+              <div className={`curso-preview-price ${curso.precio === 0 ? 'gratis' : ''}`}>
+                {curso.precio === 0 ? 'Gratis' : `$${curso.precio ?? 0}`}
+              </div>
+              {curso.instructorID && (
+                <div className="curso-preview-instructor">
+                  {curso.instructorID.foto ? (
+                    <img src={imageUrl(curso.instructorID.foto)} alt="Instructor" />
+                  ) : (
+                    <div className="perfil-photo-placeholder" style={{ width: 40, height: 40, fontSize: 18 }}>
+                      {curso.instructorID?.nombre?.charAt(0) || '?'}
+                    </div>
+                  )}
+                  <span>{curso.instructorID?.nombre || 'Sin nombre'}</span>
+                </div>
+              )}
+
+              {user?.rol === 'estudiante' && !enrolled && (
+                <button className="preview-btn-inscribir" onClick={handleInscribir} disabled={enrolling}>
+                  {enrolling ? 'Inscribiendo...' : 'Inscribirse'}
+                </button>
+              )}
+              {enrolled && (
+                <Link to={`/cursos/${id}/aprender`} className="preview-btn-inscribir" style={{ display: 'block', textAlign: 'center', textDecoration: 'none' }}>
+                  Ir al curso
+                </Link>
+              )}
+              {message && (
+                <div style={{ marginTop: 12, fontSize: 14, color: '#059669' }}>{message}</div>
+              )}
+              {error && (
+                <div style={{ marginTop: 12, fontSize: 14, color: '#ef4444' }}>{error}</div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {curso.secciones && curso.secciones.length > 0 && (
+        <div className="preview-temario">
+          <h2>Temario</h2>
+          {curso.secciones.map((seccion, i) => (
+            <div key={seccion._id} className="seccion-item">
+              <div className="preview-seccion-header" onClick={() => setSeccionAbierta(seccionAbierta === i ? -1 : i)}>
+                <span>Seccion {i + 1}: {seccion.titulo}</span>
+                <span>{seccionAbierta === i ? '▲' : '▼'}</span>
+              </div>
+              {seccionAbierta === i && seccion.lecciones && seccion.lecciones.map((leccion) => (
+                <div key={leccion._id} className="preview-leccion-item">
+                  <span className="leccion-icon">{'▶'}</span>
+                  <span>{leccion.titulo}</span>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      )}
+
+      <div className="resenas-section">
+        <h2>Resenas ({resenas.length})</h2>
+        {curso.calificacion_promedio > 0 && (
+          <div className="calificacion-display">
+            <span className="estrellas">{'\u2605'}</span>
+            <span>{curso.calificacion_promedio}</span>
+          </div>
+        )}
+
+        {resenasLoading ? (
+          <p style={{ fontSize: 14, color: 'var(--text-light)' }}>Cargando resenas...</p>
+        ) : resenas.length === 0 ? (
+          <p style={{ fontSize: 14, color: 'var(--text-light)' }}>No hay resenas aun.</p>
+        ) : (
+          resenas.map((r) => (
+            <div key={r._id} className="resena-card">
+              <div className="resena-header">
+                {r.estudiante_id?.foto ? (
+                  <img src={imageUrl(r.estudiante_id.foto)} alt="" />
+                ) : (
+                  <div className="perfil-photo-placeholder" style={{ width: 32, height: 32, fontSize: 14 }}>
+                    {r.estudiante_id?.nombre?.charAt(0) || '?'}
+                  </div>
+                )}
+                <span className="resena-name">{r.estudiante_id?.nombre || 'Anonimo'}</span>
+                <span className="resena-stars" style={{ color: '#f59e0b' }}>
+                  {'\u2605'.repeat(r.calificacion)}{'\u2606'.repeat(5 - r.calificacion)}
+                </span>
+              </div>
+              {r.comentario && <p className="resena-comentario">{r.comentario}</p>}
+            </div>
+          ))
+        )}
+
+        {user?.rol === 'estudiante' && enrolled && (
+          <div className="resena-form">
+            <h3>Deja tu resena</h3>
+            <StarPicker value={nuevaCalif} onChange={setNuevaCalif} />
+            <div className="preview-form-group">
+              <textarea
+                rows={3}
+                placeholder="Escribe tu comentario..."
+                value={nuevoComentario}
+                onChange={(e) => setNuevoComentario(e.target.value)}
+              />
+            </div>
+            <button className="preview-btn-enviar" onClick={handleEnviarResena} disabled={enviandoResena || nuevaCalif < 1}>
+              {enviandoResena ? 'Enviando...' : 'Enviar resena'}
+            </button>
+            {resenaMsg && <p style={{ marginTop: 8, fontSize: 13, color: resenaMsg.includes('Error') ? 'var(--error)' : '#059669' }}>{resenaMsg}</p>}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/pages/CursosLista.css">
+.lista-page {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 18px 40px;
+  position: relative;
+  z-index: 10;
+  color: #fff;
+}
+
+.lista-filters {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.lista-filters input,
+.lista-filters select {
+  padding: 10px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(27, 46, 38, 0.5);
+  backdrop-filter: blur(15px);
+  color: #fff;
+  outline: none;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+
+.lista-filters input::placeholder,
+.lista-filters select::placeholder {
+  color: rgba(255,255,255,0.55);
+}
+
+.lista-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.lista-card {
+  background: rgba(27, 46, 38, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.28s cubic-bezier(.16,1,.3,1), box-shadow 0.28s ease;
+}
+
+.lista-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 28px 60px rgba(0,0,0,0.36);
+  border-color: rgba(255,255,255,0.22);
+}
+
+.lista-card-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  background: rgba(255,255,255,0.05);
+}
+
+.lista-card-img-placeholder {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.6);
+  font-size: 28px;
+}
+
+.lista-card-body {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+.lista-card-body h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.lista-card-meta {
+  display: flex;
+  gap: 8px;
+  color: rgba(232,240,236,0.75);
+  font-size: 13px;
+}
+
+.lista-card-precio {
+  margin-top: auto;
+  font-weight: 700;
+  color: var(--verde-intermedio-luz);
+}
+
+.lista-card-precio.gratis {
+  color: #d1fae5;
+}
+
+.lista-empty-message {
+  text-align: center;
+  color: rgba(255,255,255,0.7);
+  padding: 24px 12px;
+}
+
+.dash-loading, .dash-error {
+  color: rgba(255,255,255,0.9);
+  text-align: center;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .lista-page { padding: 18px 14px 32px; }
+  .lista-card-img { height: 120px; }
+}
+</file>
+
+<file path="src/pages/CursosLista.jsx">
+import { useState, useEffect } from 'react';
+import './CursosLista.css';
+import { Link } from 'react-router-dom';
+import api from '../Api/axios';
+import { imageUrl } from '../utils';
+
+const CATEGORIAS = ['programacion', 'diseno', 'negocios', 'musica', 'fotografia', 'marketing', 'desarrollo'];
+const NIVELES = ['', 'principiante', 'intermedio', 'avanzado'];
+
+export function CursosLista() {
+  const [cursos, setCursos] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+  const [filters, setFilters] = useState({ titulo: '', categoria: '', nivel: '' });
+
+  /* eslint-disable react-hooks/exhaustive-deps */
+  useEffect(() => {
+    loadCursos(filters);
+  }, []);
+  /* eslint-enable react-hooks/exhaustive-deps */
+
+  function loadCursos(params) {
+    setLoading(true);
+    setError('');
+    const q = {};
+    if (params.titulo) q.titulo = params.titulo;
+    if (params.categoria) q.categoria = params.categoria;
+    if (params.nivel) q.nivel = params.nivel;
+
+    api.get('/Cursos', { params: q })
+      .then((res) => setCursos(res.data.cursos || res.data.data?.cursos || []))
+      .catch((err) => setError(err.response?.data?.message || 'Error al cargar cursos'))
+      .finally(() => setLoading(false));
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    const next = { ...filters, [name]: value };
+    setFilters(next);
+    loadCursos(next);
+  };
+
+  return (
+    <div className="lista-page">
+      <div className="lista-filters">
+        <input
+          name="titulo"
+          placeholder="Buscar por titulo..."
+          value={filters.titulo}
+          onChange={handleChange}
+        />
+        <select name="categoria" value={filters.categoria} onChange={handleChange}>
+          <option value="">Todas las categorias</option>
+          {CATEGORIAS.map((c) => (
+            <option key={c} value={c}>{c.charAt(0).toUpperCase() + c.slice(1)}</option>
+          ))}
+        </select>
+        <select name="nivel" value={filters.nivel} onChange={handleChange}>
+          <option value="">Todos los niveles</option>
+          {NIVELES.filter(Boolean).map((n) => (
+            <option key={n} value={n}>{n.charAt(0).toUpperCase() + n.slice(1)}</option>
+          ))}
+        </select>
+      </div>
+
+      {loading && <div className="dash-loading">Cargando cursos...</div>}
+      {error && <div className="dash-error">{error}</div>}
+
+      {!loading && !error && (
+        <div className="lista-grid" style={{ marginTop: 24 }}>
+          {cursos.length === 0 ? (
+            <p className="lista-empty-message">No se encontraron cursos.</p>
+          ) : (
+            cursos.map((curso) => (
+              <Link to={`/cursos/${curso._id}`} key={curso._id} className="lista-card">
+                {curso.imagen ? (
+                  <img src={imageUrl(curso.imagen)} alt={curso.titulo} className="lista-card-img" />
+                ) : (
+                  <div className="lista-card-img-placeholder">{'?'}</div>
+                )}
+                <div className="lista-card-body">
+                  <h3>{curso.titulo}</h3>
+                  <div className="lista-card-meta">
+                    <span>{curso.categoria || 'Sin categoria'}</span>
+                    <span>{curso.nivel || 'Sin nivel'}</span>
+                  </div>
+                  <span className={`curso-card-precio ${curso.precio === 0 ? 'gratis' : ''}`}>
+                    {curso.precio === 0 ? 'Gratis' : `$${curso.precio ?? 0}`}
+                  </span>
+                  {curso.calificacion_promedio > 0 && (
+                    <span style={{ fontSize: 13, color: '#f59e0b', display: 'block', marginTop: 4 }}>
+                      {'★'} {curso.calificacion_promedio}
+                    </span>
+                  )}
+                </div>
+              </Link>
+            ))
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+</file>
+
+<file path="src/pages/MisCursos.css">
+.mis-cursos-page {
+  width: min(100%, 1080px);
+  margin: 0 auto;
+  padding: 28px 20px 40px;
+}
+
+.mis-cursos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.mis-cursos-header .btn-primary {
+  width: auto;
+  padding: 12px 22px;
+  background: rgba(163, 190, 176, 0.16);
+  color: #f8fafc;
+  border: 1px solid rgba(163, 190, 176, 0.34);
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mis-cursos-header .btn-primary:hover {
+  transform: translateY(-1px);
+  background: rgba(163, 190, 176, 0.24);
+  box-shadow: 0 20px 32px rgba(0, 0, 0, 0.24);
+}
+
+.mis-cursos-page .course-list {
+  display: grid;
+  gap: 18px;
+}
+
+.mis-cursos-page .course-card {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 24px;
+  border-radius: 24px;
+  background: rgba(27, 46, 38, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.24);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.mis-cursos-page .course-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(163, 190, 176, 0.25);
+}
+
+.mis-cursos-page .course-card-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.mis-cursos-page .course-card-header h3 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #f8fafc;
+}
+
+.mis-cursos-page .course-category {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  margin-top: 4px;
+}
+
+.mis-cursos-page .course-status-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mis-cursos-page .course-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 0;
+}
+
+.mis-cursos-page .dash-stat {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.mis-cursos-page .dash-switch {
+  width: 44px;
+  height: 24px;
+}
+
+.mis-cursos-page .course-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.mis-cursos-page .course-actions .dash-btn-outline,
+.mis-cursos-page .course-actions .btn-sm {
+  font-size: 0.92rem;
+}
+
+.mis-cursos-page .empty-message {
+  color: rgba(241, 245, 249, 0.75);
+  text-align: center;
+  padding: 42px 0;
+  font-size: 1rem;
+}
+
+@media (max-width: 820px) {
+  .mis-cursos-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .mis-cursos-page .course-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  .mis-cursos-page {
+    padding: 20px 14px 28px;
+  }
+
+  .mis-cursos-page .course-card {
+    border-radius: 20px;
+  }
+
+  .mis-cursos-page .course-stats {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+</file>
+
+<file path="src/pages/MisCursos.jsx">
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import api from '../Api/axios';
+import './MisCursos.css';
+
+export function MisCursos() {
+  const [cursos, setCursos] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    // Usar la ruta correcta para obtener cursos del instructor
+    api.get('/Dashboard/instructor')
+      .then((res) => {
+        const cursosData = res.data?.cursos || [];
+        setCursos(cursosData);
+      })
+      .catch((err) => setError(err.response?.data?.message || err.message || 'Error al cargar cursos'))
+      .finally(() => setLoading(false));
+  }, []);
+
+  const togglePublicado = async (cursoId) => {
+    try {
+      const res = await api.patch(`/Cursos/${cursoId}/publicar`);
+      setCursos((prev) => prev.map((c) => c._id === cursoId ? (res.data?.curso || c) : c));
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const deleteCurso = async (cursoId) => {
+    if (!confirm('Eliminar este curso y todo su contenido?')) return;
+    try {
+      await api.delete(`/Cursos/${cursoId}`);
+      setCursos((prev) => prev.filter((c) => c._id !== cursoId));
+    } catch (err) {
+      setError(err.response?.data?.message || 'Error al eliminar');
+    }
+  };
+
+  if (loading) return <div className="dash-loading">Cargando...</div>;
+  if (error) return <div className="dash-error">{error}</div>;
+
+  return (
+    <div className="mis-cursos-page">
+      <div className="mis-cursos-header">
+        <Link to="/cursos/nuevo" className="btn-primary mis-cursos-create-button">Crear curso</Link>
+      </div>
+
+      {cursos.length === 0 ? (
+        <p className="empty-message">No has creado ningun curso.</p>
+      ) : (
+        <div className="course-list">
+          {cursos.map((curso) => (
+            <div key={curso._id} className="course-card course-card-mis-cursos">
+              <div className="course-card-header">
+                <div>
+                  <h3>{curso.titulo}</h3>
+                  <p className="course-category">
+                    {curso.categoria} · {curso.nivel}
+                  </p>
+                </div>
+                <div className="course-status-group">
+                  <button
+                    className={`dash-switch ${curso.publicado ? 'on' : ''}`}
+                    onClick={() => togglePublicado(curso._id)}
+                    title={curso.publicado ? 'Despublicar' : 'Publicar'}
+                  />
+                  <span className={`dash-stat ${curso.publicado ? 'published' : 'draft'}`}>
+                    {curso.publicado ? 'Publicado' : 'Borrador'}
+                  </span>
+                </div>
+              </div>
+              <div className="course-stats">
+                <span className="stat">{curso.total_inscritos ?? 0} inscritos</span>
+                <span className="stat">{curso.calificacion_promedio ?? 0} / 5</span>
+                <span className="stat">${curso.precio ?? 0}</span>
+              </div>
+              <div className="course-actions">
+                <Link to={`/cursos/${curso._id}/editar`} className="dash-btn-outline">
+                  Editar
+                </Link>
+
+                  <Link className="delete-btn-outline" onClick={() => deleteCurso(curso._id)}>
+                    Eliminar
+                  </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+</file>
+
+<file path="src/pages/Perfil.css">
+.perfil-page {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 18px 40px;
+  position: relative;
+  z-index: 10;
+}
+
+.perfil-card {
+  background: rgba(27, 46, 38, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.22);
+  color: #fff;
+}
+
+.perfil-photo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.perfil-photo-wrapper {
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.perfil-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.perfil-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(163, 190, 176, 0.18);
+  color: #fff;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.perfil-page .perfil-btn-secondary {
+  padding: 10px 22px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.perfil-page .perfil-btn-secondary:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-1px);
+}
+
+.perfil-page .perfil-btn-secondary:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.perfil-page .perfil-success,
+.perfil-page .perfil-error {
+  border-radius: 18px;
+  padding: 14px 16px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.perfil-page .perfil-success {
+  background: rgba(16, 185, 129, 0.12);
+  color: #d1fae5;
+  border: 1px solid rgba(16, 185, 129, 0.28);
+}
+
+.perfil-page .perfil-error {
+  background: rgba(254, 202, 202, 0.16);
+  color: #fecaca;
+  border: 1px solid rgba(248, 113, 113, 0.28);
+}
+
+.perfil-page .perfil-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.perfil-page .perfil-form-group label {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.perfil-page .perfil-form-group input,
+.perfil-page .perfil-form-group textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 14px 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  outline: none;
+  transition: all 0.25s ease;
+  resize: vertical;
+}
+
+.perfil-page .perfil-form-group textarea {
+  min-height: 100px;
+}
+
+.perfil-page .perfil-form-group input::placeholder,
+.perfil-page .perfil-form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.perfil-page .perfil-form-group input:focus,
+.perfil-page .perfil-form-group textarea:focus {
+  border-color: rgba(163, 190, 176, 0.9);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 0 4px rgba(163, 190, 176, 0.12);
+}
+
+.perfil-page .btn-primary {
+  width: 100%;
+  padding: 14px 18px;
+  background: #ffffff;
+  color: #1b2e26;
+  border: none;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.perfil-page .btn-primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.14);
+}
+
+.perfil-page .btn-primary:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .perfil-page {
+    padding: 18px 14px 32px;
+  }
+
+  .perfil-card {
+    padding: 24px;
+  }
+
+  .perfil-photo-wrapper {
+    width: 88px;
+    height: 88px;
+  }
+}
+</file>
+
+<file path="src/pages/Perfil.jsx">
+import { useState, useEffect, useRef } from 'react';
+import api from '../Api/axios';
+import { imageUrl } from '../utils';
+import './Perfil.css';
+
+export function Perfil() {
+  const [nombre, setNombre] = useState('');
+  const [biografia, setBiografia] = useState('');
+  const [redesSociales, setRedesSociales] = useState('');
+  const [fotoUrl, setFotoUrl] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState('');
+  const [error, setError] = useState('');
+  const [subiendoFoto, setSubiendoFoto] = useState(false);
+  const fileRef = useRef(null);
+
+  useEffect(() => {
+    api.get('/auth/me')
+      .then((res) => {
+        const u = res.data.data;
+        setNombre(u.nombre || '');
+        setBiografia(u.biografia || '');
+        setRedesSociales(Array.isArray(u.redes_sociales) ? u.redes_sociales.join('\n') : '');
+        setFotoUrl(u.foto || '');
+      })
+      .catch((err) => setError(err.response?.data?.message || 'Error al cargar perfil'));
+  }, []);
+
+  const handleFotoUpload = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    // Validar tipo de archivo - aceptar solo mime types correctos (image/jpg no existe, es image/jpeg)
+    const allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/gif'];
+    if (!allowedTypes.includes(file.type)) {
+      setError('Formato no permitido. Usa JPG, PNG, WEBP o GIF.');
+      return;
+    }
+
+    if (file.size > 2 * 1024 * 1024) {
+      setError('La imagen excede 2MB.');
+      return;
+    }
+
+    setSubiendoFoto(true);
+    setError('');
+    setMessage('');
+
+    const formData = new FormData();
+    formData.append('foto', file);
+
+    try {
+      const res = await api.post('/uploads/profile-photo', formData);
+      setFotoUrl(res.data.url);
+      setMessage('Foto actualizada correctamente.');
+    } catch (err) {
+      console.error('Error al subir foto:', err);
+      setError(err.response?.data?.message || 'Error al subir foto. Verifica el formato y tamaño.');
+    } finally {
+      setSubiendoFoto(false);
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError('');
+    setMessage('');
+
+    try {
+      const redesArray = redesSociales
+        .split('\n')
+        .map((s) => s.trim())
+        .filter(Boolean);
+
+      await api.put('/auth/profile', {
+        nombre,
+        biografia,
+        foto: fotoUrl,
+        redes_sociales: redesArray
+      });
+
+      const user = JSON.parse(localStorage.getItem('user') || '{}');
+      user.nombre = nombre;
+      user.foto = fotoUrl;
+      user.biografia = biografia;
+      user.redes_sociales = redesArray;
+      localStorage.setItem('user', JSON.stringify(user));
+
+      setMessage('Perfil actualizado correctamente.');
+    } catch (err) {
+      setError(err.response?.data?.message || 'Error al actualizar perfil.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="perfil-page">
+      <div className="perfil-card">
+        <div className="perfil-photo-section">
+          <div className="perfil-photo-wrapper">
+            {fotoUrl ? (
+              <img src={imageUrl(fotoUrl)} alt="Perfil" className="perfil-photo" />
+            ) : (
+              <div className="perfil-photo-placeholder">
+                {nombre ? nombre.charAt(0).toUpperCase() : '?'}
+              </div>
+            )}
+          </div>
+          <input
+            ref={fileRef}
+            type="file"
+            accept="image/*"
+            onChange={handleFotoUpload}
+            style={{ display: 'none' }}
+          />
+          <button
+            type="button"
+            className="perfil-btn-secondary"
+            onClick={() => fileRef.current?.click()}
+            disabled={subiendoFoto}
+          >
+            {subiendoFoto ? 'Subiendo...' : 'Cambiar foto'}
+          </button>
+        </div>
+
+        {message && <div className="perfil-success">{message}</div>}
+        {error && <div className="perfil-error">{error}</div>}
+
+        <form onSubmit={handleSubmit}>
+          <div className="perfil-form-group">
+            <label htmlFor="nombre">Nombre</label>
+            <input id="nombre" type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} required />
+          </div>
+
+          <div className="perfil-form-group">
+            <label htmlFor="biografia">Biografia</label>
+            <textarea id="biografia" rows={4} value={biografia} onChange={(e) => setBiografia(e.target.value)} />
+          </div>
+
+          <div className="perfil-form-group">
+            <label htmlFor="redes">Redes sociales (una por linea)</label>
+            <textarea id="redes" rows={3} placeholder="https://twitter.com/usuario&#10;https://github.com/usuario" value={redesSociales} onChange={(e) => setRedesSociales(e.target.value)} />
+          </div>
+
+          <button type="submit" className="btn-primary" disabled={loading}>
+            {loading ? 'Guardando...' : 'Guardar cambios'}
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/App.jsx">
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
+import { useAuth } from './context/useAuth';
+import { Login } from './pages/auth/Login';
+import { Register } from './pages/auth/Register';
+import { DashboardEstudiante } from './pages/dashboard/Estudiante';
+import { DashboardInstructor } from './pages/dashboard/Instructor';
+import { Perfil } from './pages/Perfil';
+import { CursosLista } from './pages/CursosLista';
+import { CursoPreview } from './pages/CursoPreview';
+import { CursoForm } from './pages/CursoForm';
+import { MisCursos } from './pages/MisCursos';
+import { CursoAprendizaje } from './pages/CursoAprendizaje';
+import { Layout } from './components/Layout';
+
+function PublicLayoutRoute({ children, title }) {
+  const { user } = useAuth();
+
+  if (user) {
+    return <Layout title={title}>{children}</Layout>;
+  }
+
+  return (
+    <div>
+      <nav className="layout-navbar-public" style={{ position: 'sticky', top: 0, zIndex: 100 }}>
+        <div className="layout-navbar-public-brand">
+          <a href="/" style={{ textDecoration: 'none', color: 'var(--accent)', fontWeight: 700, fontSize: 20 }}>Mentora</a>
+        </div>
+        <div className="layout-navbar-public-links">
+          <a href="/login" style={{ textDecoration: 'none', color: 'var(--text)', fontSize: 14, fontWeight: 500 }}>Login</a>
+          <a href="/register" style={{ textDecoration: 'none', color: 'var(--text)', fontSize: 14, fontWeight: 500 }}>Register</a>
+        </div>
+      </nav>
+      <div className="layout-main-content">
+        {title && <h1 className="layout-page-title">{title}</h1>}
+        {children}
+      </div>
+    </div>
+  );
+}
+
+function ProtectedRoute({ children, title }) {
+  const { user, loading } = useAuth();
+
+  if (loading) return <div className="app-loading">Cargando...</div>;
+  if (!user) return <Navigate to="/login" replace />;
+
+  return <Layout title={title}>{children}</Layout>;
+}
+
+function DashboardRouter() {
+  const { user } = useAuth();
+
+  if (!user) return <Navigate to="/login" replace />;
+
+  if (user.rol === 'instructor') return <DashboardInstructor />;
+  return <DashboardEstudiante />;
+}
+
+function AppRoutes() {
+  const { user, loading } = useAuth();
+
+  if (loading) return <div className="app-loading">Cargando...</div>;
+
+  return (
+    <Routes>
+      <Route path="/login" element={user ? <Navigate to="/dashboard" replace /> : <Login />} />
+      <Route path="/register" element={user ? <Navigate to="/dashboard" replace /> : <Register />} />
+      <Route path="/dashboard" element={<ProtectedRoute title="Dashboard"><DashboardRouter /></ProtectedRoute>} />
+      <Route path="/perfil" element={<ProtectedRoute title="Mi Perfil"><Perfil /></ProtectedRoute>} />
+      <Route path="/explorar" element={<PublicLayoutRoute title="Explorar cursos"><CursosLista /></PublicLayoutRoute>} />
+      <Route path="/cursos/:id" element={<PublicLayoutRoute><CursoPreview /></PublicLayoutRoute>} />
+      <Route path="/cursos/nuevo" element={<ProtectedRoute title="Crear curso"><CursoForm /></ProtectedRoute>} />
+      <Route path="/cursos/:id/editar" element={<ProtectedRoute title="Editar curso"><CursoForm /></ProtectedRoute>} />
+      <Route path="/mis-cursos" element={<ProtectedRoute title="Mis cursos"><MisCursos /></ProtectedRoute>} />
+      <Route path="/cursos/:id/aprender" element={<ProtectedRoute><CursoAprendizaje /></ProtectedRoute>} />
+      <Route path="*" element={<Navigate to={user ? '/dashboard' : '/login'} replace />} />
+    </Routes>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AuthProvider>
+        <AppRoutes />
+      </AuthProvider>
+    </BrowserRouter>
+  );
+}
+</file>
+
+<file path="src/index.css">
+/* ============================================
+   Global Styles - index.css
+   Solo estilos globales, variables y reset
+   ============================================ */
+
+:root {
+  /* Base colors */
+  --text: #1a1a2e;
+  --text-light: #6b7280;
+  --bg: #769283;
+  --white: #ffffff;
+  --accent: #5d55dd;
+  --accent-hover: #1904ff;
+  --border: #e5e7eb;
+  --error: #ef4444;
+  --error-bg: #fef2f2;
+  --success: #10b981;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --radius: 8px;
+
+  /* Dashboard palette */
+  --blanco-puro: #ffffff;
+  --verde-apagado-oscuro: #1b2e26;
+  --verde-apagado-medio: #345446;
+  --verde-apagado-suave: #507a67;
+  --verde-intermedio-luz: #a3beb0;
+  --verde-intermedio-oscuro-transparente: #7692839e;
+  --verde-casi-blanco: #e8f0ec;
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  font: 16px/1.5 var(--sans);
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* --- Keyframes globales --- */
+
+@keyframes authPageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes authPageSlideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes authPageSlideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes authCardPop {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Loading & Error States (globales) --- */
+
+.dashboard-loading,
+.app-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-size: 16px;
+  color: var(--text-light);
+}
+
+.dashboard-error {
+  color: var(--error);
+  text-align: center;
+  padding: 40px 24px;
+  font-size: 15px;
+}
+
+/* --- Navbar (público) --- */
+
+.layout-navbar-public {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 56px;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.layout-navbar-public-brand a {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.layout-navbar-public-links {
+  display: flex;
+  gap: 20px;
+}
+
+.layout-navbar-public-links a {
+  font-size: 14px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.layout-navbar-public-links a:hover {
+  color: var(--accent);
+}
+
+/* --- Empty Message --- */
+
+.empty-message {
+  color: var(--text-light);
+  text-align: center;
+  padding: 40px 0;
+  font-size: 15px;
+}
+
+/* --- Main Content (público) --- */
+
+.layout-main-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  width: 100%;
+}
+
+.layout-page-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+</file>
+
+<file path="src/main.jsx">
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.jsx'
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)
+</file>
+
+<file path="src/utils.js">
+const API_BASE = 'http://localhost:3977';
+
+export function imageUrl(path) {
+  if (!path) return '';
+  if (path.startsWith('http://') || path.startsWith('https://')) return path;
+  if (path.startsWith('/images/')) return `${API_BASE}${path}`;
+  if (path.startsWith('data:')) return path;
+  return path;
+}
+</file>
+
+<file path=".gitignore">
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+</file>
+
+<file path="eslint.config.js">
+import js from '@eslint/js'
+import globals from 'globals'
+import reactHooks from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
+import { defineConfig, globalIgnores } from 'eslint/config'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{js,jsx}'],
+    extends: [
+      js.configs.recommended,
+      reactHooks.configs.flat.recommended,
+      reactRefresh.configs.vite,
+    ],
+    languageOptions: {
+      globals: globals.browser,
+      parserOptions: { ecmaFeatures: { jsx: true } },
+    },
+  },
+])
+</file>
+
+<file path="index.html">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mentora</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+</file>
+
+<file path="package.json">
+{
+  "name": "mentora",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^1.18.1",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "react-router-dom": "^7.18.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "eslint": "^10.3.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.6.0",
+    "vite": "^8.0.12"
+  }
+}
+</file>
+
+<file path="README.md">
+# React + Vite
+
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+
+## React Compiler
+
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+</file>
+
+<file path="vite.config.js">
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react()],
+})
+</file>
+
+</files>
