@@ -19,10 +19,12 @@ const app = express()
 
 const allowedOrigins = process.env.CORS_ORIGINS
   ? process.env.CORS_ORIGINS.split(",").map((o) => o.trim()).filter(Boolean)
-  : ['http://localhost:3000', 'http://localhost:5173'];
+  : null;
 
 app.use(cors({
-  origin: allowedOrigins,
+  origin: allowedOrigins
+    ? allowedOrigins
+    : (origin, callback) => callback(null, origin || true),
   credentials: true
 }));
 
