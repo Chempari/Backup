@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import api from '../../Api/axios';
 import { imageUrl } from '../../utils';
+import { StarIcon } from '../../components/Icons';
 import './Certificados.css';
 
 export function Certificados() {
@@ -53,7 +54,7 @@ export function Certificados() {
                 {cert.curso_id?.imagen ? (
                   <img src={imageUrl(cert.curso_id.imagen)} alt={cert.curso_id.titulo} />
                 ) : (
-                  <div className="certificado-card-placeholder">{'★'}</div>
+                  <div className="certificado-card-placeholder"><StarIcon size={40} /></div>
                 )}
              </div>
               <div className="certificado-card-info">

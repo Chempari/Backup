@@ -43,8 +43,8 @@
 
 .instructor-comentario-stars {
   color: #fbbf24;
-  font-size: 14px;
-  letter-spacing: 2px;
+  display: inline-flex;
+  line-height: 0;
 }
 
 .instructor-comentario-texto {

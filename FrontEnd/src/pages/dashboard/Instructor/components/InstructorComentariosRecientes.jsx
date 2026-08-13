@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { UserLink } from '../../../../components/UserLink';
+import { Stars } from '../../../../components/Icons';
 import './InstructorComentariosRecientes.css';
 
 function formatoFecha(iso) {
@@ -25,8 +26,7 @@ export function InstructorComentariosRecientes({ comentarios }) {
           </div>
           {typeof c.calificacion === 'number' && c.calificacion !== null && (
             <div className="instructor-comentario-stars">
-              {'\u2605'.repeat(c.calificacion)}
-              {'\u2606'.repeat(5 - c.calificacion)}
+              <Stars value={c.calificacion} size={15} />
             </div>
           )}
           {c.comentario && (

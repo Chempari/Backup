@@ -233,11 +233,12 @@
   }
 
   .instructor-course-actions {
-    justify-content: stretch;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
   }
 
   .instructor-course-btn {
-    flex: 1;
+    flex: 0 0 auto;
   }
 }
 
@@ -400,6 +401,26 @@
 .instructor-course-actions {
   display: flex;
   gap: 8px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  max-width: 100%;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(163, 190, 176, 0.5) transparent;
+  -webkit-overflow-scrolling: touch;
+}
+
+.instructor-course-actions::-webkit-scrollbar {
+  height: 5px;
+}
+
+.instructor-course-actions::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.instructor-course-actions::-webkit-scrollbar-thumb {
+  background: rgba(163, 190, 176, 0.5);
+  border-radius: 999px;
 }
 
 .instructor-course-btn {

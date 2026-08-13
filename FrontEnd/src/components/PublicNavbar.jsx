@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/useAuth';
+import { imageUrl } from '../utils';
 import api from '../Api/axios';
 import './PublicNavbar.css';
 
@@ -160,7 +161,7 @@ export function PublicNavbar({ onNosotrosClick, categorias = [] }) {
                   className="public-navbar-search-result"
                   onClick={() => handleResultClick(curso)}
                 >
-                  <img src={curso.imagen ? `http://localhost:3977${curso.imagen}` : ''} alt={curso.titulo} className="public-navbar-search-result-img" onError={(e) => e.target.style.display='none'} />
+                  <img src={curso.imagen ? imageUrl(curso.imagen) : ''} alt={curso.titulo} className="public-navbar-search-result-img" onError={(e) => e.target.style.display='none'} />
                   <div className="public-navbar-search-result-info">
                     <span className="public-navbar-search-result-title">{curso.titulo}</span>
                     <span className="public-navbar-search-result-meta">{curso.categoria} · {curso.nivel}</span>

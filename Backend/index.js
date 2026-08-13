@@ -27,8 +27,12 @@ const MONGO_URI = process.env.MONGO_URI ||
     `mongodb://${encodeURIComponent(DB_USER)}:${encodeURIComponent(DB_PASSWORD)}@${DB_HOST_CLEAN}/${DB_NAME}?${DB_OPTIONS}&retryWrites=true&w=majority`;
 
 const port = process.env.PORT || 3977;
-console.log("=== LA URI DETECTADA ES ==> ", MONGO_URI);
-mongoose.set('debug', true);
+const esProduccion = process.env.NODE_ENV === 'production';
+
+if (!esProduccion) {
+  console.log("=== LA URI DETECTADA ES ==> ", MONGO_URI);
+  mongoose.set('debug', true);
+}
 
 mongoose.connect(MONGO_URI)
     .then(() => {

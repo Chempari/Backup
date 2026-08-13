@@ -22,7 +22,7 @@ const recalcularPromedio = async (curso_id) => {
 
 exports.createResena = async (req, res) => {
   try {
-    const { curso_id, calificacion, comentario, leccion_id } = req.body;
+    const { curso_id, calificacion, comentario, leccion_id, respuesta_a } = req.body;
 
     if (!curso_id) {
       return res.status(400).json({
@@ -49,6 +49,28 @@ exports.createResena = async (req, res) => {
     const tieneComentario = typeof comentario === "string" && comentario.trim() !== "";
     const tieneCalificacion = typeof calificacion === "number" && !Number.isNaN(calificacion);
 
+    // Respuestas: se resuelven siempre al comentario raiz (hilo de un solo nivel)
+    let respuestaA = null;
+    if (respuesta_a !== undefined && respuesta_a !== null && respuesta_a !== "") {
+      if (!mongoose.isValidObjectId(respuesta_a)) {
+        return res.status(400).json({ success: false, message: "respuesta_a invalido" });
+      }
+      const padre = await Resena.findById(respuesta_a);
+      if (!padre) {
+        return res.status(404).json({ success: false, message: "El comentario a responder no existe" });
+      }
+      if (padre.curso_id.toString() !== curso_id) {
+        return res.status(400).json({ success: false, message: "Solo puedes responder comentarios del mismo curso" });
+      }
+      respuestaA = padre.respuesta_a || padre._id;
+      if (tieneCalificacion) {
+        return res.status(400).json({ success: false, message: "Las respuestas no pueden incluir calificacion" });
+      }
+      if (!tieneComentario) {
+        return res.status(400).json({ success: false, message: "Una respuesta debe incluir un comentario" });
+      }
+    }
+
     if (!tieneComentario && !tieneCalificacion) {
       return res.status(400).json({
         success: false,
@@ -63,15 +85,31 @@ exports.createResena = async (req, res) => {
       });
     }
 
-    const inscripcion = await Inscripcion.findOne({
-      estudiante_id: req.user.id,
-      curso_id
-    });
-    if (!inscripcion) {
-      return res.status(403).json({
-        success: false,
-        message: "Solo los estudiantes inscritos pueden dejar una resena"
+    if (req.user.rol === 'instructor') {
+      if (!respuestaA) {
+        return res.status(403).json({
+          success: false,
+          message: "Los instructores solo pueden responder comentarios en sus cursos"
+        });
+      }
+      const curso = await Curso.findById(curso_id);
+      if (!curso || curso.instructorID.toString() !== req.user.id) {
+        return res.status(403).json({
+          success: false,
+          message: "Solo puedes responder comentarios en tus propios cursos"
+        });
+      }
+    } else {
+      const inscripcion = await Inscripcion.findOne({
+        estudiante_id: req.user.id,
+        curso_id
       });
+      if (!inscripcion) {
+        return res.status(403).json({
+          success: false,
+          message: "Solo los estudiantes inscritos pueden dejar una resena"
+        });
+      }
     }
 
     if (tieneCalificacion && !leccion_id) {
@@ -100,7 +138,8 @@ exports.createResena = async (req, res) => {
       estudiante_id: req.user.id,
       curso_id,
       leccion_id: leccion_id || null,
-      calificacion: tieneCalificacion ? calificacion : null,
+      respuesta_a: respuestaA,
+      calificacion: tieneCalificacion && !respuestaA ? calificacion : null,
       comentario: tieneComentario ? comentario.trim() : ""
     });
 
@@ -236,6 +275,7 @@ exports.deleteResena = async (req, res) => {
     }
 
     const curso_id = resena.curso_id;
+    await Resena.deleteMany({ respuesta_a: resena._id });
     await Resena.findByIdAndDelete(id);
 
     await recalcularPromedio(curso_id);

@@ -19,6 +19,13 @@ exports.createUser = async (req, res) => {
       });
     }
 
+    if (!correo.toLowerCase().endsWith('@gmail.com')) {
+      return res.status(400).json({
+        success: false,
+        message: "Solo se permiten correos de Gmail (@gmail.com)"
+      });
+    }
+
     const usuarioExistente = await Usuario.findOne({ correo: correo.toLowerCase() });
     if (usuarioExistente) {
       return res.status(400).json({
@@ -99,6 +106,12 @@ exports.updateUser = async (req, res) => {
     }
 
     if (req.body.correo) {
+      if (!req.body.correo.toLowerCase().endsWith('@gmail.com')) {
+        return res.status(400).json({
+          success: false,
+          message: "Solo se permiten correos de Gmail (@gmail.com)"
+        });
+      }
       const usuarioConCorreo = await Usuario.findOne({
         correo: req.body.correo.toLowerCase(),
         _id: { $ne: id }

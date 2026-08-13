@@ -1,7 +1,56 @@
 const path = require("path");
 const fs = require("fs");
+const cloudinary = require("../config/cloudinary");
+const { CLOUDINARY_CLOUD_NAME } = require("../constants");
 const Usuario = require("../models/Usuarios");
 const Curso = require("../models/Cursos");
+
+const usarCloudinary = Boolean(CLOUDINARY_CLOUD_NAME);
+
+function urlGuardada(req) {
+  // CloudinaryStorage deja la URL completa en req.file.path; disco local usa /images/<filename>
+  if (req.file.path && /^https?:\/\//.test(req.file.path)) {
+    return req.file.path;
+  }
+  return `/images/${req.file.filename}`;
+}
+
+function publicIdDesdeUrl(url) {
+  // https://res.cloudinary.com/<cloud>/image/upload/v123/mentora/images/foto-abc.jpg
+  // -> public_id: mentora/images/foto-abc
+  try {
+    const u = new URL(url);
+    const parts = u.pathname.split("/");
+    const idx = parts.lastIndexOf("upload");
+    if (idx === -1) return null;
+    const publicId = parts.slice(idx + 1).join("/").replace(/\.[a-z0-9]+$/i, "");
+    return publicId || null;
+  } catch {
+    return null;
+  }
+}
+
+function borrarImagen(imagen) {
+  if (!imagen) return;
+  if (/^https?:\/\//.test(imagen)) {
+    const publicId = publicIdDesdeUrl(imagen);
+    if (publicId) {
+      cloudinary.uploader.destroy(publicId, (err) => {
+        if (err) console.error("Error al eliminar imagen en Cloudinary:", err);
+      });
+    }
+    return;
+  }
+  if (imagen.startsWith("/images/")) {
+    const filename = imagen.replace("/images/", "");
+    const oldPath = path.join(__dirname, "..", "uploads", "images", filename);
+    fs.unlink(oldPath, (err) => {
+      if (err && err.code !== "ENOENT") {
+        console.error("Error al eliminar archivo local:", err);
+      }
+    });
+  }
+}
 
 exports.subirFotoPerfil = async (req, res) => {
   try {
@@ -11,7 +60,7 @@ exports.subirFotoPerfil = async (req, res) => {
         message: 'No autorizado'
       });
     }
-    
+
     if (!req.file) {
       return res.status(400).json({
         success: false,
@@ -19,11 +68,11 @@ exports.subirFotoPerfil = async (req, res) => {
       });
     }
 
-    const url = `/images/${req.file.filename}`;
+    const url = urlGuardada(req);
 
     const usuario = await Usuario.findById(req.user.id);
     if (!usuario) {
-      fs.unlinkSync(req.file.path);
+      borrarImagen(url);
       return res.status(404).json({
         success: false,
         message: "Usuario no encontrado"
@@ -35,15 +84,7 @@ exports.subirFotoPerfil = async (req, res) => {
     usuario.foto = url;
     await usuario.save();
 
-    if (fotoAnterior && fotoAnterior.startsWith("/images/")) {
-      const filename = fotoAnterior.replace("/images/", "");
-      const oldPath = path.join(__dirname, "..", "uploads", "images", filename);
-      fs.unlink(oldPath, (err) => {
-        if (err && err.code !== "ENOENT") {
-          console.error("Error al eliminar foto anterior:", err);
-        }
-      });
-    }
+    borrarImagen(fotoAnterior);
 
     return res.status(200).json({
       success: true,
@@ -56,9 +97,7 @@ exports.subirFotoPerfil = async (req, res) => {
       }
     });
   } catch (error) {
-    if (req.file) {
-      try { fs.unlinkSync(req.file.path); } catch (_) {}
-    }
+    borrarImagen(req.file && urlGuardada(req));
     return res.status(500).json({
       success: false,
       message: "Error al subir foto de perfil",
@@ -75,7 +114,7 @@ exports.subirPortadaCurso = async (req, res) => {
         message: 'No autorizado'
       });
     }
-    
+
     if (!req.file) {
       return res.status(400).json({
         success: false,
@@ -83,7 +122,7 @@ exports.subirPortadaCurso = async (req, res) => {
       });
     }
 
-    const url = `/images/${req.file.filename}`;
+    const url = urlGuardada(req);
 
     return res.status(200).json({
       success: true,
@@ -91,9 +130,7 @@ exports.subirPortadaCurso = async (req, res) => {
       url
     });
   } catch (error) {
-    if (req.file) {
-      try { fs.unlinkSync(req.file.path); } catch (_) {}
-    }
+    borrarImagen(req.file && urlGuardada(req));
     return res.status(500).json({
       success: false,
       message: "Error al subir imagen",
@@ -110,7 +147,7 @@ exports.eliminarArchivo = async (req, res) => {
         message: 'No autorizado'
       });
     }
-    
+
     const { filename } = req.params;
 
     if (!filename) {
@@ -120,7 +157,9 @@ exports.eliminarArchivo = async (req, res) => {
       });
     }
 
-    const url = `/images/${filename}`;
+    const url = filename.startsWith("http")
+      ? filename
+      : `/images/${filename}`;
 
     const esMiFoto = await Usuario.findOne({ _id: req.user.id, foto: url });
     const esMiPortada = await Curso.findOne({ instructorID: req.user.id, imagen: url });
@@ -132,16 +171,25 @@ exports.eliminarArchivo = async (req, res) => {
       });
     }
 
-    const filePath = path.join(__dirname, "..", "uploads", "images", filename);
-
-    if (!fs.existsSync(filePath)) {
-      return res.status(404).json({
-        success: false,
-        message: "Archivo no encontrado"
-      });
+    if (usarCloudinary) {
+      const publicId = publicIdDesdeUrl(url);
+      if (!publicId) {
+        return res.status(400).json({
+          success: false,
+          message: "No se pudo identificar el archivo en Cloudinary"
+        });
+      }
+      await cloudinary.uploader.destroy(publicId);
+    } else {
+      const filePath = path.join(__dirname, "..", "uploads", "images", filename);
+      if (!fs.existsSync(filePath)) {
+        return res.status(404).json({
+          success: false,
+          message: "Archivo no encontrado"
+        });
+      }
+      fs.unlinkSync(filePath);
     }
-
-    fs.unlinkSync(filePath);
 
     if (esMiFoto) {
       await Usuario.findByIdAndUpdate(req.user.id, { foto: null });

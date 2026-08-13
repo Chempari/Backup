@@ -22,13 +22,24 @@ export function useResenas(cursoId) {
     return res.data.resena;
   }, [cursoId, cargarResenas]);
 
+  const responder = useCallback(async (resenaId, comentario) => {
+    const res = await api.post('/Resenas', {
+      curso_id: cursoId,
+      comentario: comentario.trim(),
+      respuesta_a: resenaId
+    });
+    await cargarResenas();
+    return res.data.resena;
+  }, [cursoId, cargarResenas]);
+
   const calificar = useCallback(async (calificacion) => {
     await api.post('/Resenas', { curso_id: cursoId, calificacion });
     await cargarResenas();
   }, [cursoId, cargarResenas]);
 
   const actualizarResena = useCallback(async (resenaId, data) => {
-    await api.put(`/Resenas/${resenaId}`, data);
+    const body = typeof data === 'string' ? { comentario: data } : { ...(data || {}) };
+    await api.put(`/Resenas/${resenaId}`, body);
     await cargarResenas();
   }, [cargarResenas]);
 
@@ -41,6 +52,7 @@ export function useResenas(cursoId) {
     resenas,
     loading,
     crearComentario,
+    responder,
     calificar,
     actualizarResena,
     eliminarResena,

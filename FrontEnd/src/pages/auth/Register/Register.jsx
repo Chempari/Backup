@@ -23,6 +23,11 @@ export function Register() {
       return;
     }
 
+    if (!correo.toLowerCase().endsWith('@gmail.com')) {
+      setError('Solo se permiten correos de Gmail (@gmail.com)');
+      return;
+    }
+
     setError('');
     setLoading(true);
     try {

@@ -24,13 +24,15 @@ export function CursoAprendizaje() {
   const [leccionActual, setLeccionActual] = useState(null);
   const [generandoCert, setGenerandoCert] = useState(false);
   const [certMsg, setCertMsg] = useState('');
-  const { resenas, loading: resenasLoading, crearComentario, calificar, actualizarResena, eliminarResena } = useResenas(id);
+  const { resenas, loading: resenasLoading, crearComentario, calificar, actualizarResena, eliminarResena, responder: responderCurso } = useResenas(id);
   const leccionIdActual = leccionActual && leccionActual._id;
   const {
     resenas: resenasLeccion,
     loading: resenasLeccionLoading,
     crearComentario: crearComentarioLeccion,
-    eliminarResena: eliminarResenaLeccion
+    actualizarResena: actualizarResenaLeccion,
+    eliminarResena: eliminarResenaLeccion,
+    responder: responderLeccion
   } = useResenasPorLeccion(leccionIdActual);
 
   const isInstructor = useMemo(() => instructorMode && user?.rol === 'instructor', [instructorMode, user?.rol]);
@@ -168,9 +170,11 @@ export function CursoAprendizaje() {
                 cursoId={id}
                 resenas={resenasLeccion}
                 loading={resenasLeccionLoading}
+                modoInstructor={isInstructor}
                 onComentar={crearComentarioLeccion}
                 onEliminar={eliminarResenaLeccion}
-                onEditar={actualizarResena}
+                onEditar={actualizarResenaLeccion}
+                onResponder={(resenaId, texto) => responderLeccion(id, resenaId, texto)}
               />
            </>
           ) : (
@@ -179,19 +183,19 @@ export function CursoAprendizaje() {
             </div>
           )}
 
-          {!isInstructor && (
-            <ComentariosCurso
-              resenas={resenas}
-              loading={resenasLoading}
-              user={user}
-              enrolled={!!inscripcion}
-              promedio={curso.calificacion_promedio || 0}
-              onComentar={crearComentario}
-              onCalificar={handleCalificar}
-              onActualizar={actualizarResena}
-              onEliminar={eliminarResena}
-            />
-          )}
+          <ComentariosCurso
+            resenas={resenas}
+            loading={resenasLoading}
+            user={user}
+            enrolled={!!inscripcion}
+            promedio={curso.calificacion_promedio || 0}
+            modoInstructor={isInstructor}
+            onComentar={crearComentario}
+            onCalificar={handleCalificar}
+            onActualizar={actualizarResena}
+            onEliminar={eliminarResena}
+            onResponder={responderCurso}
+          />
         </div>
 
         <aside className="aprendizaje-temario-column">

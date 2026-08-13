@@ -1,17 +1,23 @@
 ﻿import { useState } from 'react';
 import { useAuth } from '../../../../context/useAuth';
 import { UserLink } from '../../../../components/UserLink';
+import { FormularioRespuesta, HiloRespuestas } from '../../shared/HiloRespuestas';
 import '../../shared/resenas.css';
 
-export function ComentariosLeccion({ cursoId, resenas, loading, onComentar, onEliminar, onEditar }) {
+export function ComentariosLeccion({ cursoId, resenas, loading, modoInstructor = false, onComentar, onEliminar, onEditar, onResponder }) {
   const { user } = useAuth();
   const [nuevo, setNuevo] = useState('');
   const [enviando, setEnviando] = useState(false);
   const [msg, setMsg] = useState('');
   const [editandoId, setEditandoId] = useState(null);
   const [editTexto, setEditTexto] = useState('');
+  const [respondiendoId, setRespondiendoId] = useState(null);
 
-  const puedeParticipar = user?.rol === 'estudiante';
+  const puedeParticipar = user?.rol === 'estudiante' || modoInstructor;
+  const puedeResponder = onResponder && puedeParticipar;
+
+  const raices = resenas.filter((r) => !r.respuesta_a);
+  const totalComentarios = raices.length;
 
   const handleComentar = async () => {
     if (!nuevo.trim()) return;
@@ -62,80 +68,111 @@ export function ComentariosLeccion({ cursoId, resenas, loading, onComentar, onEl
 
   return (
     <div className="resenas-section">
-      <h2>Comentarios de esta leccion ({resenas.length})</h2>
+      <h2>Comentarios de esta leccion ({totalComentarios})</h2>
 
       {loading ? (
         <p style={{ fontSize: 14, color: 'var(--text-light)' }}>Cargando comentarios</p>
-      ) : resenas.length === 0 ? (
+      ) : totalComentarios === 0 ? (
         <p style={{ fontSize: 14, color: 'var(--text-light)' }}>No hay comentarios en esta leccion aun</p>
       ) : (
         <div className="resenas-list">
-          {resenas.map((r) => (
-            <div key={r._id} className="resena-card">
-              <div className="resena-header">
-                <UserLink user={r.estudiante_id} size="sm" />
-                <span className="resena-fecha">{formatearFecha(r.createdAt)}</span>
-                {user?._id === r.estudiante_id?._id && (
-                  <div className="resena-acciones">
-                {editandoId === r._id ? (
-                  <>
-                    <button
-                      type="button"
-                      className="preview-btn-outline"
-                      style={{ fontSize: 12, padding: '4px 10px', marginRight: '4px' }}
-                      onClick={() => guardarEdicion(r._id)}
-                      disabled={enviando}
-                    >
-                      Guardar
-                    </button>
-                    <button
-                      type="button"
-                      className="preview-btn-outline"
-                      style={{ fontSize: 12, padding: '4px 10px' }}
-                      onClick={cancelarEdicion}
-                    >
-                      Cancelar
-                    </button>
-                  </>
-                    ) : (
-                      <>
-                        <button
-                          type="button"
-                          className="preview-btn-outline"
-                          style={{ fontSize: 12, padding: '4px 10px', marginRight: '4px' }}
-                          onClick={() => iniciarEdicion(r)}
-                        >
-                          Editar
-                        </button>
-                        <button
-                          type="button"
-                          className="preview-btn-outline"
-                          style={{ fontSize: 12, padding: '4px 10px' }}
-                          onClick={() => onEliminar(r._id)}
-                        >
-                          Eliminar
-                        </button>
-                      </>
+          {raices.map((r) => {
+            const respuestas = resenas.filter((x) => x.respuesta_a === r._id);
+            const esAutor = user?._id === r.estudiante_id?._id;
+            return (
+              <div key={r._id} className="comentario-hilo">
+                <div className="resena-card">
+                  <div className="resena-header">
+                    <UserLink user={r.estudiante_id} size="sm" />
+                    <span className="resena-fecha">{formatearFecha(r.createdAt)}</span>
+                    {esAutor && (
+                      <div className="resena-acciones">
+                        {editandoId === r._id ? (
+                          <>
+                            <button
+                              type="button"
+                              className="preview-btn-outline"
+                              style={{ fontSize: 12, padding: '4px 10px', marginRight: '4px' }}
+                              onClick={() => guardarEdicion(r._id)}
+                              disabled={enviando}
+                            >
+                              Guardar
+                            </button>
+                            <button
+                              type="button"
+                              className="preview-btn-outline"
+                              style={{ fontSize: 12, padding: '4px 10px' }}
+                              onClick={cancelarEdicion}
+                            >
+                              Cancelar
+                            </button>
+                          </>
+                        ) : (
+                          <>
+                            <button
+                              type="button"
+                              className="preview-btn-outline"
+                              style={{ fontSize: 12, padding: '4px 10px', marginRight: '4px' }}
+                              onClick={() => iniciarEdicion(r)}
+                            >
+                              Editar
+                            </button>
+                            <button
+                              type="button"
+                              className="preview-btn-outline"
+                              style={{ fontSize: 12, padding: '4px 10px' }}
+                              onClick={() => onEliminar(r._id)}
+                            >
+                              Eliminar
+                            </button>
+                          </>
+                        )}
+                      </div>
                     )}
                   </div>
-                )}
-              </div>
-              {editandoId === r._id ? (
-                <div className="resena-edit-form">
-                  <textarea
-                    rows={3}
-                    value={editTexto}
-                    onChange={(e) => setEditTexto(e.target.value)}
-                    disabled={enviando}
-                    className="resena-edit-textarea"
-                  />
+                  {editandoId === r._id ? (
+                    <div className="resena-edit-form">
+                      <textarea
+                        rows={3}
+                        value={editTexto}
+                        onChange={(e) => setEditTexto(e.target.value)}
+                        disabled={enviando}
+                        className="resena-edit-textarea"
+                      />
+                    </div>
+                  ) : (
+                    <p className="resena-comentario">{r.comentario}</p>
+                  )}
+                  {puedeResponder && (
+                    <div className="respuesta-parent-actions">
+                      <button
+                        type="button"
+                        className="respuesta-action-btn"
+                        onClick={() => setRespondiendoId(respondiendoId === r._id ? null : r._id)}
+                      >
+                        Responder
+                      </button>
+                    </div>
+                  )}
+                  {puedeResponder && respondiendoId === r._id && (
+                    <FormularioRespuesta
+                      onEnviar={(t) => onResponder(r._id, t)}
+                      onCancelar={() => setRespondiendoId(null)}
+                    />
+                  )}
                 </div>
-              ) : (
-                <p className="resena-comentario">{r.comentario}</p>
-              )}
-            </div>
-          ))}
-      </div>
+                <HiloRespuestas
+                  respuestas={respuestas}
+                  currentUserId={user?._id}
+                  puedeResponder={puedeResponder}
+                  onResponder={onResponder}
+                  onEditar={onEditar}
+                  onEliminar={onEliminar}
+                />
+              </div>
+            );
+          })}
+        </div>
       )}
 
       {puedeParticipar && (
@@ -159,10 +196,10 @@ export function ComentariosLeccion({ cursoId, resenas, loading, onComentar, onEl
           {msg && (
             <p style={{ marginTop: 8, fontSize: 13, color: msg.includes('Error') ? 'var(--error)' : '#059669' }}>
               {msg}
-          </p>
+            </p>
           )}
-      </div>
+        </div>
       )}
-  </div>
+    </div>
   );
 }

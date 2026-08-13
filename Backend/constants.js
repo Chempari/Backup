@@ -6,6 +6,9 @@ const IP_SERVER = process.env.IP_SERVER || "localhost";
 const JWT_SECRET = process.env.JWT_SECRET || "9bceee966f8aeffddfa560fc270c6e8e319807028f056ce4c13cced9f30f59e4";
 const JWT_EXPIRATION = process.env.JWT_EXPIRATION || "8h";
 const CORS_ORIGIN = process.env.CORS_ORIGIN || "http://localhost:3000";
+const CLOUDINARY_CLOUD_NAME = process.env.CLOUDINARY_CLOUD_NAME || "rz1es5hy";
+const CLOUDINARY_API_KEY = process.env.CLOUDINARY_API_KEY || "145431956437368";
+const CLOUDINARY_API_SECRET = process.env.CLOUDINARY_API_SECRET || "qwt2w4YV0bnwubOqEI4uYjXDaIs";
 
 module.exports = {
     DB_USER,
@@ -15,5 +18,8 @@ module.exports = {
     IP_SERVER,
     JWT_SECRET,
     JWT_EXPIRATION,
-    CORS_ORIGIN
+    CORS_ORIGIN,
+    CLOUDINARY_CLOUD_NAME,
+    CLOUDINARY_API_KEY,
+    CLOUDINARY_API_SECRET
 }

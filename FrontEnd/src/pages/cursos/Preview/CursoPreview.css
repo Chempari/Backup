@@ -248,7 +248,8 @@
 
 .leccion-icon {
   color: #6ee7b7; /* Ícono de play verde brillante */
-  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
 }
 
 /* =========================================

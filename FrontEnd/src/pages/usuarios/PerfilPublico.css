@@ -106,11 +106,11 @@
 .perfil-publico-red--whatsapp:hover { background: rgba(37, 211, 102, 0.3); border-color: #25d366; }
 
 .perfil-publico-red span {
-  display: none;
+  display: inline;
 }
 
 .perfil-publico-red:hover span {
-  display: inline;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .perfil-publico-cursos {

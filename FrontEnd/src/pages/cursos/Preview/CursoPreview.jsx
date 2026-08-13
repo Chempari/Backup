@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { useAuth } from '../../../context/useAuth';
 import api from '../../../Api/axios';
 import { ComentariosCurso } from '../shared/ComentariosCurso';
+import { StarIcon, PlayIcon, ChevronIcon } from '../../../components/Icons';
 import { useResenas } from '../shared/useResenas';
 import { UserLink } from '../../../components/UserLink';
 import { PagoModal } from '../../../components/PagoModal';
@@ -19,7 +20,7 @@ export function CursoPreview() {
   const [message, setMessage] = useState('');
   const [pagoModalOpen, setPagoModalOpen] = useState(false);
   const [seccionAbierta, setSeccionAbierta] = useState(0);
-  const { resenas, loading: resenasLoading, crearComentario, calificar, actualizarResena, eliminarResena } = useResenas(id);
+  const { resenas, loading: resenasLoading, crearComentario, calificar, actualizarResena, eliminarResena, responder } = useResenas(id);
 
   const cargarCurso = useCallback(() => {
     return api.get(`/Cursos/${id}`)
@@ -114,7 +115,9 @@ export function CursoPreview() {
             <span>{curso.categoria}</span>
             <span>{curso.nivel}</span>
             {curso.calificacion_promedio > 0 && (
-              <span style={{ color: '#f59e0b' }}>{'â˜…'} {curso.calificacion_promedio}</span>
+              <span style={{ color: '#f59e0b', display: 'inline-flex', alignItems: 'center', gap: 4 }}>
+                <StarIcon size={14} /> {curso.calificacion_promedio}
+              </span>
             )}
           </div>
         </div>
@@ -143,7 +146,7 @@ export function CursoPreview() {
               </div>
               <div className="stat-row">
                 <span className="stat-value stat-stars">
-                  {'â˜…'} {curso.calificacion_promedio > 0 ? curso.calificacion_promedio : '0.0'}
+                  <StarIcon size={16} /> {curso.calificacion_promedio > 0 ? curso.calificacion_promedio : '0.0'}
                 </span>
                 <span className="stat-label">Calificacion</span>
               </div>
@@ -192,11 +195,11 @@ export function CursoPreview() {
             <div key={seccion._id} className="seccion-item">
               <div className="preview-seccion-header" onClick={() => setSeccionAbierta(seccionAbierta === i ? -1 : i)}>
                 <span>Seccion {i + 1}: {seccion.titulo}</span>
-                <span>{seccionAbierta === i ? 'â–²' : 'â–¼'}</span>
+                <span>{<ChevronIcon up={seccionAbierta === i} />}</span>
               </div>
               {seccionAbierta === i && seccion.lecciones?.map((leccion) => (
                 <div key={leccion._id} className="preview-leccion-item">
-                  <span className="leccion-icon">{'â–¶'}</span>
+                  <span className="leccion-icon">{<PlayIcon size={14} />}</span>
                   <span>{leccion.titulo}</span>
                 </div>
               ))}
@@ -215,6 +218,7 @@ export function CursoPreview() {
         onCalificar={handleCalificar}
         onActualizar={actualizarResena}
         onEliminar={eliminarResena}
+        onResponder={responder}
       />
     </div>
   );

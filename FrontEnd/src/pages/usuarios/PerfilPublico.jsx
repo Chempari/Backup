@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import api from '../../Api/axios';
 import { imageUrl } from '../../utils';
 import { SocialIcon } from '../../components/SocialIcons';
+import { PlayIcon } from '../../components/Icons';
 import './PerfilPublico.css';
 
 export function PerfilPublico() {
@@ -87,7 +88,7 @@ export function PerfilPublico() {
                 {curso.imagen ? (
                   <img src={imageUrl(curso.imagen)} alt="" />
                 ) : (
-                  <div className="perfil-publico-curso-placeholder">{'▶'}</div>
+                  <div className="perfil-publico-curso-placeholder"><PlayIcon size={22} /></div>
                 )}
                 <div className="perfil-publico-curso-info">
                   <h3>{curso.titulo}</h3>

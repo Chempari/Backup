@@ -1,3 +1,5 @@
+import { StarIcon } from '../../../../components/Icons';
+
 export function StarPicker({ value, onChange }) {
   return (
     <div className="preview-star-rating">
@@ -7,8 +9,9 @@ export function StarPicker({ value, onChange }) {
           type="button"
           className={s <= value ? 'filled' : ''}
           onClick={() => onChange(s)}
+          aria-label={`${s} estrellas`}
         >
-          {'\u2605'}
+          <StarIcon size={32} filled={s <= value} />
         </button>
       ))}
     </div>

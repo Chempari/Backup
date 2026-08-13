@@ -79,8 +79,7 @@ export function DashboardInstructor() {
         cursos={cursos} 
         onTogglePublicado={togglePublicado} 
         onDelete={deleteCurso}
-        onVisualizar={(cursoId) => window.open(`/cursos/${cursoId}?instructor=true`, '_blank')}
-        onVerInscritos={() => {}}
+        onVisualizar={(cursoId) => window.open(`/cursos/${cursoId}/aprender?instructor=true`, '_blank')}
       />
 
       <h2 className="dashboard-instructor__section-title">Comentarios recientes</h2>

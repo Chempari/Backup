@@ -76,7 +76,12 @@ usuario.pre("save", async function(next) {
 
 // Método para comparar contraseñas
 usuario.methods.compararPassword = async function(password) {
-  return await bcrypt.compare(password, this.password);
+  try {
+    return await bcrypt.compare(password, this.password);
+  } catch (error) {
+    // Hash legacy o corrupto: nunca romper el login con un 500
+    return false;
+  }
 };
 
 module.exports = mongoose.model("Usuario", usuario);

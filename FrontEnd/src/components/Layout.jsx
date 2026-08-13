@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/useAuth';
 import { LayoutBackground } from './LayoutBackground';
+import { imageUrl } from '../utils';
 import api from '../Api/axios';
 import './layout.css';
 
@@ -139,7 +140,7 @@ export function Layout({ children, title }) {
                     className="layout-search-result"
                     onClick={() => handleResultClick(curso)}
                   >
-                    <img src={curso.imagen ? `http://localhost:3977${curso.imagen}` : ''} alt={curso.titulo} className="layout-search-result-img" onError={(e) => e.target.style.display='none'} />
+                    <img src={curso.imagen ? imageUrl(curso.imagen) : ''} alt={curso.titulo} className="layout-search-result-img" onError={(e) => e.target.style.display='none'} />
                     <div className="layout-search-result-info">
                       <span className="layout-search-result-title">{curso.titulo}</span>
                       <span className="layout-search-result-meta">{curso.categoria} · {curso.nivel}</span>
